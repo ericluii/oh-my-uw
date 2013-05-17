@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07AD0EAD1746E5CC002BF8F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EAC1746E5CC002BF8F6 /* UIKit.framework */; };
+		07AD0EAF1746E5CC002BF8F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EAE1746E5CC002BF8F6 /* Foundation.framework */; };
+		07AD0EB11746E5CC002BF8F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EB01746E5CC002BF8F6 /* CoreGraphics.framework */; };
+		07AD0EB71746E5CC002BF8F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0EB51746E5CC002BF8F6 /* InfoPlist.strings */; };
+		07AD0EB91746E5CC002BF8F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AD0EB81746E5CC002BF8F6 /* main.m */; };
+		07AD0EBD1746E5CC002BF8F6 /* OMUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AD0EBC1746E5CC002BF8F6 /* OMUAppDelegate.m */; };
+		07AD0EBF1746E5CC002BF8F6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0EBE1746E5CC002BF8F6 /* Default.png */; };
+		07AD0EC11746E5CC002BF8F6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0EC01746E5CC002BF8F6 /* Default@2x.png */; };
+		07AD0EC31746E5CC002BF8F6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0EC21746E5CC002BF8F6 /* Default-568h@2x.png */; };
+		07AD0EC61746E5CC002BF8F6 /* OMUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AD0EC51746E5CC002BF8F6 /* OMUViewController.m */; };
+		07AD0EC91746E5CC002BF8F6 /* OMUViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0EC71746E5CC002BF8F6 /* OMUViewController_iPhone.xib */; };
+		07AD0ECC1746E5CC002BF8F6 /* OMUViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0ECA1746E5CC002BF8F6 /* OMUViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07AD0EA91746E5CC002BF8F6 /* Oh My UW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oh My UW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07AD0EAC1746E5CC002BF8F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		07AD0EAE1746E5CC002BF8F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		07AD0EB01746E5CC002BF8F6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		07AD0EB41746E5CC002BF8F6 /* Oh My UW-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Oh My UW-Info.plist"; sourceTree = "<group>"; };
+		07AD0EB61746E5CC002BF8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		07AD0EB81746E5CC002BF8F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07AD0EBA1746E5CC002BF8F6 /* Oh My UW-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oh My UW-Prefix.pch"; sourceTree = "<group>"; };
+		07AD0EBB1746E5CC002BF8F6 /* OMUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OMUAppDelegate.h; sourceTree = "<group>"; };
+		07AD0EBC1746E5CC002BF8F6 /* OMUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OMUAppDelegate.m; sourceTree = "<group>"; };
+		07AD0EBE1746E5CC002BF8F6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		07AD0EC01746E5CC002BF8F6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		07AD0EC21746E5CC002BF8F6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		07AD0EC41746E5CC002BF8F6 /* OMUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OMUViewController.h; sourceTree = "<group>"; };
+		07AD0EC51746E5CC002BF8F6 /* OMUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OMUViewController.m; sourceTree = "<group>"; };
+		07AD0EC81746E5CC002BF8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OMUViewController_iPhone.xib; sourceTree = "<group>"; };
+		07AD0ECB1746E5CC002BF8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OMUViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07AD0EA61746E5CC002BF8F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07AD0EAD1746E5CC002BF8F6 /* UIKit.framework in Frameworks */,
+				07AD0EAF1746E5CC002BF8F6 /* Foundation.framework in Frameworks */,
+				07AD0EB11746E5CC002BF8F6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07AD0EA01746E5CB002BF8F6 = {
+			isa = PBXGroup;
+			children = (
+				07AD0EB21746E5CC002BF8F6 /* Oh My UW */,
+				07AD0EAB1746E5CC002BF8F6 /* Frameworks */,
+				07AD0EAA1746E5CC002BF8F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07AD0EAA1746E5CC002BF8F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07AD0EA91746E5CC002BF8F6 /* Oh My UW.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07AD0EAB1746E5CC002BF8F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07AD0EAC1746E5CC002BF8F6 /* UIKit.framework */,
+				07AD0EAE1746E5CC002BF8F6 /* Foundation.framework */,
+				07AD0EB01746E5CC002BF8F6 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07AD0EB21746E5CC002BF8F6 /* Oh My UW */ = {
+			isa = PBXGroup;
+			children = (
+				07AD0EBB1746E5CC002BF8F6 /* OMUAppDelegate.h */,
+				07AD0EBC1746E5CC002BF8F6 /* OMUAppDelegate.m */,
+				07AD0EC41746E5CC002BF8F6 /* OMUViewController.h */,
+				07AD0EC51746E5CC002BF8F6 /* OMUViewController.m */,
+				07AD0EC71746E5CC002BF8F6 /* OMUViewController_iPhone.xib */,
+				07AD0ECA1746E5CC002BF8F6 /* OMUViewController_iPad.xib */,
+				07AD0EB31746E5CC002BF8F6 /* Supporting Files */,
+			);
+			path = "Oh My UW";
+			sourceTree = "<group>";
+		};
+		07AD0EB31746E5CC002BF8F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07AD0EB41746E5CC002BF8F6 /* Oh My UW-Info.plist */,
+				07AD0EB51746E5CC002BF8F6 /* InfoPlist.strings */,
+				07AD0EB81746E5CC002BF8F6 /* main.m */,
+				07AD0EBA1746E5CC002BF8F6 /* Oh My UW-Prefix.pch */,
+				07AD0EBE1746E5CC002BF8F6 /* Default.png */,
+				07AD0EC01746E5CC002BF8F6 /* Default@2x.png */,
+				07AD0EC21746E5CC002BF8F6 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07AD0EA81746E5CC002BF8F6 /* Oh My UW */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07AD0ECF1746E5CC002BF8F6 /* Build configuration list for PBXNativeTarget "Oh My UW" */;
+			buildPhases = (
+				07AD0EA51746E5CC002BF8F6 /* Sources */,
+				07AD0EA61746E5CC002BF8F6 /* Frameworks */,
+				07AD0EA71746E5CC002BF8F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Oh My UW";
+			productName = "Oh My UW";
+			productReference = 07AD0EA91746E5CC002BF8F6 /* Oh My UW.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07AD0EA11746E5CB002BF8F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OMU;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Eric Lui";
+			};
+			buildConfigurationList = 07AD0EA41746E5CB002BF8F6 /* Build configuration list for PBXProject "Oh My UW" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 07AD0EA01746E5CB002BF8F6;
+			productRefGroup = 07AD0EAA1746E5CC002BF8F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07AD0EA81746E5CC002BF8F6 /* Oh My UW */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07AD0EA71746E5CC002BF8F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07AD0EB71746E5CC002BF8F6 /* InfoPlist.strings in Resources */,
+				07AD0EBF1746E5CC002BF8F6 /* Default.png in Resources */,
+				07AD0EC11746E5CC002BF8F6 /* Default@2x.png in Resources */,
+				07AD0EC31746E5CC002BF8F6 /* Default-568h@2x.png in Resources */,
+				07AD0EC91746E5CC002BF8F6 /* OMUViewController_iPhone.xib in Resources */,
+				07AD0ECC1746E5CC002BF8F6 /* OMUViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07AD0EA51746E5CC002BF8F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07AD0EB91746E5CC002BF8F6 /* main.m in Sources */,
+				07AD0EBD1746E5CC002BF8F6 /* OMUAppDelegate.m in Sources */,
+				07AD0EC61746E5CC002BF8F6 /* OMUViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		07AD0EB51746E5CC002BF8F6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07AD0EB61746E5CC002BF8F6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		07AD0EC71746E5CC002BF8F6 /* OMUViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07AD0EC81746E5CC002BF8F6 /* en */,
+			);
+			name = OMUViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		07AD0ECA1746E5CC002BF8F6 /* OMUViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07AD0ECB1746E5CC002BF8F6 /* en */,
+			);
+			name = OMUViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07AD0ECD1746E5CC002BF8F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		07AD0ECE1746E5CC002BF8F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07AD0ED01746E5CC002BF8F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Oh My UW/Oh My UW-Prefix.pch";
+				INFOPLIST_FILE = "Oh My UW/Oh My UW-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		07AD0ED11746E5CC002BF8F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Oh My UW/Oh My UW-Prefix.pch";
+				INFOPLIST_FILE = "Oh My UW/Oh My UW-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07AD0EA41746E5CB002BF8F6 /* Build configuration list for PBXProject "Oh My UW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07AD0ECD1746E5CC002BF8F6 /* Debug */,
+				07AD0ECE1746E5CC002BF8F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07AD0ECF1746E5CC002BF8F6 /* Build configuration list for PBXNativeTarget "Oh My UW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07AD0ED01746E5CC002BF8F6 /* Debug */,
+				07AD0ED11746E5CC002BF8F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07AD0EA11746E5CB002BF8F6 /* Project object */;
+}
