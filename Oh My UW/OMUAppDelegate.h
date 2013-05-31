@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OMUNavigationBar.h"
 
 @class OMUViewController;
 
@@ -14,6 +15,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) OMUNavigationBar *navBar;
 @property (strong, nonatomic) OMUViewController *viewController;
 
 @end

@@ -21,7 +21,10 @@
     } else {
         self.viewController = [[OMUViewController alloc] initWithNibName:@"OMUViewController_iPad" bundle:nil];
     }
-    self.window.rootViewController = self.viewController;
+    
+    _navBar = [[OMUNavigationBar alloc] initWithRootViewController:self.viewController];
+    
+    self.window.rootViewController = _navBar.navigator;
     [self.window makeKeyAndVisible];
     return YES;
 }

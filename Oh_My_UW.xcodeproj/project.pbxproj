@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076346841755952200645A1B /* OMUNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 076346831755952200645A1B /* OMUNavigationBar.m */; };
 		07AD0EAD1746E5CC002BF8F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EAC1746E5CC002BF8F6 /* UIKit.framework */; };
 		07AD0EAF1746E5CC002BF8F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EAE1746E5CC002BF8F6 /* Foundation.framework */; };
 		07AD0EB11746E5CC002BF8F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EB01746E5CC002BF8F6 /* CoreGraphics.framework */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		076346821755952200645A1B /* OMUNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUNavigationBar.h; path = Classes/OMUNavigationBar.h; sourceTree = "<group>"; };
+		076346831755952200645A1B /* OMUNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUNavigationBar.m; path = Classes/OMUNavigationBar.m; sourceTree = "<group>"; };
 		07AD0EA91746E5CC002BF8F6 /* Oh My UW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oh My UW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AD0EAC1746E5CC002BF8F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07AD0EAE1746E5CC002BF8F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -174,6 +177,8 @@
 		07EDE23D1746E99F005CB5B1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				076346821755952200645A1B /* OMUNavigationBar.h */,
+				076346831755952200645A1B /* OMUNavigationBar.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				07C3558B17557599000D9C34 /* AFURLConnectionOperation.m in Sources */,
 				07C3558C17557599000D9C34 /* AFXMLRequestOperation.m in Sources */,
 				07C3558D17557599000D9C34 /* UIImageView+AFNetworking.m in Sources */,
+				076346841755952200645A1B /* OMUNavigationBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

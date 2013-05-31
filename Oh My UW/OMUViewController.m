@@ -7,6 +7,7 @@
 //
 
 #import "OMUViewController.h"
+#import "OMUAppDelegate.h"
 
 @interface OMUViewController ()
 
@@ -17,6 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.view addSubview:((OMUAppDelegate *)[[UIApplication sharedApplication] delegate]).navBar];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
