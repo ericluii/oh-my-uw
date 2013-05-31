@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OMUViewController : UIViewController
+@interface OMUDefaultViewController : UIViewController {
+    int touchTolerance;
+}
 
 @end

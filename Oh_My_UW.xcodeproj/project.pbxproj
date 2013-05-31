@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		076346841755952200645A1B /* OMUNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 076346831755952200645A1B /* OMUNavigationBar.m */; };
+		07A86E50175826ED0078ED36 /* OMUSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A86E4F175826ED0078ED36 /* OMUSideMenu.m */; };
 		07AD0EAD1746E5CC002BF8F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EAC1746E5CC002BF8F6 /* UIKit.framework */; };
 		07AD0EAF1746E5CC002BF8F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EAE1746E5CC002BF8F6 /* Foundation.framework */; };
 		07AD0EB11746E5CC002BF8F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EB01746E5CC002BF8F6 /* CoreGraphics.framework */; };
@@ -17,7 +18,7 @@
 		07AD0EBF1746E5CC002BF8F6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0EBE1746E5CC002BF8F6 /* Default.png */; };
 		07AD0EC11746E5CC002BF8F6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0EC01746E5CC002BF8F6 /* Default@2x.png */; };
 		07AD0EC31746E5CC002BF8F6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0EC21746E5CC002BF8F6 /* Default-568h@2x.png */; };
-		07AD0EC61746E5CC002BF8F6 /* OMUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AD0EC51746E5CC002BF8F6 /* OMUViewController.m */; };
+		07AD0EC61746E5CC002BF8F6 /* OMUDefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AD0EC51746E5CC002BF8F6 /* OMUDefaultViewController.m */; };
 		07AD0EC91746E5CC002BF8F6 /* OMUViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0EC71746E5CC002BF8F6 /* OMUViewController_iPhone.xib */; };
 		07AD0ECC1746E5CC002BF8F6 /* OMUViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0ECA1746E5CC002BF8F6 /* OMUViewController_iPad.xib */; };
 		07C3558517557599000D9C34 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3557317557599000D9C34 /* AFHTTPClient.m */; };
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		076346821755952200645A1B /* OMUNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUNavigationBar.h; path = Classes/OMUNavigationBar.h; sourceTree = "<group>"; };
 		076346831755952200645A1B /* OMUNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUNavigationBar.m; path = Classes/OMUNavigationBar.m; sourceTree = "<group>"; };
+		07A86E4E175826ED0078ED36 /* OMUSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUSideMenu.h; path = Classes/OMUSideMenu.h; sourceTree = "<group>"; };
+		07A86E4F175826ED0078ED36 /* OMUSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUSideMenu.m; path = Classes/OMUSideMenu.m; sourceTree = "<group>"; };
 		07AD0EA91746E5CC002BF8F6 /* Oh My UW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oh My UW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AD0EAC1746E5CC002BF8F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07AD0EAE1746E5CC002BF8F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,8 +50,8 @@
 		07AD0EBE1746E5CC002BF8F6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "Oh My UW/Default.png"; sourceTree = "<group>"; };
 		07AD0EC01746E5CC002BF8F6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Oh My UW/Default@2x.png"; sourceTree = "<group>"; };
 		07AD0EC21746E5CC002BF8F6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Oh My UW/Default-568h@2x.png"; sourceTree = "<group>"; };
-		07AD0EC41746E5CC002BF8F6 /* OMUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OMUViewController.h; sourceTree = "<group>"; };
-		07AD0EC51746E5CC002BF8F6 /* OMUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OMUViewController.m; sourceTree = "<group>"; };
+		07AD0EC41746E5CC002BF8F6 /* OMUDefaultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OMUDefaultViewController.h; sourceTree = "<group>"; };
+		07AD0EC51746E5CC002BF8F6 /* OMUDefaultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OMUDefaultViewController.m; sourceTree = "<group>"; };
 		07AD0EC81746E5CC002BF8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OMUViewController_iPhone.xib; sourceTree = "<group>"; };
 		07AD0ECB1746E5CC002BF8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OMUViewController_iPad.xib; sourceTree = "<group>"; };
 		07C3557217557599000D9C34 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 			children = (
 				076346821755952200645A1B /* OMUNavigationBar.h */,
 				076346831755952200645A1B /* OMUNavigationBar.m */,
+				07A86E4E175826ED0078ED36 /* OMUSideMenu.h */,
+				07A86E4F175826ED0078ED36 /* OMUSideMenu.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -193,8 +198,8 @@
 		07EDE23F1746E9BD005CB5B1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				07AD0EC41746E5CC002BF8F6 /* OMUViewController.h */,
-				07AD0EC51746E5CC002BF8F6 /* OMUViewController.m */,
+				07AD0EC41746E5CC002BF8F6 /* OMUDefaultViewController.h */,
+				07AD0EC51746E5CC002BF8F6 /* OMUDefaultViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -297,7 +302,7 @@
 			files = (
 				07AD0EB91746E5CC002BF8F6 /* main.m in Sources */,
 				07AD0EBD1746E5CC002BF8F6 /* OMUAppDelegate.m in Sources */,
-				07AD0EC61746E5CC002BF8F6 /* OMUViewController.m in Sources */,
+				07AD0EC61746E5CC002BF8F6 /* OMUDefaultViewController.m in Sources */,
 				07C3558517557599000D9C34 /* AFHTTPClient.m in Sources */,
 				07C3558617557599000D9C34 /* AFHTTPRequestOperation.m in Sources */,
 				07C3558717557599000D9C34 /* AFImageRequestOperation.m in Sources */,
@@ -308,6 +313,7 @@
 				07C3558C17557599000D9C34 /* AFXMLRequestOperation.m in Sources */,
 				07C3558D17557599000D9C34 /* UIImageView+AFNetworking.m in Sources */,
 				076346841755952200645A1B /* OMUNavigationBar.m in Sources */,
+				07A86E50175826ED0078ED36 /* OMUSideMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

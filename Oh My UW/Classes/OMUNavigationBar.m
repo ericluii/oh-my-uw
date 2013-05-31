@@ -7,7 +7,6 @@
 //
 
 #import "OMUNavigationBar.h"
-#import "OMUViewController.h"
 
 @implementation OMUNavigationBar
 
@@ -46,10 +45,12 @@
 - (void) switchMenuState {
     if (_menuExpanded) {
         [UIView animateWithDuration:0.5 animations:^{
+            [[self superview].subviews[0] setFrame:CGRectMake(0, 0, 240, [self superview].frame.size.height)];
             [[self superview] setFrame:CGRectMake(0, 0, [self superview].frame.size.width, [self superview].frame.size.height)];
         }];
     } else {
         [UIView animateWithDuration:0.5 animations:^{
+            [[self superview].subviews[0] setFrame:CGRectMake(-240, 0, 240, [self superview].frame.size.height)];
             [[self superview] setFrame:CGRectMake(240, 0, [self superview].frame.size.width, [self superview].frame.size.height)];
         }];
     }

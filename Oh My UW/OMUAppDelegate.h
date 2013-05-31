@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "OMUNavigationBar.h"
+#import "OMUSideMenu.h"
 
-@class OMUViewController;
+@class OMUDefaultViewController;
 
 @interface OMUAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) OMUNavigationBar *navBar;
-@property (strong, nonatomic) OMUViewController *viewController;
+@property (strong, nonatomic) OMUDefaultViewController *viewController;
+@property (strong, nonatomic) OMUSideMenu *sideMenu;
 
 @end
