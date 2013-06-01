@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OMUNavigationConstants.h"
 
 @interface OMUNavigationBar : UIView {
     UILabel * _title;
@@ -20,5 +21,4 @@
 - (id)initWithTitle:(NSString*) title;
 - (void) pushViewController:(UIViewController *) vc animated:(BOOL) animate;
 - (void) popViewControllerAndAnimated:(BOOL) animate;
-- (void) toggleHidden:(BOOL)hide;
 @end

@@ -20,7 +20,7 @@
     _sideMenu = [[OMUSideMenu alloc] init];
     [self.view addSubview:_sideMenu];
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 44, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 44)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 44)];
     [view setBackgroundColor:[UIColor colorWithRed:(rand()%255 + 100)/255.0 green:(rand()%255 + 100)/255.0 blue:(rand()%255 + 100)/255.0 alpha:1]];
     [self.view addSubview:view];
     
@@ -71,7 +71,7 @@
     _touchStarted.x = nextTouchPoint.x;
     float newX = self.view.frame.origin.x + xOffset;
     
-    if (newX > 240 || newX < 0) {
+    if (newX > SIDE_MENU_WIDTH || newX < 0) {
         return;
     }
     
@@ -80,17 +80,17 @@
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (self.view.frame.origin.x < 120) {
+    if (self.view.frame.origin.x < SIDE_MENU_WIDTH/2) {
         [_navBar setMenuExpanded:NO];
         [UIView animateWithDuration:0.2 animations:^{
-            [self.view.subviews[0] setFrame:CGRectMake(0, 0, 240, self.view.frame.size.height)];
+            [self.view.subviews[0] setFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, self.view.frame.size.height)];
             [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         }];
     } else {
         [_navBar setMenuExpanded:YES];
         [UIView animateWithDuration:0.2 animations:^{
-            [self.view.subviews[0] setFrame:CGRectMake(-240, 0, 240, self.view.frame.size.height)];
-            [self.view setFrame:CGRectMake(240, 0, self.view.frame.size.width, self.view.frame.size.height)];
+            [self.view.subviews[0] setFrame:CGRectMake(-SIDE_MENU_WIDTH, 0, SIDE_MENU_WIDTH, self.view.frame.size.height)];
+            [self.view setFrame:CGRectMake(SIDE_MENU_WIDTH, 0, self.view.frame.size.width, self.view.frame.size.height)];
         }];
     }
 }
