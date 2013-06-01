@@ -16,8 +16,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) OMUNavigationBar *navBar;
 @property (strong, nonatomic) OMUDefaultViewController *viewController;
-@property (strong, nonatomic) OMUSideMenu *sideMenu;
+@property (strong, nonatomic) UINavigationController * navigator;
 
 @end

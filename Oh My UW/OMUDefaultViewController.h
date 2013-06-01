@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OMUNavigationBar.h"
+#import "OMUSideMenu.h"
 
 @interface OMUDefaultViewController : UIViewController {
-    int touchTolerance;
+    CGPoint _touchStarted;
+    OMUNavigationBar *_navBar;
+    OMUSideMenu *_sideMenu;
 }
 
 @end

@@ -11,12 +11,14 @@
 @interface OMUNavigationBar : UIView {
     UILabel * _title;
     UIButton * _expandMenuBtn;
-    BOOL _menuExpanded;
 }
 
 @property (nonatomic, strong) UINavigationController * navigator;
+@property (nonatomic) BOOL menuExpanded;
 
 
-- (id)initWithRootViewController:(UIViewController *)rootViewController;
-
+- (id)initWithTitle:(NSString*) title;
+- (void) pushViewController:(UIViewController *) vc animated:(BOOL) animate;
+- (void) popViewControllerAndAnimated:(BOOL) animate;
+- (void) toggleHidden:(BOOL)hide;
 @end

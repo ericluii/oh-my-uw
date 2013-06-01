@@ -22,10 +22,10 @@
         self.viewController = [[OMUDefaultViewController alloc] initWithNibName:@"OMUViewController_iPad" bundle:nil];
     }
     
-    _navBar = [[OMUNavigationBar alloc] initWithRootViewController:self.viewController];
-    _sideMenu = [[OMUSideMenu alloc] init];
-    
-    self.window.rootViewController = _navBar.navigator;
+    _navigator = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    [_navigator setNavigationBarHidden:YES];
+
+    self.window.rootViewController = _navigator;
     [self.window makeKeyAndVisible];
     return YES;
 }

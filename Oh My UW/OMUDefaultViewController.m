@@ -7,7 +7,6 @@
 //
 
 #import "OMUDefaultViewController.h"
-#import "OMUAppDelegate.h"
 
 @interface OMUDefaultViewController ()
 
@@ -16,20 +15,33 @@
 @implementation OMUDefaultViewController
 
 - (void)viewDidLoad {
-    touchTolerance = 20;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self.view addSubview:((OMUAppDelegate *)[[UIApplication sharedApplication] delegate]).sideMenu];
+    _sideMenu = [[OMUSideMenu alloc] init];
+    [self.view addSubview:_sideMenu];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 44, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 44)];
-    [view setBackgroundColor:[UIColor greenColor]];
+    [view setBackgroundColor:[UIColor colorWithRed:(rand()%255 + 100)/255.0 green:(rand()%255 + 100)/255.0 blue:(rand()%255 + 100)/255.0 alpha:1]];
     [self.view addSubview:view];
     
-    UIView *menuDetection = [[UIView alloc] initWithFrame:CGRectMake(0, 44, 20, [UIScreen mainScreen].bounds.size.height - 44)];
-    [menuDetection setBackgroundColor:[UIColor redColor]];
-    [self.view addSubview:menuDetection];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
+    [button setBackgroundColor:[UIColor purpleColor]];
+    [button addTarget:self action:@selector(touch) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:button];
     
-    [self.view addSubview:((OMUAppDelegate *)[[UIApplication sharedApplication] delegate]).navBar];
+    UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(100, 300, 200, 100)];
+    [button2 setBackgroundColor:[UIColor redColor]];
+    [button2 addTarget:self action:@selector(touch2) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:button2];
+    
+    _navBar = [[OMUNavigationBar alloc] initWithTitle:[NSString stringWithFormat:@"Title %d", rand() % 999]];
+    [self.view addSubview:_navBar];
+}
+
+- (void) setupGestureRecognizer {
+    UISwipeGestureRecognizer * swipeDetection = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
+    [swipeDetection setDirection:UISwipeGestureRecognizerDirectionLeft|UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeDetection];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,37 +50,49 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)touch {    
+    OMUDefaultViewController *vc = [[OMUDefaultViewController alloc] initWithNibName:@"OMUViewController_iPhone" bundle:nil];
+    [_navBar pushViewController:vc animated:YES];
+}
+
+-(void)touch2 {
+    [_navBar popViewControllerAndAnimated:YES];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    _touchStarted = [touch locationInView:self.parentViewController.view];
+}
+
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
-    CGPoint point = [touch locationInView:self.parentViewController.view];
+    CGPoint nextTouchPoint = [touch locationInView:self.parentViewController.view];
+    float xOffset = nextTouchPoint.x - _touchStarted.x;
+    _touchStarted.x = nextTouchPoint.x;
+    float newX = self.view.frame.origin.x + xOffset;
     
-    if ([touch locationInView:self.view].x > touchTolerance || point.x >= 240) {
+    if (newX > 240 || newX < 0) {
         return;
     }
     
-    touchTolerance = [UIScreen mainScreen].bounds.size.width;
-    
-    [[self.view.subviews objectAtIndex:0] setFrame:CGRectMake(-point.x, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    self.view.frame = CGRectMake(point.x, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [[self.view.subviews objectAtIndex:0] setFrame:CGRectMake(-newX, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.view.frame = CGRectMake(newX, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
-    CGPoint point = [touch locationInView:self.parentViewController.view];
-
-    if (point.x < 120) {
+    if (self.view.frame.origin.x < 120) {
+        [_navBar setMenuExpanded:NO];
         [UIView animateWithDuration:0.2 animations:^{
             [self.view.subviews[0] setFrame:CGRectMake(0, 0, 240, self.view.frame.size.height)];
             [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         }];
     } else {
+        [_navBar setMenuExpanded:YES];
         [UIView animateWithDuration:0.2 animations:^{
             [self.view.subviews[0] setFrame:CGRectMake(-240, 0, 240, self.view.frame.size.height)];
             [self.view setFrame:CGRectMake(240, 0, self.view.frame.size.width, self.view.frame.size.height)];
         }];
     }
-    
-    touchTolerance = 20;
 }
 
 @end
