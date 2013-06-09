@@ -10,3 +10,7 @@
 
 extern NSInteger const SIDE_MENU_WIDTH;
 extern NSInteger const NAV_BAR_HEIGHT;
+
+extern float const WEATHER_CELL_HEIGHT;
+
+extern float const WRAPPER_OFFSET;

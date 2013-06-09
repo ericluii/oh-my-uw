@@ -8,5 +8,9 @@
 
 #import "OMUNavigationConstants.h"
 
-NSInteger const SIDE_MENU_WIDTH = 240;
+NSInteger const SIDE_MENU_WIDTH = 276;
 NSInteger const NAV_BAR_HEIGHT = 44;
+
+float const WEATHER_CELL_HEIGHT = 91.0f;
+
+float const WRAPPER_OFFSET = 5.0f;

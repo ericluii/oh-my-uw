@@ -8,7 +8,7 @@
 
 #import "OMUAppDelegate.h"
 
-#import "OMUDefaultViewController.h"
+#import "OMUHomeViewController.h"
 
 @implementation OMUAppDelegate
 
@@ -16,11 +16,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[OMUDefaultViewController alloc] initWithNibName:@"OMUViewController_iPhone" bundle:nil];
-    } else {
-        self.viewController = [[OMUDefaultViewController alloc] initWithNibName:@"OMUViewController_iPad" bundle:nil];
-    }
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self.viewController = [[OMUHomeViewController alloc] init];
+//    } else {
+//        self.viewController = [[OMUDefaultViewController alloc] initWithNibName:@"OMUViewController_iPad" bundle:nil];
+//    }
     
     _navigator = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     [_navigator setNavigationBarHidden:YES];

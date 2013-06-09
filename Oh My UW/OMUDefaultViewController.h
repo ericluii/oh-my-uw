@@ -11,9 +11,11 @@
 #import "OMUSideMenu.h"
 
 @interface OMUDefaultViewController : UIViewController {
-    CGPoint _touchStarted;
     OMUNavigationBar *_navBar;
     OMUSideMenu *_sideMenu;
 }
+
+- (id)initWithTitle:(NSString *) title;
++(CGRect)viewFrame;
 
 @end

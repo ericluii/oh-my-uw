@@ -24,6 +24,8 @@
 
 - (void) configureNavBarWithTitle:(NSString *)title {
     [self setBackgroundColor:[UIColor colorWithRed:250/255.0 green:255/255.0 blue:82/255.0 alpha:1]];
+    _background = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320.0f, NAV_BAR_HEIGHT)];
+    [_background setImage:[UIImage imageNamed:@"navbar_bg"]];
     
     _title = [[UILabel alloc] initWithFrame:CGRectMake(NAV_BAR_HEIGHT, 0, 232, NAV_BAR_HEIGHT)];
     [_title setTextAlignment:NSTextAlignmentCenter];
@@ -34,22 +36,23 @@
     [_title setFont:[UIFont boldSystemFontOfSize:22]];
     [_title setText:title];
     
-    _expandMenuBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, NAV_BAR_HEIGHT, NAV_BAR_HEIGHT)];
-    [_expandMenuBtn setBackgroundColor:[UIColor whiteColor]];
+    _expandMenuBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, NAV_BAR_HEIGHT, NAV_BAR_HEIGHT - 2)];
+    [_expandMenuBtn setBackgroundColor:[UIColor lightGrayColor]];
     [_expandMenuBtn addTarget:self action:@selector(switchMenuState) forControlEvents:UIControlEventTouchDown];
     
+    [self addSubview:_background];
     [self addSubview:_title];
     [self addSubview:_expandMenuBtn];
 }
 
 - (void) switchMenuState {
     if (_menuExpanded) {
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.4 animations:^{
             [[self superview].subviews[0] setFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, [self superview].frame.size.height)];
             [[self superview] setFrame:CGRectMake(0, 0, [self superview].frame.size.width, [self superview].frame.size.height)];
         }];
     } else {
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.4 animations:^{
             [[self superview].subviews[0] setFrame:CGRectMake(-SIDE_MENU_WIDTH, 0, SIDE_MENU_WIDTH, [self superview].frame.size.height)];
             [[self superview] setFrame:CGRectMake(SIDE_MENU_WIDTH, 0, [self superview].frame.size.width, [self superview].frame.size.height)];
         }];

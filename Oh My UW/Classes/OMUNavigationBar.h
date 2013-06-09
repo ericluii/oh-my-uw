@@ -10,6 +10,7 @@
 #import "OMUNavigationConstants.h"
 
 @interface OMUNavigationBar : UIView {
+    UIImageView * _background;
     UILabel * _title;
     UIButton * _expandMenuBtn;
 }
