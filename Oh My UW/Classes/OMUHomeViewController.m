@@ -66,19 +66,31 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    OMUWeatherCell * cell = [_tableView dequeueReusableCellWithIdentifier:[OMUWeatherCell reuseIdentifier]];
-    
-    if (!cell) {
-        cell = [[OMUWeatherCell alloc] initWithWeather:[OMUWeatherModel sharedInstance]];
-    }
+    UITableViewCell * cell;
     
     if (indexPath.row == 0) {
         if (!_weatherLoading && _successfulFetch) {
-            //cell.textLabel.text = [NSString stringWithFormat:@"%f",[[OMUWeatherModel sharedInstance] temperatureCurrent]];
+            cell = [_tableView dequeueReusableCellWithIdentifier:[OMUWeatherCell reuseIdentifier]];
+            
+            if (!cell) {
+                cell = [[OMUWeatherCell alloc] initWithWeather:[OMUWeatherModel sharedInstance]];
+            }
         } else if (_weatherLoading) {
-            //cell.textLabel.text = @"Loading";
+            cell = [_tableView dequeueReusableCellWithIdentifier:@"loadingCell"];
+            
+            if (!cell) {
+                cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 50.0f)];
+            }
+            
+            cell.textLabel.text = @"Loading";
         } else {
-            //cell.textLabel.text = @"Something went wrong";
+            cell = [_tableView dequeueReusableCellWithIdentifier:@"errorCell"];
+            
+            if (!cell) {
+                cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 50.0f)];
+            }
+            
+            cell.textLabel.text = @"Something Went Wrong";
         }
     }
     
@@ -88,11 +100,13 @@
 - (void) fetchWeather {
     NSURLRequest *request = [NSURLRequest requestWithURL:[OMURequestConstants weatherURL]];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"Weather Successfully Fetched");
         [[OMUWeatherModel sharedInstance] configureWithJSONResponse:[[JSON objectForKey:@"response"] objectForKey:@"data"]];
         _weatherLoading = NO;
         [_tableView reloadData];
         _successfulFetch = YES;
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Weather Failed to Fetch: %@", error);
         _weatherLoading = NO;
         [_tableView reloadData];
     }];
