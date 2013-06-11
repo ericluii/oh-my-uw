@@ -49,7 +49,7 @@
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
-    [self.view addSubview:_tableView];
+    [_contentView addSubview:_tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

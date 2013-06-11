@@ -7,25 +7,45 @@
 //
 
 #import "OMUSideMenu.h"
+#import "OMUNavigationConstants.h"
 
 @implementation OMUSideMenu
 
 - (id)init {
-    self = [super initWithFrame:CGRectMake(0, 0, 240, [UIScreen mainScreen].bounds.size.height)];
+    self = [super initWithFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, [UIScreen mainScreen].bounds.size.height)];
     if (self) {
         // Initialization code
-        [self setBackgroundColor:[UIColor blueColor]];
+        [self setupMenu];
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+- (void) setupMenu {
+    _menu = [[UITableView alloc] initWithFrame:self.frame];
+    [_menu setDelegate:self];
+    [_menu setDataSource:self];
+    [_menu setUserInteractionEnabled:YES];
+    [_menu setScrollEnabled:YES];
+    [self addSubview:_menu];
 }
-*/
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 4;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"menuCell"];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, 50.0f)];
+    }
+    
+    [cell.textLabel setText:[NSString stringWithFormat:@"Menu Item %d", indexPath.row]];
+    
+    return cell;
+}
 @end

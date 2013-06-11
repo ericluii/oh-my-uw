@@ -36,9 +36,14 @@
     [_title setFont:[UIFont boldSystemFontOfSize:22]];
     [_title setText:title];
     
-    _expandMenuBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, NAV_BAR_HEIGHT, NAV_BAR_HEIGHT - 2)];
-    [_expandMenuBtn setBackgroundColor:[UIColor lightGrayColor]];
-    [_expandMenuBtn addTarget:self action:@selector(switchMenuState) forControlEvents:UIControlEventTouchDown];
+    _expandMenuBtn = [[UIButton alloc] initWithFrame:CGRectMake(2, 2, NAV_BAR_HEIGHT - 4, NAV_BAR_HEIGHT - 4)];
+    [_expandMenuBtn setBackgroundImage:[UIImage imageNamed:@"navbar_menu_btn"] forState:UIControlStateNormal];
+    [_expandMenuBtn addTarget:self action:@selector(switchMenuState) forControlEvents:UIControlEventTouchUpInside];
+    
+    _backBtn = [[UIButton alloc] initWithFrame:CGRectMake(2, 2, NAV_BAR_HEIGHT - 4, NAV_BAR_HEIGHT - 4)];
+    [_backBtn setBackgroundImage:[UIImage imageNamed:@"navbar_menu_btn"] forState:UIControlStateNormal];
+    [_backBtn addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [_backBtn setHidden:YES];
     
     [self addSubview:_background];
     [self addSubview:_title];
@@ -48,17 +53,24 @@
 - (void) switchMenuState {
     if (_menuExpanded) {
         [UIView animateWithDuration:0.4 animations:^{
-            [[self superview].subviews[0] setFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, [self superview].frame.size.height)];
             [[self superview] setFrame:CGRectMake(0, 0, [self superview].frame.size.width, [self superview].frame.size.height)];
         }];
     } else {
         [UIView animateWithDuration:0.4 animations:^{
-            [[self superview].subviews[0] setFrame:CGRectMake(-SIDE_MENU_WIDTH, 0, SIDE_MENU_WIDTH, [self superview].frame.size.height)];
             [[self superview] setFrame:CGRectMake(SIDE_MENU_WIDTH, 0, [self superview].frame.size.width, [self superview].frame.size.height)];
         }];
     }
     
     _menuExpanded = !_menuExpanded;
+}
+
+- (void) backButtonPressed {
+    [_navigator popViewControllerAnimated:YES];
+}
+
+- (void) backButtonIsVisisble:(BOOL) visible {
+    [_backBtn setHidden:visible];
+    [_expandMenuBtn setHidden:!visible];
 }
 
 - (void) pushViewController:(UIViewController *) vc animated:(BOOL) animate {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0705539C17679EE200544B99 /* navbar_menu_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0705539A17679EE200544B99 /* navbar_menu_btn@2x.png */; };
+		0705539D17679EE200544B99 /* navbar_menu_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0705539B17679EE200544B99 /* navbar_menu_btn.png */; };
 		075393FE175981C600D59314 /* OMUNavigationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 075393FD175981C600D59314 /* OMUNavigationConstants.m */; };
 		076346841755952200645A1B /* OMUNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 076346831755952200645A1B /* OMUNavigationBar.m */; };
 		0778B216176407BC0069D4B4 /* OMUMinorWeatherCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0778B215176407BC0069D4B4 /* OMUMinorWeatherCellView.m */; };
@@ -44,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0705539A17679EE200544B99 /* navbar_menu_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_menu_btn@2x.png"; sourceTree = "<group>"; };
+		0705539B17679EE200544B99 /* navbar_menu_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_menu_btn.png; sourceTree = "<group>"; };
 		075393FC175981C600D59314 /* OMUNavigationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUNavigationConstants.h; path = Classes/OMUNavigationConstants.h; sourceTree = "<group>"; };
 		075393FD175981C600D59314 /* OMUNavigationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUNavigationConstants.m; path = Classes/OMUNavigationConstants.m; sourceTree = "<group>"; };
 		076346821755952200645A1B /* OMUNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUNavigationBar.h; path = Classes/OMUNavigationBar.h; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 		07EDE2431746EA1F005CB5B1 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				0705539A17679EE200544B99 /* navbar_menu_btn@2x.png */,
+				0705539B17679EE200544B99 /* navbar_menu_btn.png */,
 				079798781763ECAD00A36644 /* navbar_bg.png */,
 				079798791763ECAD00A36644 /* navbar_bg@2x.png */,
 				07AD0EBE1746E5CC002BF8F6 /* Default.png */,
@@ -351,6 +357,8 @@
 				07AD0ECC1746E5CC002BF8F6 /* OMUViewController_iPad.xib in Resources */,
 				0797987A1763ECAD00A36644 /* navbar_bg.png in Resources */,
 				0797987B1763ECAD00A36644 /* navbar_bg@2x.png in Resources */,
+				0705539C17679EE200544B99 /* navbar_menu_btn@2x.png in Resources */,
+				0705539D17679EE200544B99 /* navbar_menu_btn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

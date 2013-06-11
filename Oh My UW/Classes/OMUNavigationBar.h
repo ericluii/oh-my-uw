@@ -13,6 +13,7 @@
     UIImageView * _background;
     UILabel * _title;
     UIButton * _expandMenuBtn;
+    UIButton * _backBtn;
 }
 
 @property (nonatomic, strong) UINavigationController * navigator;
@@ -20,6 +21,7 @@
 
 
 - (id)initWithTitle:(NSString*) title;
+- (void) backButtonIsVisisble:(BOOL) visible;
 - (void) pushViewController:(UIViewController *) vc animated:(BOOL) animate;
 - (void) popViewControllerAndAnimated:(BOOL) animate;
 @end

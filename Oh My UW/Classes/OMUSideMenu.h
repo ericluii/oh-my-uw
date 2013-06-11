@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OMUSideMenu : UIView
+@interface OMUSideMenu : UIView <UITableViewDataSource, UITableViewDelegate> {
+    UITableView * _menu;
+}
 
 @end

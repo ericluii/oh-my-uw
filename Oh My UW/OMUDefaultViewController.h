@@ -13,6 +13,7 @@
 @interface OMUDefaultViewController : UIViewController {
     OMUNavigationBar *_navBar;
     OMUSideMenu *_sideMenu;
+    UIView *_contentView;
 }
 
 - (id)initWithTitle:(NSString *) title;

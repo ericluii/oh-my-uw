@@ -21,14 +21,13 @@
         _sideMenu = [[OMUSideMenu alloc] init];
         [self.view addSubview:_sideMenu];
         
-        UIView *view = [[UIView alloc] initWithFrame:[OMUDefaultViewController viewFrame]];
-        [view setBackgroundColor: [UIColor whiteColor]];
-        [self.view addSubview:view];
+        _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        [self.view addSubview:_contentView];
         
         [self setupGestureRecognizer];
         
         _navBar = [[OMUNavigationBar alloc] initWithTitle:title];
-        [self.view addSubview:_navBar];
+        [_contentView addSubview:_navBar];
     }
     return self;
 }
@@ -40,15 +39,15 @@
 
 - (void) setupGestureRecognizer {
     UIPanGestureRecognizer * panDetection = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panHandler:)];
-    [self.view addGestureRecognizer:panDetection];
+    [_contentView addGestureRecognizer:panDetection];
     
     UISwipeGestureRecognizer * rightSwipeDetection = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandler:)];
     [rightSwipeDetection setDirection:UISwipeGestureRecognizerDirectionRight];
-    [self.view addGestureRecognizer:rightSwipeDetection];
+    [_contentView addGestureRecognizer:rightSwipeDetection];
     
     UISwipeGestureRecognizer * leftSwipeDetection = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeHandler:)];
     [leftSwipeDetection setDirection:UISwipeGestureRecognizerDirectionLeft];
-    [self.view addGestureRecognizer:leftSwipeDetection];
+    [_contentView addGestureRecognizer:leftSwipeDetection];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,46 +57,41 @@
 }
 - (void) panHandler:(UIPanGestureRecognizer *) recognizer {
     if (recognizer.state == UIGestureRecognizerStateEnded) {
-        if (self.view.frame.origin.x < SIDE_MENU_WIDTH/2) {
+        if (_contentView.frame.origin.x < SIDE_MENU_WIDTH/2) {
             [_navBar setMenuExpanded:NO];
             [UIView animateWithDuration:0.2 animations:^{
-                [self.view.subviews[0] setFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, self.view.frame.size.height)];
-                [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+                [_contentView setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
             }];
         } else {
             [_navBar setMenuExpanded:YES];
             [UIView animateWithDuration:0.2 animations:^{
-                [self.view.subviews[0] setFrame:CGRectMake(-SIDE_MENU_WIDTH, 0, SIDE_MENU_WIDTH, self.view.frame.size.height)];
-                [self.view setFrame:CGRectMake(SIDE_MENU_WIDTH, 0, self.view.frame.size.width, self.view.frame.size.height)];
+                [_contentView setFrame:CGRectMake(SIDE_MENU_WIDTH, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
             }];
         }
     } else {
-        CGPoint translation = [recognizer translationInView:self.view];
-        float newX = self.view.frame.origin.x + translation.x;
+        CGPoint translation = [recognizer translationInView:_contentView];
+        float newX = _contentView.frame.origin.x + translation.x;
         
         if (newX > SIDE_MENU_WIDTH || newX < 0) {
             return;
         }
         
-        [[self.view.subviews objectAtIndex:0] setFrame:CGRectMake(-newX, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        self.view.frame = CGRectMake(newX, 0, self.view.frame.size.width, self.view.frame.size.height);
-        [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
+        [_contentView setFrame:CGRectMake(newX, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
+        [recognizer setTranslation:CGPointMake(0, 0) inView:_contentView];
     }
 }
 
 - (void) leftSwipeHandler:(UISwipeGestureRecognizer *) recognizer {
     [_navBar setMenuExpanded:NO];
     [UIView animateWithDuration:0.2 animations:^{
-        [self.view.subviews[0] setFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, self.view.frame.size.height)];
-        [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        [_contentView setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
     }];
 }
 
 - (void) rightSwipeHandler:(UISwipeGestureRecognizer *) recognizer {
     [_navBar setMenuExpanded:YES];
     [UIView animateWithDuration:0.2 animations:^{
-        [self.view.subviews[0] setFrame:CGRectMake(-SIDE_MENU_WIDTH, 0, SIDE_MENU_WIDTH, self.view.frame.size.height)];
-        [self.view setFrame:CGRectMake(SIDE_MENU_WIDTH, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        [_contentView setFrame:CGRectMake(SIDE_MENU_WIDTH, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
     }];
 }
 
