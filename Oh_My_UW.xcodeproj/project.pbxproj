@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0705539C17679EE200544B99 /* navbar_menu_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0705539A17679EE200544B99 /* navbar_menu_btn@2x.png */; };
-		0705539D17679EE200544B99 /* navbar_menu_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0705539B17679EE200544B99 /* navbar_menu_btn.png */; };
 		075393FE175981C600D59314 /* OMUNavigationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 075393FD175981C600D59314 /* OMUNavigationConstants.m */; };
 		076346841755952200645A1B /* OMUNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 076346831755952200645A1B /* OMUNavigationBar.m */; };
 		0778B216176407BC0069D4B4 /* OMUMinorWeatherCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0778B215176407BC0069D4B4 /* OMUMinorWeatherCellView.m */; };
@@ -17,9 +15,22 @@
 		079798711763C89800A36644 /* OMUWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079798701763C89800A36644 /* OMUWeatherCell.m */; };
 		079798741763CDE100A36644 /* OMUMainWeatherCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 079798731763CDE100A36644 /* OMUMainWeatherCellView.m */; };
 		079798771763E7E000A36644 /* OMUDefaultCellWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 079798761763E7E000A36644 /* OMUDefaultCellWrapper.m */; };
-		0797987A1763ECAD00A36644 /* navbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 079798781763ECAD00A36644 /* navbar_bg.png */; };
-		0797987B1763ECAD00A36644 /* navbar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079798791763ECAD00A36644 /* navbar_bg@2x.png */; };
 		07A86E50175826ED0078ED36 /* OMUSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A86E4F175826ED0078ED36 /* OMUSideMenu.m */; };
+		07AA9AE4176948F100D90672 /* loading_bar_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9AD6176948F100D90672 /* loading_bar_1@2x.png */; };
+		07AA9AE5176948F100D90672 /* loading_bar_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9AD7176948F100D90672 /* loading_bar_2@2x.png */; };
+		07AA9AE6176948F100D90672 /* loading_bar_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9AD8176948F100D90672 /* loading_bar_3@2x.png */; };
+		07AA9AE7176948F100D90672 /* loading_bar_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9AD9176948F100D90672 /* loading_bar_4@2x.png */; };
+		07AA9AE8176948F100D90672 /* loading_bar_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9ADA176948F100D90672 /* loading_bar_5@2x.png */; };
+		07AA9AE9176948F100D90672 /* loading_bar_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9ADB176948F100D90672 /* loading_bar_6@2x.png */; };
+		07AA9AEA176948F100D90672 /* loading_bar_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9ADC176948F100D90672 /* loading_bar_7@2x.png */; };
+		07AA9AEB176948F100D90672 /* loading_bar_8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9ADD176948F100D90672 /* loading_bar_8@2x.png */; };
+		07AA9AEC176948F100D90672 /* loading_bar_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9ADE176948F100D90672 /* loading_bar_9@2x.png */; };
+		07AA9AED176948F100D90672 /* loading_bar_10@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9ADF176948F100D90672 /* loading_bar_10@2x.png */; };
+		07AA9AEE176948F100D90672 /* navbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9AE0176948F100D90672 /* navbar_bg.png */; };
+		07AA9AEF176948F100D90672 /* navbar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9AE1176948F100D90672 /* navbar_bg@2x.png */; };
+		07AA9AF0176948F100D90672 /* navbar_menu_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9AE2176948F100D90672 /* navbar_menu_btn.png */; };
+		07AA9AF1176948F100D90672 /* navbar_menu_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9AE3176948F100D90672 /* navbar_menu_btn@2x.png */; };
+		07AA9AF917694BA600D90672 /* OMUDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AA9AF817694BA600D90672 /* OMUDefaultLoadingCell.m */; };
 		07AD0EAD1746E5CC002BF8F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EAC1746E5CC002BF8F6 /* UIKit.framework */; };
 		07AD0EAF1746E5CC002BF8F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EAE1746E5CC002BF8F6 /* Foundation.framework */; };
 		07AD0EB11746E5CC002BF8F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EB01746E5CC002BF8F6 /* CoreGraphics.framework */; };
@@ -46,8 +57,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0705539A17679EE200544B99 /* navbar_menu_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_menu_btn@2x.png"; sourceTree = "<group>"; };
-		0705539B17679EE200544B99 /* navbar_menu_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_menu_btn.png; sourceTree = "<group>"; };
 		075393FC175981C600D59314 /* OMUNavigationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUNavigationConstants.h; path = Classes/OMUNavigationConstants.h; sourceTree = "<group>"; };
 		075393FD175981C600D59314 /* OMUNavigationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUNavigationConstants.m; path = Classes/OMUNavigationConstants.m; sourceTree = "<group>"; };
 		076346821755952200645A1B /* OMUNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUNavigationBar.h; path = Classes/OMUNavigationBar.h; sourceTree = "<group>"; };
@@ -64,10 +73,24 @@
 		079798731763CDE100A36644 /* OMUMainWeatherCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUMainWeatherCellView.m; path = Classes/OMUMainWeatherCellView.m; sourceTree = "<group>"; };
 		079798751763E7E000A36644 /* OMUDefaultCellWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUDefaultCellWrapper.h; path = Classes/OMUDefaultCellWrapper.h; sourceTree = "<group>"; };
 		079798761763E7E000A36644 /* OMUDefaultCellWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUDefaultCellWrapper.m; path = Classes/OMUDefaultCellWrapper.m; sourceTree = "<group>"; };
-		079798781763ECAD00A36644 /* navbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_bg.png; sourceTree = "<group>"; };
-		079798791763ECAD00A36644 /* navbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_bg@2x.png"; sourceTree = "<group>"; };
 		07A86E4E175826ED0078ED36 /* OMUSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUSideMenu.h; path = Classes/OMUSideMenu.h; sourceTree = "<group>"; };
 		07A86E4F175826ED0078ED36 /* OMUSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUSideMenu.m; path = Classes/OMUSideMenu.m; sourceTree = "<group>"; };
+		07AA9AD6176948F100D90672 /* loading_bar_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading_bar_1@2x.png"; path = "Oh My UW/Images/loading_bar_1@2x.png"; sourceTree = "<group>"; };
+		07AA9AD7176948F100D90672 /* loading_bar_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading_bar_2@2x.png"; path = "Oh My UW/Images/loading_bar_2@2x.png"; sourceTree = "<group>"; };
+		07AA9AD8176948F100D90672 /* loading_bar_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading_bar_3@2x.png"; path = "Oh My UW/Images/loading_bar_3@2x.png"; sourceTree = "<group>"; };
+		07AA9AD9176948F100D90672 /* loading_bar_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading_bar_4@2x.png"; path = "Oh My UW/Images/loading_bar_4@2x.png"; sourceTree = "<group>"; };
+		07AA9ADA176948F100D90672 /* loading_bar_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading_bar_5@2x.png"; path = "Oh My UW/Images/loading_bar_5@2x.png"; sourceTree = "<group>"; };
+		07AA9ADB176948F100D90672 /* loading_bar_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading_bar_6@2x.png"; path = "Oh My UW/Images/loading_bar_6@2x.png"; sourceTree = "<group>"; };
+		07AA9ADC176948F100D90672 /* loading_bar_7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading_bar_7@2x.png"; path = "Oh My UW/Images/loading_bar_7@2x.png"; sourceTree = "<group>"; };
+		07AA9ADD176948F100D90672 /* loading_bar_8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading_bar_8@2x.png"; path = "Oh My UW/Images/loading_bar_8@2x.png"; sourceTree = "<group>"; };
+		07AA9ADE176948F100D90672 /* loading_bar_9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading_bar_9@2x.png"; path = "Oh My UW/Images/loading_bar_9@2x.png"; sourceTree = "<group>"; };
+		07AA9ADF176948F100D90672 /* loading_bar_10@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading_bar_10@2x.png"; path = "Oh My UW/Images/loading_bar_10@2x.png"; sourceTree = "<group>"; };
+		07AA9AE0176948F100D90672 /* navbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navbar_bg.png; path = "Oh My UW/Images/navbar_bg.png"; sourceTree = "<group>"; };
+		07AA9AE1176948F100D90672 /* navbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbar_bg@2x.png"; path = "Oh My UW/Images/navbar_bg@2x.png"; sourceTree = "<group>"; };
+		07AA9AE2176948F100D90672 /* navbar_menu_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navbar_menu_btn.png; path = "Oh My UW/Images/navbar_menu_btn.png"; sourceTree = "<group>"; };
+		07AA9AE3176948F100D90672 /* navbar_menu_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbar_menu_btn@2x.png"; path = "Oh My UW/Images/navbar_menu_btn@2x.png"; sourceTree = "<group>"; };
+		07AA9AF717694BA600D90672 /* OMUDefaultLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUDefaultLoadingCell.h; path = Classes/OMUDefaultLoadingCell.h; sourceTree = "<group>"; };
+		07AA9AF817694BA600D90672 /* OMUDefaultLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUDefaultLoadingCell.m; path = Classes/OMUDefaultLoadingCell.m; sourceTree = "<group>"; };
 		07AD0EA91746E5CC002BF8F6 /* Oh My UW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oh My UW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AD0EAC1746E5CC002BF8F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07AD0EAE1746E5CC002BF8F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -124,21 +147,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0705539E1768C45D00544B99 /* Weather Cell */ = {
+			isa = PBXGroup;
+			children = (
+				079798721763CDE100A36644 /* OMUMainWeatherCellView.h */,
+				079798731763CDE100A36644 /* OMUMainWeatherCellView.m */,
+				0778B214176407BC0069D4B4 /* OMUMinorWeatherCellView.h */,
+				0778B215176407BC0069D4B4 /* OMUMinorWeatherCellView.m */,
+				0797986F1763C89800A36644 /* OMUWeatherCell.h */,
+				079798701763C89800A36644 /* OMUWeatherCell.m */,
+			);
+			name = "Weather Cell";
+			sourceTree = "<group>";
+		};
 		075393F317597CD100D59314 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				076346821755952200645A1B /* OMUNavigationBar.h */,
-				076346831755952200645A1B /* OMUNavigationBar.m */,
-				07A86E4E175826ED0078ED36 /* OMUSideMenu.h */,
-				07A86E4F175826ED0078ED36 /* OMUSideMenu.m */,
-				0797986F1763C89800A36644 /* OMUWeatherCell.h */,
-				079798701763C89800A36644 /* OMUWeatherCell.m */,
-				0778B214176407BC0069D4B4 /* OMUMinorWeatherCellView.h */,
-				0778B215176407BC0069D4B4 /* OMUMinorWeatherCellView.m */,
-				079798721763CDE100A36644 /* OMUMainWeatherCellView.h */,
-				079798731763CDE100A36644 /* OMUMainWeatherCellView.m */,
-				079798751763E7E000A36644 /* OMUDefaultCellWrapper.h */,
-				079798761763E7E000A36644 /* OMUDefaultCellWrapper.m */,
+				07AA9AF617694B7500D90672 /* Home */,
+				07AA9AF517694B6500D90672 /* Navigation */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -152,6 +178,29 @@
 				075393FD175981C600D59314 /* OMUNavigationConstants.m */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		07AA9AF517694B6500D90672 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				076346821755952200645A1B /* OMUNavigationBar.h */,
+				076346831755952200645A1B /* OMUNavigationBar.m */,
+				07A86E4E175826ED0078ED36 /* OMUSideMenu.h */,
+				07A86E4F175826ED0078ED36 /* OMUSideMenu.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		07AA9AF617694B7500D90672 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				079798751763E7E000A36644 /* OMUDefaultCellWrapper.h */,
+				079798761763E7E000A36644 /* OMUDefaultCellWrapper.m */,
+				0705539E1768C45D00544B99 /* Weather Cell */,
+				07AA9AF717694BA600D90672 /* OMUDefaultLoadingCell.h */,
+				07AA9AF817694BA600D90672 /* OMUDefaultLoadingCell.m */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		07AD0EA01746E5CB002BF8F6 = {
@@ -286,10 +335,20 @@
 		07EDE2431746EA1F005CB5B1 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				0705539A17679EE200544B99 /* navbar_menu_btn@2x.png */,
-				0705539B17679EE200544B99 /* navbar_menu_btn.png */,
-				079798781763ECAD00A36644 /* navbar_bg.png */,
-				079798791763ECAD00A36644 /* navbar_bg@2x.png */,
+				07AA9AD6176948F100D90672 /* loading_bar_1@2x.png */,
+				07AA9AD7176948F100D90672 /* loading_bar_2@2x.png */,
+				07AA9AD8176948F100D90672 /* loading_bar_3@2x.png */,
+				07AA9AD9176948F100D90672 /* loading_bar_4@2x.png */,
+				07AA9ADA176948F100D90672 /* loading_bar_5@2x.png */,
+				07AA9ADB176948F100D90672 /* loading_bar_6@2x.png */,
+				07AA9ADC176948F100D90672 /* loading_bar_7@2x.png */,
+				07AA9ADD176948F100D90672 /* loading_bar_8@2x.png */,
+				07AA9ADE176948F100D90672 /* loading_bar_9@2x.png */,
+				07AA9ADF176948F100D90672 /* loading_bar_10@2x.png */,
+				07AA9AE0176948F100D90672 /* navbar_bg.png */,
+				07AA9AE1176948F100D90672 /* navbar_bg@2x.png */,
+				07AA9AE2176948F100D90672 /* navbar_menu_btn.png */,
+				07AA9AE3176948F100D90672 /* navbar_menu_btn@2x.png */,
 				07AD0EBE1746E5CC002BF8F6 /* Default.png */,
 				07AD0EC01746E5CC002BF8F6 /* Default@2x.png */,
 				07AD0EC21746E5CC002BF8F6 /* Default-568h@2x.png */,
@@ -355,10 +414,20 @@
 				07AD0EC31746E5CC002BF8F6 /* Default-568h@2x.png in Resources */,
 				07AD0EC91746E5CC002BF8F6 /* OMUViewController_iPhone.xib in Resources */,
 				07AD0ECC1746E5CC002BF8F6 /* OMUViewController_iPad.xib in Resources */,
-				0797987A1763ECAD00A36644 /* navbar_bg.png in Resources */,
-				0797987B1763ECAD00A36644 /* navbar_bg@2x.png in Resources */,
-				0705539C17679EE200544B99 /* navbar_menu_btn@2x.png in Resources */,
-				0705539D17679EE200544B99 /* navbar_menu_btn.png in Resources */,
+				07AA9AE4176948F100D90672 /* loading_bar_1@2x.png in Resources */,
+				07AA9AE5176948F100D90672 /* loading_bar_2@2x.png in Resources */,
+				07AA9AE6176948F100D90672 /* loading_bar_3@2x.png in Resources */,
+				07AA9AE7176948F100D90672 /* loading_bar_4@2x.png in Resources */,
+				07AA9AE8176948F100D90672 /* loading_bar_5@2x.png in Resources */,
+				07AA9AE9176948F100D90672 /* loading_bar_6@2x.png in Resources */,
+				07AA9AEA176948F100D90672 /* loading_bar_7@2x.png in Resources */,
+				07AA9AEB176948F100D90672 /* loading_bar_8@2x.png in Resources */,
+				07AA9AEC176948F100D90672 /* loading_bar_9@2x.png in Resources */,
+				07AA9AED176948F100D90672 /* loading_bar_10@2x.png in Resources */,
+				07AA9AEE176948F100D90672 /* navbar_bg.png in Resources */,
+				07AA9AEF176948F100D90672 /* navbar_bg@2x.png in Resources */,
+				07AA9AF0176948F100D90672 /* navbar_menu_btn.png in Resources */,
+				07AA9AF1176948F100D90672 /* navbar_menu_btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +461,7 @@
 				079798741763CDE100A36644 /* OMUMainWeatherCellView.m in Sources */,
 				079798771763E7E000A36644 /* OMUDefaultCellWrapper.m in Sources */,
 				0778B216176407BC0069D4B4 /* OMUMinorWeatherCellView.m in Sources */,
+				07AA9AF917694BA600D90672 /* OMUDefaultLoadingCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

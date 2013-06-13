@@ -12,6 +12,7 @@
 #import "AFJSONRequestOperation.h"
 #import "OMUWeatherModel.h"
 #import "OMUWeatherCell.h"
+#import "OMUDefaultLoadingCell.h"
 
 @interface OMUHomeViewController ()
 
@@ -79,10 +80,8 @@
             cell = [_tableView dequeueReusableCellWithIdentifier:@"loadingCell"];
             
             if (!cell) {
-                cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 50.0f)];
+                cell = [[OMUDefaultLoadingCell alloc] initWithHeight:WEATHER_CELL_HEIGHT andText:@"Loading Weather..."];
             }
-            
-            cell.textLabel.text = @"Loading";
         } else {
             cell = [_tableView dequeueReusableCellWithIdentifier:@"errorCell"];
             
