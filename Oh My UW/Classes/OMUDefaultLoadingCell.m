@@ -33,7 +33,7 @@
 }
 
 - (void) configureWithText:(NSString *)text {
-    _wrapper = [[OMUDefaultCellWrapper alloc] initWithFrame:CGRectMake(WRAPPER_OFFSET, WRAPPER_OFFSET, 320.0f - (WRAPPER_OFFSET * 2), WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET * 2))];
+    _wrapper = [[OMUDefaultCellWrapper alloc] initWithFrame:CGRectMake(WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL, 320.0f - (WRAPPER_OFFSET_HORIZONTAL * 2), WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2))];
     
     UIImage *statusImage = [UIImage imageNamed:@"loading_bar_1.png"];
     UIImageView *activityImageView = [[UIImageView alloc]

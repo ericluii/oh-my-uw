@@ -52,6 +52,13 @@
 		07C3558B17557599000D9C34 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3558017557599000D9C34 /* AFURLConnectionOperation.m */; };
 		07C3558C17557599000D9C34 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3558217557599000D9C34 /* AFXMLRequestOperation.m */; };
 		07C3558D17557599000D9C34 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3558417557599000D9C34 /* UIImageView+AFNetworking.m */; };
+		07C5BC96176D1E7F001F59F2 /* OMUDeviceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C5BC95176D1E7B001F59F2 /* OMUDeviceUtils.m */; };
+		07C77280176CE32600053BA6 /* OMUMainImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C7727F176CE32600053BA6 /* OMUMainImageCell.m */; };
+		07C77282176CEFCF00053BA6 /* main_image_direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 07C77281176CEFCF00053BA6 /* main_image_direction.png */; };
+		07C77284176CFF2F00053BA6 /* main_image_school.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07C77283176CFF2E00053BA6 /* main_image_school.jpg */; };
+		07C77286176D019600053BA6 /* main_image_social.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07C77285176D019600053BA6 /* main_image_social.jpg */; };
+		07C77288176D02AE00053BA6 /* main_image_news.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07C77287176D02AD00053BA6 /* main_image_news.jpg */; };
+		07C7728A176D042900053BA6 /* main_image_faq.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07C77289176D042900053BA6 /* main_image_faq.jpg */; };
 		07D65FFE176240A300FAFBAC /* OMURequestConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D65FFD176240A300FAFBAC /* OMURequestConstants.m */; };
 		07D660011763763900FAFBAC /* OMUHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D660001763763900FAFBAC /* OMUHomeViewController.m */; };
 /* End PBXBuildFile section */
@@ -127,6 +134,15 @@
 		07C3558217557599000D9C34 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		07C3558317557599000D9C34 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		07C3558417557599000D9C34 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		07C5BC94176D1E7B001F59F2 /* OMUDeviceUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMUDeviceUtils.h; path = Classes/OMUDeviceUtils.h; sourceTree = "<group>"; };
+		07C5BC95176D1E7B001F59F2 /* OMUDeviceUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OMUDeviceUtils.m; path = Classes/OMUDeviceUtils.m; sourceTree = "<group>"; };
+		07C7727E176CE32600053BA6 /* OMUMainImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUMainImageCell.h; path = Classes/OMUMainImageCell.h; sourceTree = "<group>"; };
+		07C7727F176CE32600053BA6 /* OMUMainImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUMainImageCell.m; path = Classes/OMUMainImageCell.m; sourceTree = "<group>"; };
+		07C77281176CEFCF00053BA6 /* main_image_direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_image_direction.png; path = "Oh My UW/Images/main_image_direction.png"; sourceTree = "<group>"; };
+		07C77283176CFF2E00053BA6 /* main_image_school.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = main_image_school.jpg; path = "Oh My UW/Images/main_image_school.jpg"; sourceTree = "<group>"; };
+		07C77285176D019600053BA6 /* main_image_social.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = main_image_social.jpg; path = "Oh My UW/Images/main_image_social.jpg"; sourceTree = "<group>"; };
+		07C77287176D02AD00053BA6 /* main_image_news.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = main_image_news.jpg; path = "Oh My UW/Images/main_image_news.jpg"; sourceTree = "<group>"; };
+		07C77289176D042900053BA6 /* main_image_faq.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = main_image_faq.jpg; path = "Oh My UW/Images/main_image_faq.jpg"; sourceTree = "<group>"; };
 		07D65FFC176240A300FAFBAC /* OMURequestConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMURequestConstants.h; path = Classes/OMURequestConstants.h; sourceTree = "<group>"; };
 		07D65FFD176240A300FAFBAC /* OMURequestConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMURequestConstants.m; path = Classes/OMURequestConstants.m; sourceTree = "<group>"; };
 		07D65FFF1763763900FAFBAC /* OMUHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUHomeViewController.h; path = Classes/OMUHomeViewController.h; sourceTree = "<group>"; };
@@ -176,6 +192,8 @@
 				07D65FFD176240A300FAFBAC /* OMURequestConstants.m */,
 				075393FC175981C600D59314 /* OMUNavigationConstants.h */,
 				075393FD175981C600D59314 /* OMUNavigationConstants.m */,
+				07C5BC94176D1E7B001F59F2 /* OMUDeviceUtils.h */,
+				07C5BC95176D1E7B001F59F2 /* OMUDeviceUtils.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -196,6 +214,7 @@
 			children = (
 				079798751763E7E000A36644 /* OMUDefaultCellWrapper.h */,
 				079798761763E7E000A36644 /* OMUDefaultCellWrapper.m */,
+				07C7727D176CE30500053BA6 /* Main Image Cell */,
 				0705539E1768C45D00544B99 /* Weather Cell */,
 				07AA9AF717694BA600D90672 /* OMUDefaultLoadingCell.h */,
 				07AA9AF817694BA600D90672 /* OMUDefaultLoadingCell.m */,
@@ -292,6 +311,15 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		07C7727D176CE30500053BA6 /* Main Image Cell */ = {
+			isa = PBXGroup;
+			children = (
+				07C7727E176CE32600053BA6 /* OMUMainImageCell.h */,
+				07C7727F176CE32600053BA6 /* OMUMainImageCell.m */,
+			);
+			name = "Main Image Cell";
+			sourceTree = "<group>";
+		};
 		07EDE23E1746E9B5005CB5B1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +363,11 @@
 		07EDE2431746EA1F005CB5B1 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				07C77289176D042900053BA6 /* main_image_faq.jpg */,
+				07C77285176D019600053BA6 /* main_image_social.jpg */,
+				07C77287176D02AD00053BA6 /* main_image_news.jpg */,
+				07C77283176CFF2E00053BA6 /* main_image_school.jpg */,
+				07C77281176CEFCF00053BA6 /* main_image_direction.png */,
 				07AA9AD6176948F100D90672 /* loading_bar_1@2x.png */,
 				07AA9AD7176948F100D90672 /* loading_bar_2@2x.png */,
 				07AA9AD8176948F100D90672 /* loading_bar_3@2x.png */,
@@ -428,6 +461,11 @@
 				07AA9AEF176948F100D90672 /* navbar_bg@2x.png in Resources */,
 				07AA9AF0176948F100D90672 /* navbar_menu_btn.png in Resources */,
 				07AA9AF1176948F100D90672 /* navbar_menu_btn@2x.png in Resources */,
+				07C77282176CEFCF00053BA6 /* main_image_direction.png in Resources */,
+				07C77284176CFF2F00053BA6 /* main_image_school.jpg in Resources */,
+				07C77286176D019600053BA6 /* main_image_social.jpg in Resources */,
+				07C77288176D02AE00053BA6 /* main_image_news.jpg in Resources */,
+				07C7728A176D042900053BA6 /* main_image_faq.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +479,7 @@
 				07AD0EB91746E5CC002BF8F6 /* main.m in Sources */,
 				07AD0EBD1746E5CC002BF8F6 /* OMUAppDelegate.m in Sources */,
 				07AD0EC61746E5CC002BF8F6 /* OMUDefaultViewController.m in Sources */,
+				07C5BC96176D1E7F001F59F2 /* OMUDeviceUtils.m in Sources */,
 				07C3558517557599000D9C34 /* AFHTTPClient.m in Sources */,
 				07C3558617557599000D9C34 /* AFHTTPRequestOperation.m in Sources */,
 				07C3558717557599000D9C34 /* AFImageRequestOperation.m in Sources */,
@@ -462,6 +501,7 @@
 				079798771763E7E000A36644 /* OMUDefaultCellWrapper.m in Sources */,
 				0778B216176407BC0069D4B4 /* OMUMinorWeatherCellView.m in Sources */,
 				07AA9AF917694BA600D90672 /* OMUDefaultLoadingCell.m in Sources */,
+				07C77280176CE32600053BA6 /* OMUMainImageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,10 +598,12 @@
 		07AD0ED01746E5CC002BF8F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eric Lui (X64FHS5GGN)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Oh My UW/Oh_My_UW-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Oh My UW/Oh_My_UW-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "427CEF38-C227-4B0F-BFD4-E3BBC9AA749C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -569,10 +611,12 @@
 		07AD0ED11746E5CC002BF8F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eric Lui (X64FHS5GGN)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Oh My UW/Oh_My_UW-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Oh My UW/Oh_My_UW-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "427CEF38-C227-4B0F-BFD4-E3BBC9AA749C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

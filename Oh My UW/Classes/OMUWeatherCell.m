@@ -38,9 +38,9 @@
 }
 
 - (void) configure {
-    _wrapper = [[OMUDefaultCellWrapper alloc] initWithFrame:CGRectMake(WRAPPER_OFFSET, WRAPPER_OFFSET, 320.0f - (WRAPPER_OFFSET * 2), WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET * 2))];
+    _wrapper = [[OMUDefaultCellWrapper alloc] initWithFrame:CGRectMake(WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL, 320.0f - (WRAPPER_OFFSET_HORIZONTAL * 2), WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2))];
     
-    _scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f - (WRAPPER_OFFSET * 2), WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET * 2))];
+    _scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f - (WRAPPER_OFFSET_HORIZONTAL * 2), WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2))];
     [_scroller setDelegate:self];
     [_scroller setScrollEnabled:YES];
     
@@ -49,12 +49,12 @@
     
     CGFloat xOrigin = _mainWeatherView.frame.size.width + 7.0f;
     for (NSDictionary *day in _weather.restOfWeek) {
-        OMUMinorWeatherCellView * dayOfWeek = [[OMUMinorWeatherCellView alloc] initWithDayDictionary:day andFrame:CGRectMake(xOrigin, 0, 40.0f, WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET * 2))];
+        OMUMinorWeatherCellView * dayOfWeek = [[OMUMinorWeatherCellView alloc] initWithDayDictionary:day andFrame:CGRectMake(xOrigin, 0, 40.0f, WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2))];
         [_scroller addSubview:dayOfWeek];
         xOrigin += 40.0f;
     }
     
-    [_scroller setContentSize:CGSizeMake(xOrigin, WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET * 2))];
+    [_scroller setContentSize:CGSizeMake(xOrigin, WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2))];
     
     [_wrapper addSubview:_scroller];
     [self addSubview:_wrapper];

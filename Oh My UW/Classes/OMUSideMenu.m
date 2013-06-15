@@ -8,11 +8,12 @@
 
 #import "OMUSideMenu.h"
 #import "OMUNavigationConstants.h"
+#import "OMUDeviceUtils.h"
 
 @implementation OMUSideMenu
 
 - (id)init {
-    self = [super initWithFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, [UIScreen mainScreen].bounds.size.height)];
+    self = [super initWithFrame:CGRectMake(0, [OMUDeviceUtils isIOS7] ? STATUS_BAR_HEIGHT : 0, SIDE_MENU_WIDTH, [UIScreen mainScreen].bounds.size.height - ([OMUDeviceUtils isIOS7] ? STATUS_BAR_HEIGHT * 2 : 0))];
     if (self) {
         // Initialization code
         [self setupMenu];
@@ -24,8 +25,7 @@
     _menu = [[UITableView alloc] initWithFrame:self.frame];
     [_menu setDelegate:self];
     [_menu setDataSource:self];
-    [_menu setUserInteractionEnabled:YES];
-    [_menu setScrollEnabled:YES];
+    [_menu setBackgroundColor:[UIColor colorWithRed:64/255.0 green:64/255.0 blue:64/255.0 alpha:1]];
     [self addSubview:_menu];
 }
 
@@ -48,4 +48,9 @@
     
     return cell;
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"Header";
+}
+
 @end

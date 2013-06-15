@@ -7,6 +7,7 @@
 //
 
 #import "OMUDefaultViewController.h"
+#import "OMUDeviceUtils.h"
 
 @interface OMUDefaultViewController ()
 
@@ -96,7 +97,7 @@
 }
 
 +(CGRect)viewFrame {
-    return CGRectMake(0, NAV_BAR_HEIGHT, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - NAV_BAR_HEIGHT);
+    return CGRectMake(0, [OMUDeviceUtils isIOS7] ? STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT : NAV_BAR_HEIGHT, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - NAV_BAR_HEIGHT - STATUS_BAR_HEIGHT);
 }
 
 @end

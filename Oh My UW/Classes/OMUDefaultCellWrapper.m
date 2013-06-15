@@ -17,9 +17,9 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         // Initialization code
-        self.layer.shadowOffset = CGSizeMake(2, 2);
-        self.layer.shadowRadius = 5;
-        self.layer.shadowOpacity = 0.5;
+        self.layer.shadowOffset = CGSizeMake(1, 1);
+        self.layer.shadowRadius = 1;
+        self.layer.shadowOpacity = 0.2;
     }
     return self;
 }

@@ -13,6 +13,7 @@
 #import "OMUWeatherModel.h"
 #import "OMUWeatherCell.h"
 #import "OMUDefaultLoadingCell.h"
+#import "OMUMainImageCell.h"
 
 @interface OMUHomeViewController ()
 
@@ -34,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view.
     [self fetchWeather];
 }
@@ -46,15 +48,19 @@
 
 - (void)setupTableView {
     _tableView = [[UITableView alloc] initWithFrame:[OMUDefaultViewController viewFrame]];
-    [_tableView setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:1]];
+    [_tableView setBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
     [_contentView addSubview:_tableView];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [_tableView addSubview:refreshControl];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 1 + numberOfCellType;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -62,7 +68,7 @@
         return WEATHER_CELL_HEIGHT;
     }
     else {
-        return 150.0f;
+        return MAIN_CELL_HEIGHT;
     }
 }
 
@@ -91,9 +97,23 @@
             
             cell.textLabel.text = @"Something Went Wrong";
         }
+    } else {
+        cell = [_tableView dequeueReusableCellWithIdentifier:[OMUMainImageCell reuseIdentifier]];
+        
+        if (!cell) {
+            cell = [[OMUMainImageCell alloc] initWithCellType:(MainCellType)(indexPath.row - 1)];
+        }
     }
     
     return cell;
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    _weatherLoading = YES;
+    _successfulFetch = NO;
+    [_tableView reloadData];
+    [self fetchWeather];
+    [refreshControl endRefreshing];
 }
 
 - (void) fetchWeather {
@@ -109,6 +129,12 @@
         _weatherLoading = NO;
         [_tableView reloadData];
     }];
+    
+    // Disable caching
+    [operation setCacheResponseBlock:^NSCachedURLResponse *(NSURLConnection *connection, NSCachedURLResponse *cachedResponse) {
+        return nil;
+    }];
+    
     [operation start];
 }
 
