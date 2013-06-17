@@ -20,10 +20,6 @@ typedef enum MainCellType {
 
 @interface OMUMainImageCell : UITableViewCell
 
-@property (nonatomic, strong) OMUDefaultCellWrapper * wrapper;
-@property (nonatomic, strong) UIImageView * backgroundImage;
-@property (nonatomic, strong) UILabel * overlayText;
-
 - (id)initWithCellType:(MainCellType) cellType;
 + (NSString *) reuseIdentifier;
 

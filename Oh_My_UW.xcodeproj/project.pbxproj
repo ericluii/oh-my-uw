@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0702C3CC176E9E6C00F3D3E8 /* OMUImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702C3CB176E9E6C00F3D3E8 /* OMUImageManager.m */; };
 		075393FE175981C600D59314 /* OMUNavigationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 075393FD175981C600D59314 /* OMUNavigationConstants.m */; };
 		076346841755952200645A1B /* OMUNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 076346831755952200645A1B /* OMUNavigationBar.m */; };
 		0778B216176407BC0069D4B4 /* OMUMinorWeatherCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0778B215176407BC0069D4B4 /* OMUMinorWeatherCellView.m */; };
@@ -64,6 +65,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0702C3CA176E9E6C00F3D3E8 /* OMUImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUImageManager.h; path = Classes/OMUImageManager.h; sourceTree = "<group>"; };
+		0702C3CB176E9E6C00F3D3E8 /* OMUImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUImageManager.m; path = Classes/OMUImageManager.m; sourceTree = "<group>"; };
 		075393FC175981C600D59314 /* OMUNavigationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUNavigationConstants.h; path = Classes/OMUNavigationConstants.h; sourceTree = "<group>"; };
 		075393FD175981C600D59314 /* OMUNavigationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUNavigationConstants.m; path = Classes/OMUNavigationConstants.m; sourceTree = "<group>"; };
 		076346821755952200645A1B /* OMUNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUNavigationBar.h; path = Classes/OMUNavigationBar.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				075393FD175981C600D59314 /* OMUNavigationConstants.m */,
 				07C5BC94176D1E7B001F59F2 /* OMUDeviceUtils.h */,
 				07C5BC95176D1E7B001F59F2 /* OMUDeviceUtils.m */,
+				0702C3CA176E9E6C00F3D3E8 /* OMUImageManager.h */,
+				0702C3CB176E9E6C00F3D3E8 /* OMUImageManager.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 				0778B216176407BC0069D4B4 /* OMUMinorWeatherCellView.m in Sources */,
 				07AA9AF917694BA600D90672 /* OMUDefaultLoadingCell.m in Sources */,
 				07C77280176CE32600053BA6 /* OMUMainImageCell.m in Sources */,
+				0702C3CC176E9E6C00F3D3E8 /* OMUImageManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
