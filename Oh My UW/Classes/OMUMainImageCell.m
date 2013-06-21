@@ -32,6 +32,7 @@
     [super setHighlighted:highlighted animated:animated];
     
     // Configure the view for the selected state
+    [self setNeedsDisplay];
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -41,14 +42,22 @@
     CGContextSetShadow(context, CGSizeMake(1, 1), 2.0);
     CGContextAddRect(context, wrapper);
     CGContextFillRect(context, wrapper);
-    [[self getCellImage] drawInRect:wrapper];
+    if ([self isHighlighted]) {
+        [[self getCellImage] drawInRect:wrapper blendMode:kCGBlendModeLuminosity alpha:1];
+    } else {
+        [[self getCellImage] drawInRect:wrapper];
+    }
     
     CGRect labelBackground = CGRectMake(WRAPPER_OFFSET_HORIZONTAL, rect.size.height - 20.0f - WRAPPER_OFFSET_VERTICAL, rect.size.width - (2 * WRAPPER_OFFSET_HORIZONTAL), 20.0f);
     CGContextAddRect(context, labelBackground);
-    CGContextSetFillColorWithColor(context, [UIColor colorWithWhite:0 alpha:0.7].CGColor);
+    CGContextSetFillColorWithColor(context, [self isHighlighted] ? [UIColor colorWithRed:1 green:1 blue:102/255.0 alpha:0.7].CGColor : [UIColor colorWithWhite:0 alpha:0.7].CGColor);
     CGContextFillRect(context, labelBackground);
 
-    [[UIColor whiteColor] set];
+    if ([self isHighlighted]) {
+        [[UIColor grayColor] set];
+    } else {
+        [[UIColor whiteColor] set];
+    }
     [[self getCellText] drawAtPoint:CGPointMake(labelBackground.origin.x + 3.0f, labelBackground.origin.y + 2.0f) withFont:[UIFont systemFontOfSize:13.0f]];
 }
 
