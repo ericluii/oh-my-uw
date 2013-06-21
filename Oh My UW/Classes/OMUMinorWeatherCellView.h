@@ -11,10 +11,7 @@
 @interface OMUMinorWeatherCellView : UIView
 
 @property (nonatomic, strong) NSDictionary *dayDict;
-@property (nonatomic, strong) UILabel * dayLbl;
 @property (nonatomic, strong) UIImageView * mainWeatherImage;
-@property (nonatomic, strong) UILabel * highTemperatureLbl;
-@property (nonatomic, strong) UILabel * lowTemperatureLbl;
 
 - (id)initWithDayDictionary:(NSDictionary *) dayDict andFrame:(CGRect) frame;
 

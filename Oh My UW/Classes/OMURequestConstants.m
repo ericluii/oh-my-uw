@@ -13,12 +13,24 @@ NSString const * BASE_URL = @"http://api.uwaterloo.ca/public/v1/";
 
 @implementation OMURequestConstants
 
+- (id) init {
+    self = [super init];
+    
+    if (self) {
+        _imageCache = [[NSMutableDictionary alloc] init];
+    }
+    
+    return self;
+}
+
 + (OMURequestConstants *) sharedInstance {
     static OMURequestConstants * sharedInstance;
     static dispatch_once_t oncePredicate;
+    
     dispatch_once(&oncePredicate, ^{
         sharedInstance = [[self alloc] init];
     });
+    
     return sharedInstance;
 }
 

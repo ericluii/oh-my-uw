@@ -11,7 +11,7 @@
 @implementation OMUDeviceUtils
 
 + (BOOL) isIOS7 {
-    return [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0;
+    return false;
 }
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OMUDefaultCellWrapper.h"
 
 typedef enum MainCellType {
     schoolOrganizerType = 0,

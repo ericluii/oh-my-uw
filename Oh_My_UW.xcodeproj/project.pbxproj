@@ -15,7 +15,6 @@
 		0797986E1763BDDA00A36644 /* OMUCoursesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797986D1763BDDA00A36644 /* OMUCoursesManager.m */; };
 		079798711763C89800A36644 /* OMUWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079798701763C89800A36644 /* OMUWeatherCell.m */; };
 		079798741763CDE100A36644 /* OMUMainWeatherCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 079798731763CDE100A36644 /* OMUMainWeatherCellView.m */; };
-		079798771763E7E000A36644 /* OMUDefaultCellWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 079798761763E7E000A36644 /* OMUDefaultCellWrapper.m */; };
 		07A86E50175826ED0078ED36 /* OMUSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A86E4F175826ED0078ED36 /* OMUSideMenu.m */; };
 		07AA9AE4176948F100D90672 /* loading_bar_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9AD6176948F100D90672 /* loading_bar_1@2x.png */; };
 		07AA9AE5176948F100D90672 /* loading_bar_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA9AD7176948F100D90672 /* loading_bar_2@2x.png */; };
@@ -81,8 +80,6 @@
 		079798701763C89800A36644 /* OMUWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUWeatherCell.m; path = Classes/OMUWeatherCell.m; sourceTree = "<group>"; };
 		079798721763CDE100A36644 /* OMUMainWeatherCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUMainWeatherCellView.h; path = Classes/OMUMainWeatherCellView.h; sourceTree = "<group>"; };
 		079798731763CDE100A36644 /* OMUMainWeatherCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUMainWeatherCellView.m; path = Classes/OMUMainWeatherCellView.m; sourceTree = "<group>"; };
-		079798751763E7E000A36644 /* OMUDefaultCellWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUDefaultCellWrapper.h; path = Classes/OMUDefaultCellWrapper.h; sourceTree = "<group>"; };
-		079798761763E7E000A36644 /* OMUDefaultCellWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUDefaultCellWrapper.m; path = Classes/OMUDefaultCellWrapper.m; sourceTree = "<group>"; };
 		07A86E4E175826ED0078ED36 /* OMUSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUSideMenu.h; path = Classes/OMUSideMenu.h; sourceTree = "<group>"; };
 		07A86E4F175826ED0078ED36 /* OMUSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUSideMenu.m; path = Classes/OMUSideMenu.m; sourceTree = "<group>"; };
 		07AA9AD6176948F100D90672 /* loading_bar_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading_bar_1@2x.png"; path = "Oh My UW/Images/loading_bar_1@2x.png"; sourceTree = "<group>"; };
@@ -217,8 +214,6 @@
 		07AA9AF617694B7500D90672 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				079798751763E7E000A36644 /* OMUDefaultCellWrapper.h */,
-				079798761763E7E000A36644 /* OMUDefaultCellWrapper.m */,
 				07C7727D176CE30500053BA6 /* Main Image Cell */,
 				0705539E1768C45D00544B99 /* Weather Cell */,
 				07AA9AF717694BA600D90672 /* OMUDefaultLoadingCell.h */,
@@ -503,7 +498,6 @@
 				0797986E1763BDDA00A36644 /* OMUCoursesManager.m in Sources */,
 				079798711763C89800A36644 /* OMUWeatherCell.m in Sources */,
 				079798741763CDE100A36644 /* OMUMainWeatherCellView.m in Sources */,
-				079798771763E7E000A36644 /* OMUDefaultCellWrapper.m in Sources */,
 				0778B216176407BC0069D4B4 /* OMUMinorWeatherCellView.m in Sources */,
 				07AA9AF917694BA600D90672 /* OMUDefaultLoadingCell.m in Sources */,
 				07C77280176CE32600053BA6 /* OMUMainImageCell.m in Sources */,

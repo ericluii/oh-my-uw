@@ -10,6 +10,16 @@
 
 @implementation OMUImageManager
 
+- (id) init {
+    self = [super init];
+    
+    if (self) {
+        _imageCache = [[NSMutableDictionary alloc] init];
+    }
+    
+    return self;
+}
+
 + (OMUImageManager *) sharedInstance {
     static OMUImageManager *sharedInstance = nil;
     static dispatch_once_t oncePredicate;
