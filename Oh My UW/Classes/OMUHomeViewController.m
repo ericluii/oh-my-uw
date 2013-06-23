@@ -14,6 +14,7 @@
 #import "OMUWeatherCell.h"
 #import "OMUDefaultLoadingCell.h"
 #import "OMUMainImageCell.h"
+#import "OMUErrorCell.h"
 
 @interface OMUHomeViewController ()
 
@@ -48,7 +49,7 @@
 
 - (void)setupTableView {
     _tableView = [[UITableView alloc] initWithFrame:[OMUDefaultViewController viewFrame]];
-    [_tableView setBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]];
+    [_tableView setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:1]];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
@@ -92,10 +93,8 @@
             cell = [_tableView dequeueReusableCellWithIdentifier:@"errorCell"];
             
             if (!cell) {
-                cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 50.0f)];
+                cell = [[OMUErrorCell alloc] initWithHeight:WEATHER_CELL_HEIGHT andText:@"Something Went Wrong."];
             }
-            
-            cell.textLabel.text = @"Something Went Wrong";
         }
     } else {
         cell = [_tableView dequeueReusableCellWithIdentifier:[OMUMainImageCell reuseIdentifier]];

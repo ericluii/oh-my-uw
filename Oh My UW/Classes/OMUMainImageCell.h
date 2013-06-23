@@ -17,7 +17,12 @@ typedef enum MainCellType {
     numberOfCellType
 } MainCellType;
 
-@interface OMUMainImageCell : UITableViewCell
+@interface OMUMainImageCell : UITableViewCell {
+    UIImage * _cellImage;
+    NSString * _cellText;
+    CGRect _imageWrapper;
+    CGRect _labelWrapper;
+}
 
 - (id)initWithCellType:(MainCellType) cellType;
 + (NSString *) reuseIdentifier;

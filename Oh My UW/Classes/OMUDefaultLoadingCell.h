@@ -6,14 +6,8 @@
 //  Copyright (c) 2013 Eric Lui. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "OMUDefaultCellWrapper.h"
+#import "OMUInfoCell.h"
 
-@interface OMUDefaultLoadingCell : UITableViewCell
-
-@property (nonatomic, strong) OMUDefaultCellWrapper * wrapper;
-
-- (id)initWithHeight:(CGFloat) height andText:(NSString *) text;
-+ (NSString *) reuseIdentifier;
+@interface OMUDefaultLoadingCell : OMUInfoCell
 
 @end

@@ -13,11 +13,6 @@
 
 @property (nonatomic, strong) OMUWeatherModel * weather;
 @property (nonatomic, strong) UIImageView * mainWeatherImage;
-@property (nonatomic, strong) UILabel * conditionLbl;
-@property (nonatomic, strong) UILabel * currentTemperatureLbl;
-@property (nonatomic, strong) UILabel * rangeTemperatureLbl;
-@property (nonatomic, strong) UILabel * humidityLbl;
-@property (nonatomic, strong) UILabel * windInfo;
 
 - (id)initWithWeather:(OMUWeatherModel *) weather;
 

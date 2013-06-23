@@ -10,7 +10,6 @@
 #import "OMUMainWeatherCellView.h"
 #import "OMUWeatherModel.h"
 #import "OMUNavigationConstants.h"
-#import "OMUDefaultCellWrapper.h"
 #import "OMUMinorWeatherCellView.h"
 
 @implementation OMUWeatherCell

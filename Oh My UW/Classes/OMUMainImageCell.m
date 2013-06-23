@@ -9,17 +9,23 @@
 #import "OMUMainImageCell.h"
 #import "OMUNavigationConstants.h"
 #import "OMUImageManager.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation OMUMainImageCell {
     MainCellType _cellType;
 }
 
 - (id)initWithCellType:(MainCellType) cellType {
-    self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, MAIN_CELL_HEIGHT)];
+    CGRect frame = CGRectMake(0.0f, 0.0f, 320.0f, MAIN_CELL_HEIGHT);
+    self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         _cellType = cellType;
+        _cellImage = [self getCellImage];
+        _cellText = [self getCellText];
+        _imageWrapper = CGRectInset(frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
+        _labelWrapper = CGRectMake(WRAPPER_OFFSET_HORIZONTAL, frame.size.height - 20.0f - WRAPPER_OFFSET_VERTICAL, frame.size.width - (2 * WRAPPER_OFFSET_HORIZONTAL), 20.0f);
     }
     return self;
 }
@@ -38,41 +44,38 @@
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
 
-    CGRect wrapper = CGRectInset(rect, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
-    CGContextSetShadow(context, CGSizeMake(1, 1), 2.0);
-    CGContextAddRect(context, wrapper);
-    CGContextFillRect(context, wrapper);
+    CGContextAddRect(context, _imageWrapper);
+    CGContextFillRect(context, _imageWrapper);
     if ([self isHighlighted]) {
-        [[self getCellImage] drawInRect:wrapper blendMode:kCGBlendModeLuminosity alpha:1];
+        [_cellImage drawInRect:_imageWrapper blendMode:kCGBlendModeLuminosity alpha:1];
     } else {
-        [[self getCellImage] drawInRect:wrapper];
+        [_cellImage drawInRect:_imageWrapper];
     }
-    
-    CGRect labelBackground = CGRectMake(WRAPPER_OFFSET_HORIZONTAL, rect.size.height - 20.0f - WRAPPER_OFFSET_VERTICAL, rect.size.width - (2 * WRAPPER_OFFSET_HORIZONTAL), 20.0f);
-    CGContextAddRect(context, labelBackground);
+
+    CGContextAddRect(context, _labelWrapper);
     CGContextSetFillColorWithColor(context, [self isHighlighted] ? [UIColor colorWithRed:1 green:1 blue:102/255.0 alpha:0.7].CGColor : [UIColor colorWithWhite:0 alpha:0.7].CGColor);
-    CGContextFillRect(context, labelBackground);
+    CGContextFillRect(context, _labelWrapper);
 
     if ([self isHighlighted]) {
         [[UIColor grayColor] set];
     } else {
         [[UIColor whiteColor] set];
     }
-    [[self getCellText] drawAtPoint:CGPointMake(labelBackground.origin.x + 3.0f, labelBackground.origin.y + 2.0f) withFont:[UIFont systemFontOfSize:13.0f]];
+    [_cellText drawAtPoint:CGPointMake(_labelWrapper.origin.x + 3.0f, _labelWrapper.origin.y + 2.0f) withFont:[UIFont systemFontOfSize:13.0f]];
 }
 
 - (UIImage *) getCellImage {
     switch (_cellType) {
         case schoolOrganizerType:
-            return [[OMUImageManager sharedInstance] getImageNamed:@"main_image_school.jpg"];
+            return [[OMUImageManager sharedInstance] getImageNamed:@"main_image_school"];
         case directionType:
             return [[OMUImageManager sharedInstance] getImageNamed:@"main_image_direction"];
         case socialType:
-            return [[OMUImageManager sharedInstance] getImageNamed:@"main_image_social.jpg"];
+            return [[OMUImageManager sharedInstance] getImageNamed:@"main_image_social"];
         case newsType:
-            return [[OMUImageManager sharedInstance] getImageNamed:@"main_image_news.jpg"];
+            return [[OMUImageManager sharedInstance] getImageNamed:@"main_image_news"];
         case faqType:
-            return [[OMUImageManager sharedInstance] getImageNamed:@"main_image_faq.jpg"];
+            return [[OMUImageManager sharedInstance] getImageNamed:@"main_image_faq"];
         default:
             return nil;
     }
