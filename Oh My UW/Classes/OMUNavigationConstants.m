@@ -12,8 +12,8 @@ NSInteger const SIDE_MENU_WIDTH = 200;
 NSInteger const NAV_BAR_HEIGHT = 44;
 NSInteger const STATUS_BAR_HEIGHT = 20;
 
-float const WEATHER_CELL_HEIGHT = 91.0f;
-float const MAIN_CELL_HEIGHT = 150.0f;
+float const WEATHER_CELL_HEIGHT = 95.0f;
+float const MAIN_CELL_HEIGHT = 155.0f;
 
-float const WRAPPER_OFFSET_VERTICAL = 3.0f;
-float const WRAPPER_OFFSET_HORIZONTAL = 5.0f;
+float const WRAPPER_OFFSET_VERTICAL = 4.0f;
+float const WRAPPER_OFFSET_HORIZONTAL = 10.0f;

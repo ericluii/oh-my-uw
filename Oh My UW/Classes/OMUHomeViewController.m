@@ -55,7 +55,6 @@
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
     [_contentView addSubview:_tableView];
-    [_tableView setShowsVerticalScrollIndicator:NO];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
