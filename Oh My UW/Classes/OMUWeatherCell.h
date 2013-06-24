@@ -11,8 +11,11 @@
 @class OMUMainWeatherCellView;
 @class OMUWeatherModel;
 @interface OMUWeatherCell : UITableViewCell <UIScrollViewDelegate> {
-    CGRect _shadow;
+    CGRect _shadowX;
+    CGRect _shadowY;
     CGRect _wrapper;
+    UIColor * _shadowColor;
+    UIColor * _wrapperColor;
 }
 
 @property (nonatomic, strong) UIScrollView * scroller;

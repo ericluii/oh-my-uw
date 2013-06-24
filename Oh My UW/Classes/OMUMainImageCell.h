@@ -22,7 +22,12 @@ typedef enum MainCellType {
     NSString * _cellText;
     CGRect _imageWrapper;
     CGRect _labelWrapper;
-    CGRect _shadow;
+    CGRect _shadowX;
+    CGRect _shadowY;
+    CGPoint _textPoint;
+    UIColor * _shadowColor;
+    UIColor * _highlightedLabelColor;
+    UIColor * _labelColor;
 }
 
 - (id)initWithCellType:(MainCellType) cellType;

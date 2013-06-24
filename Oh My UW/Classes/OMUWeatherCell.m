@@ -22,8 +22,11 @@
         _weather = weather;
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         [self configure];
-        _shadow = CGRectMake(frame.origin.x + WRAPPER_OFFSET_HORIZONTAL + 1.0, frame.origin.y + WRAPPER_OFFSET_VERTICAL + 1.0, 320.0f - (WRAPPER_OFFSET_HORIZONTAL * 2), WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2));
         _wrapper = CGRectInset(frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
+        _shadowX = CGRectMake(CGRectGetMinX(_wrapper) + 1.0f, CGRectGetMaxY(_wrapper), CGRectGetWidth(_wrapper), 1.0f);
+        _shadowY = CGRectMake(CGRectGetMaxX(_wrapper), CGRectGetMinY(_wrapper) + 1.0f, 1.0f, CGRectGetHeight(_wrapper));
+        _shadowColor = [UIColor colorWithWhite:0.5 alpha:0.2];
+        _wrapperColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -35,12 +38,15 @@
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
 
-    CGContextAddRect(context, _shadow);
-    CGContextSetFillColorWithColor(context, [UIColor colorWithWhite:0.5 alpha:0.2].CGColor);
-    CGContextFillRect(context, _shadow);
+    CGContextAddRect(context, _shadowX);
+    CGContextSetFillColorWithColor(context, _shadowColor.CGColor);
+    CGContextFillRect(context, _shadowX);
+    CGContextAddRect(context, _shadowY);
+    CGContextSetFillColorWithColor(context, _shadowColor.CGColor);
+    CGContextFillRect(context, _shadowY);
     
     CGContextAddRect(context, _wrapper);
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+    CGContextSetFillColorWithColor(context, _wrapperColor.CGColor);
     CGContextFillRect(context, _wrapper);
 }
 
