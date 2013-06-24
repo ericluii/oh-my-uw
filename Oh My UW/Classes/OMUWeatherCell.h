@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class OMUDefaultCellWrapper;
 @class OMUMainWeatherCellView;
 @class OMUWeatherModel;
-@interface OMUWeatherCell : UITableViewCell <UIScrollViewDelegate>
+@interface OMUWeatherCell : UITableViewCell <UIScrollViewDelegate> {
+    CGRect _shadow;
+    CGRect _wrapper;
+}
 
-@property (nonatomic, strong) OMUDefaultCellWrapper * wrapper;
 @property (nonatomic, strong) UIScrollView * scroller;
 @property (nonatomic, strong) OMUMainWeatherCellView * mainWeatherView;
 @property (nonatomic, strong) OMUWeatherModel * weather;

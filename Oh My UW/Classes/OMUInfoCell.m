@@ -19,6 +19,7 @@
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         _loadingText = text;
         _wrapper = CGRectInset(frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
+        _shadow = CGRectMake(frame.origin.x + WRAPPER_OFFSET_HORIZONTAL + 1.0, frame.origin.y + WRAPPER_OFFSET_VERTICAL + 1.0, 320.0f - (WRAPPER_OFFSET_HORIZONTAL * 2), WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2));
     }
     return self;
 }
@@ -29,6 +30,10 @@
 
 - (void) drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextAddRect(context, _shadow);
+    CGContextSetFillColorWithColor(context, [UIColor colorWithWhite:0.5 alpha:0.2].CGColor);
+    CGContextFillRect(context, _shadow);
     
     CGContextAddRect(context, _wrapper);
     CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);

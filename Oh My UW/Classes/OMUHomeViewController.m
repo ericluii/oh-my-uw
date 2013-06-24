@@ -15,6 +15,7 @@
 #import "OMUDefaultLoadingCell.h"
 #import "OMUMainImageCell.h"
 #import "OMUErrorCell.h"
+#import "OMUSchoolOrganizerViewController.h"
 
 @interface OMUHomeViewController ()
 
@@ -54,6 +55,7 @@
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
     [_contentView addSubview:_tableView];
+    [_tableView setShowsVerticalScrollIndicator:NO];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
@@ -93,7 +95,7 @@
             cell = [_tableView dequeueReusableCellWithIdentifier:@"errorCell"];
             
             if (!cell) {
-                cell = [[OMUErrorCell alloc] initWithHeight:WEATHER_CELL_HEIGHT andText:@"Something Went Wrong."];
+                cell = [[OMUErrorCell alloc] initWithHeight:WEATHER_CELL_HEIGHT andText:@"Something Went Wrong. Pull to Try Again."];
             }
         }
     } else {
@@ -105,6 +107,16 @@
     }
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row == 1) {
+        OMUSchoolOrganizerViewController * vc = [[OMUSchoolOrganizerViewController alloc] init];
+        [vc setBackButtonVisible:YES];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {

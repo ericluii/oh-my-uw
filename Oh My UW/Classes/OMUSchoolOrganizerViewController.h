@@ -8,6 +8,10 @@
 
 #import "OMUDefaultViewController.h"
 
-@interface OMUSchoolOrganizerViewController : OMUDefaultViewController
+@interface OMUSchoolOrganizerViewController : OMUDefaultViewController <UITableViewDataSource, UITableViewDelegate> {
+    UITableView * _tableView;
+}
+
+- (id) init;
 
 @end

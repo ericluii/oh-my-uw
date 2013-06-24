@@ -16,7 +16,8 @@
     UIView *_contentView;
 }
 
-- (id)initWithTitle:(NSString *) title;
+- (id) initWithTitle:(NSString *) title;
+- (void) setBackButtonVisible:(bool) isVisible;
 +(CGRect)viewFrame;
 
 @end

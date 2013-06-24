@@ -22,6 +22,7 @@ typedef enum MainCellType {
     NSString * _cellText;
     CGRect _imageWrapper;
     CGRect _labelWrapper;
+    CGRect _shadow;
 }
 
 - (id)initWithCellType:(MainCellType) cellType;

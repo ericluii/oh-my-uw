@@ -33,9 +33,8 @@
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+- (void) setBackButtonVisible:(bool) isVisible {
+    [_navBar backButtonIsVisisble:isVisible];
 }
 
 - (void) setupGestureRecognizer {

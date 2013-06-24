@@ -22,6 +22,5 @@
 
 - (id)initWithTitle:(NSString*) title;
 - (void) backButtonIsVisisble:(BOOL) visible;
-- (void) pushViewController:(UIViewController *) vc animated:(BOOL) animate;
-- (void) popViewControllerAndAnimated:(BOOL) animate;
+
 @end

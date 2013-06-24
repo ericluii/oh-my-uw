@@ -26,6 +26,7 @@
         _cellText = [self getCellText];
         _imageWrapper = CGRectInset(frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
         _labelWrapper = CGRectMake(WRAPPER_OFFSET_HORIZONTAL, frame.size.height - 20.0f - WRAPPER_OFFSET_VERTICAL, frame.size.width - (2 * WRAPPER_OFFSET_HORIZONTAL), 20.0f);
+        _shadow = CGRectMake(frame.origin.x + WRAPPER_OFFSET_HORIZONTAL + 1.0, frame.origin.y + WRAPPER_OFFSET_VERTICAL + 1.0, 320.0f - (WRAPPER_OFFSET_HORIZONTAL * 2), MAIN_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2));
     }
     return self;
 }
@@ -43,6 +44,10 @@
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextAddRect(context, _shadow);
+    CGContextSetFillColorWithColor(context, [UIColor colorWithWhite:0.5 alpha:0.3].CGColor);
+    CGContextFillRect(context, _shadow);
 
     CGContextAddRect(context, _imageWrapper);
     CGContextFillRect(context, _imageWrapper);

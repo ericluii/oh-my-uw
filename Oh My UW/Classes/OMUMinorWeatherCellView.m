@@ -27,7 +27,7 @@
     [[UIColor lightGrayColor] set];
     [[[_dayDict objectForKey:@"Day"] substringToIndex:3] drawInRect:CGRectMake(0, 7.0f, self.frame.size.width, 20.0f) withFont:[UIFont systemFontOfSize:12.0f] lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
     
-    [[_dayDict objectForKey:@"High"] drawInRect:CGRectMake(0, 64.0f, self.frame.size.width, 20.0f) withFont:[UIFont systemFontOfSize:10.0f] lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
+    [[_dayDict objectForKey:@"Low"] drawInRect:CGRectMake(0, 64.0f, self.frame.size.width, 20.0f) withFont:[UIFont systemFontOfSize:10.0f] lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
     
     [[UIColor grayColor] set];
     [[_dayDict objectForKey:@"High"] drawInRect:CGRectMake(0, 52.0f, self.frame.size.width, 20.0f) withFont:[UIFont systemFontOfSize:10.0f] lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];

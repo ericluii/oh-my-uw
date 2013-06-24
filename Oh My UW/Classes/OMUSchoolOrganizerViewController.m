@@ -14,25 +14,49 @@
 
 @implementation OMUSchoolOrganizerViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)init {
+    self = [super initWithTitle:@"Home"];
     if (self) {
         // Custom initialization
+        [self setupTableView];
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+- (void)setupTableView {
+    _tableView = [[UITableView alloc] initWithFrame:[OMUDefaultViewController viewFrame]];
+    [_tableView setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:1]];
+    [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [_tableView setDelegate:self];
+    [_tableView setDataSource:self];
+    [_contentView addSubview:_tableView];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 6;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return WEATHER_CELL_HEIGHT;
+    }
+    else {
+        return MAIN_CELL_HEIGHT;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"menuCell"];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, 50.0f)];
+    }
+    
+    [cell.textLabel setText:[NSString stringWithFormat:@"Menu Item %d", indexPath.row]];
+    
+    return cell;
+}
+
+
 
 @end

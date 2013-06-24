@@ -15,12 +15,15 @@
 @implementation OMUWeatherCell
 
 - (id)initWithWeather:(OMUWeatherModel *) weather {
-    self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, WEATHER_CELL_HEIGHT)];
+    CGRect frame = CGRectMake(0.0f, 0.0f, 320.0f, WEATHER_CELL_HEIGHT);
+    self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         _weather = weather;
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         [self configure];
+        _shadow = CGRectMake(frame.origin.x + WRAPPER_OFFSET_HORIZONTAL + 1.0, frame.origin.y + WRAPPER_OFFSET_VERTICAL + 1.0, 320.0f - (WRAPPER_OFFSET_HORIZONTAL * 2), WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2));
+        _wrapper = CGRectInset(frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
     }
     return self;
 }
@@ -31,12 +34,14 @@
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
+
+    CGContextAddRect(context, _shadow);
+    CGContextSetFillColorWithColor(context, [UIColor colorWithWhite:0.5 alpha:0.2].CGColor);
+    CGContextFillRect(context, _shadow);
     
-    CGRect wrapper = CGRectInset(rect, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
-    CGContextSetShadow(context, CGSizeMake(1, 1), 2.0);
-    CGContextAddRect(context, wrapper);
+    CGContextAddRect(context, _wrapper);
     CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextFillRect(context, wrapper);
+    CGContextFillRect(context, _wrapper);
 }
 
 - (void) configure {    
@@ -47,7 +52,7 @@
     _mainWeatherView = [[OMUMainWeatherCellView alloc] initWithWeather: _weather];
     [_scroller addSubview:_mainWeatherView];
     
-    CGFloat xOrigin = _mainWeatherView.frame.size.width + 7.0f;
+    CGFloat xOrigin = _mainWeatherView.frame.size.width + 5.0f;
     for (NSDictionary *day in _weather.restOfWeek) {
         OMUMinorWeatherCellView * dayOfWeek = [[OMUMinorWeatherCellView alloc] initWithDayDictionary:day andFrame:CGRectMake(xOrigin, 0, 40.0f, WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2))];
         [_scroller addSubview:dayOfWeek];

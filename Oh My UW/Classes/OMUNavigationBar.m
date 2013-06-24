@@ -43,13 +43,14 @@
     [_expandMenuBtn addTarget:self action:@selector(switchMenuState) forControlEvents:UIControlEventTouchUpInside];
     
     _backBtn = [[UIButton alloc] initWithFrame:CGRectMake(2, 2 + ([OMUDeviceUtils isIOS7] ? STATUS_BAR_HEIGHT : 0), NAV_BAR_HEIGHT - 4, NAV_BAR_HEIGHT - 4)];
-    [_backBtn setBackgroundImage:[[OMUImageManager sharedInstance] getImageNamed:@"navbar_menu_btn"] forState:UIControlStateNormal];
+    [_backBtn setBackgroundImage:[[OMUImageManager sharedInstance] getImageNamed:@"main_image_school"] forState:UIControlStateNormal];
     [_backBtn addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [_backBtn setHidden:YES];
     
     [self addSubview:_background];
     [self addSubview:_title];
     [self addSubview:_expandMenuBtn];
+    [self addSubview:_backBtn];
 }
 
 - (void) switchMenuState {
@@ -71,16 +72,8 @@
 }
 
 - (void) backButtonIsVisisble:(BOOL) visible {
-    [_backBtn setHidden:visible];
-    [_expandMenuBtn setHidden:!visible];
-}
-
-- (void) pushViewController:(UIViewController *) vc animated:(BOOL) animate {
-    [_navigator pushViewController:vc animated:animate];
-}
-
-- (void) popViewControllerAndAnimated:(BOOL) animate {
-    [_navigator popViewControllerAnimated:animate];
+    [_backBtn setHidden:!visible];
+    [_expandMenuBtn setHidden:visible];
 }
 
 @end

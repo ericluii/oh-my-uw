@@ -11,6 +11,7 @@
 @interface OMUInfoCell : UITableViewCell {
     NSString * _loadingText;
     CGRect _wrapper;
+    CGRect _shadow;
 }
 
 - (id)initWithHeight:(CGFloat) height andText:(NSString *) text;

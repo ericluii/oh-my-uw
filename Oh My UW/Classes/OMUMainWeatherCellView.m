@@ -15,10 +15,11 @@
 @implementation OMUMainWeatherCellView
 
 - (id)initWithWeather:(OMUWeatherModel *) weather {
-    self = [super initWithFrame: CGRectMake(0, 0, 200.0f, WEATHER_CELL_HEIGHT)];
+    self = [super initWithFrame: CGRectMake(0, 0, 216.0f, WEATHER_CELL_HEIGHT)];
     if (self) {
         // Initialization code
         _weather = weather;
+        [self setBackgroundColor:[UIColor whiteColor]];
         [self setupMainImage];
     }
     return self;
@@ -26,12 +27,12 @@
 
 - (void) drawRect:(CGRect)rect {
     [[UIColor lightGrayColor] set];
-    [_weather.condition drawInRect:CGRectMake(83.0f, 7.0f, 130.0f, 20.0f)
+    [_weather.condition drawInRect:CGRectMake(73.0f, 7.0f, 130.0f, 20.0f)
                           withFont:[UIFont systemFontOfSize:12.0f]
                      lineBreakMode:NSLineBreakByClipping];
     
-    [_weather.condition drawInRect:CGRectMake(5.0f, 57.0f, 200.0f, 20.0f)
-                          withFont:[UIFont systemFontOfSize:12.0f]
+    [[NSString stringWithFormat:@"%.1f°C", _weather.temperatureCurrent] drawInRect:CGRectMake(70.0f, 20.0f, 110.0f, 44.0f)
+                          withFont:[UIFont systemFontOfSize:35.0f]
                      lineBreakMode:NSLineBreakByClipping];
     
     [[UIColor grayColor] set];
@@ -40,20 +41,20 @@
                                   _weather.temperatureHigh,
                                   _weather.windSpeed,
                                   _weather.windDirection]
-                                         drawInRect:CGRectMake(5.0f, 57.0f, 200.0f, 20.0f)
+                                         drawInRect:CGRectMake(12.0f, 63.0f, 200.0f, 20.0f)
                                            withFont:[UIFont systemFontOfSize:12.0f]
                                       lineBreakMode:NSLineBreakByClipping];
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGRect divider = CGRectMake(205.0f, 5.0f, 1.0f, WEATHER_CELL_HEIGHT - 20.0f);
+    CGRect divider = CGRectMake(215.0f, 7.0f, 1.0f, WEATHER_CELL_HEIGHT - 20.0f);
     CGContextAddRect(context, divider);
     CGContextSetFillColorWithColor(context, [UIColor yellowColor].CGColor);
     CGContextFillRect(context, divider);
 }
 
 - (void) setupMainImage {
-    _mainWeatherImage = [[UIImageView alloc] initWithFrame:CGRectMake(5.0f, 10.0f, 60.0f, 51.0f)];
+    _mainWeatherImage = [[UIImageView alloc] initWithFrame:CGRectMake(7.0f, 10.0f, 60.0f, 51.0f)];
     [self addSubview:_mainWeatherImage];
     [self fetchImage];
 }
