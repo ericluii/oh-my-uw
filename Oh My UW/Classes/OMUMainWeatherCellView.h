@@ -9,7 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @class OMUWeatherModel;
-@interface OMUMainWeatherCellView : UIView
+@interface OMUMainWeatherCellView : UIView {
+    NSString * _summaryText;
+    NSString * _currentTemperatureText;
+    
+    CGRect _conditionFrame;
+    CGRect _currentTempFrame;
+    CGRect _summaryFrame;
+    CGRect _dividerFrame;
+    
+    UIFont * _smallFont;
+    UIFont * _largeFont;
+}
 
 @property (nonatomic, strong) OMUWeatherModel * weather;
 @property (nonatomic, strong) UIImageView * mainWeatherImage;

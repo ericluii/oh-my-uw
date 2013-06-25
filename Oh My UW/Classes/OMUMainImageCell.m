@@ -22,16 +22,7 @@
         // Initialization code
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         _cellType = cellType;
-        _cellImage = [self getCellImage];
-        _cellText = [self getCellText];
-        _imageWrapper = CGRectInset(frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
-        _labelWrapper = CGRectMake(WRAPPER_OFFSET_HORIZONTAL, frame.size.height - 20.0f - WRAPPER_OFFSET_VERTICAL, frame.size.width - (2 * WRAPPER_OFFSET_HORIZONTAL), 20.0f);
-        _textPoint = CGPointMake(_labelWrapper.origin.x + 3.0f, _labelWrapper.origin.y + 2.0f);
-        _shadowX = CGRectMake(CGRectGetMinX(_imageWrapper) + 1.0f, CGRectGetMaxY(_imageWrapper), CGRectGetWidth(_imageWrapper), 1.0f);
-        _shadowY = CGRectMake(CGRectGetMaxX(_imageWrapper), CGRectGetMinY(_imageWrapper) + 1.0f, 1.0f, CGRectGetHeight(_imageWrapper));
-        _shadowColor = [UIColor colorWithWhite:0.5 alpha:0.3];
-        _labelColor = [UIColor colorWithWhite:0 alpha:0.7];
-        _highlightedLabelColor = [UIColor colorWithRed:1 green:1 blue:102/255.0 alpha:0.7];
+        [self setupDrawConstantsWithFrame:frame];
     }
     return self;
 }
@@ -74,7 +65,26 @@
     } else {
         [[UIColor whiteColor] set];
     }
-    [_cellText drawAtPoint:_textPoint withFont:[UIFont systemFontOfSize:13.0f]];
+    [_cellText drawAtPoint:_textPoint withFont: _font];
+}
+
+- (void) setupDrawConstantsWithFrame:(CGRect)frame {
+    _cellImage = [self getCellImage];
+    _cellText = [self getCellText];
+    
+    _imageWrapper = CGRectInset(frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
+    _labelWrapper = CGRectMake(WRAPPER_OFFSET_HORIZONTAL, frame.size.height - 20.0f - WRAPPER_OFFSET_VERTICAL, frame.size.width - (2 * WRAPPER_OFFSET_HORIZONTAL), 20.0f);
+    
+    _textPoint = CGPointMake(_labelWrapper.origin.x + 3.0f, _labelWrapper.origin.y + 2.0f);
+    
+    _shadowX = CGRectMake(CGRectGetMinX(_imageWrapper) + 1.0f, CGRectGetMaxY(_imageWrapper), CGRectGetWidth(_imageWrapper), 1.0f);
+    _shadowY = CGRectMake(CGRectGetMaxX(_imageWrapper), CGRectGetMinY(_imageWrapper) + 1.0f, 1.0f, CGRectGetHeight(_imageWrapper));
+    
+    _shadowColor = [UIColor colorWithRed:209/255.0 green:209/255.0 blue:209/255.0 alpha:1];
+    _labelColor = [UIColor colorWithWhite:0 alpha:0.7];
+    _highlightedLabelColor = [UIColor colorWithRed:1 green:1 blue:102/255.0 alpha:0.7];
+    
+    _font = [UIFont systemFontOfSize:13.0f];
 }
 
 - (UIImage *) getCellImage {

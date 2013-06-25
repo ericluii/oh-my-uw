@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OMUMinorWeatherCellView : UIView
+@interface OMUMinorWeatherCellView : UIView {
+    CGRect _dateFrame;
+    CGRect _highFrame;
+    CGRect _lowFrame;
+    
+    UIFont * _dateFont;
+    UIFont * _tempFont;
+}
 
 @property (nonatomic, strong) NSDictionary *dayDict;
 @property (nonatomic, strong) UIImageView * mainWeatherImage;

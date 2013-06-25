@@ -19,18 +19,28 @@
         _dayDict = dayDict;
         [self setBackgroundColor:[UIColor whiteColor]];
         [self setupMainImage];
+        [self setupDrawConstants];
     }
     return self;
 }
 
 - (void) drawRect:(CGRect)rect {    
     [[UIColor lightGrayColor] set];
-    [[[_dayDict objectForKey:@"Day"] substringToIndex:3] drawInRect:CGRectMake(0, 7.0f, self.frame.size.width, 20.0f) withFont:[UIFont systemFontOfSize:12.0f] lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
+    [[[_dayDict objectForKey:@"Day"] substringToIndex:3] drawInRect:_dateFrame withFont:_dateFont lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
     
-    [[_dayDict objectForKey:@"Low"] drawInRect:CGRectMake(0, 64.0f, self.frame.size.width, 20.0f) withFont:[UIFont systemFontOfSize:10.0f] lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
+    [[_dayDict objectForKey:@"Low"] drawInRect:_lowFrame withFont:_tempFont lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
     
     [[UIColor grayColor] set];
-    [[_dayDict objectForKey:@"High"] drawInRect:CGRectMake(0, 52.0f, self.frame.size.width, 20.0f) withFont:[UIFont systemFontOfSize:10.0f] lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
+    [[_dayDict objectForKey:@"High"] drawInRect:_highFrame withFont:_tempFont lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
+}
+
+- (void) setupDrawConstants {
+    _dateFrame = CGRectMake(0, 7.0f, self.frame.size.width, 20.0f);
+    _dateFont = [UIFont systemFontOfSize:12.0f];
+    
+    _lowFrame = CGRectMake(0, 64.0f, self.frame.size.width, 20.0f);
+    _highFrame = CGRectMake(0, 52.0f, self.frame.size.width, 20.0f);
+    _tempFont = [UIFont systemFontOfSize:10.0f];
 }
 
 - (void) setupMainImage {

@@ -20,43 +20,56 @@
         // Initialization code
         _weather = weather;
         [self setBackgroundColor:[UIColor whiteColor]];
-        [self setupMainImage];
+        [self setup];
+        [self setupDrawConstants];
     }
     return self;
 }
 
 - (void) drawRect:(CGRect)rect {
     [[UIColor lightGrayColor] set];
-    [_weather.condition drawInRect:CGRectMake(73.0f, 7.0f, 130.0f, 20.0f)
-                          withFont:[UIFont systemFontOfSize:12.0f]
+    [_weather.condition drawInRect:_conditionFrame
+                          withFont:_smallFont
                      lineBreakMode:NSLineBreakByClipping];
     
-    [[NSString stringWithFormat:@"%.1f°C", _weather.temperatureCurrent] drawInRect:CGRectMake(70.0f, 20.0f, 110.0f, 44.0f)
-                          withFont:[UIFont systemFontOfSize:35.0f]
+    [_currentTemperatureText drawInRect:_currentTempFrame
+                          withFont:_largeFont
                      lineBreakMode:NSLineBreakByClipping];
     
     [[UIColor grayColor] set];
-    [[NSString stringWithFormat:@"%.1f°C - %.1f°C | Wind: %.1f km/h %@",
-                                _weather.temperatureLow,
-                                  _weather.temperatureHigh,
-                                  _weather.windSpeed,
-                                  _weather.windDirection]
-                                         drawInRect:CGRectMake(12.0f, 63.0f, 200.0f, 20.0f)
-                                           withFont:[UIFont systemFontOfSize:12.0f]
-                                      lineBreakMode:NSLineBreakByClipping];
+    [_summaryText drawInRect:_summaryFrame
+                    withFont:_smallFont
+               lineBreakMode:NSLineBreakByClipping];
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGRect divider = CGRectMake(215.0f, 7.0f, 1.0f, WEATHER_CELL_HEIGHT - 20.0f);
-    CGContextAddRect(context, divider);
+    CGContextAddRect(context, _dividerFrame);
     CGContextSetFillColorWithColor(context, [UIColor yellowColor].CGColor);
-    CGContextFillRect(context, divider);
+    CGContextFillRect(context, _dividerFrame);
 }
 
-- (void) setupMainImage {
+- (void) setup {
+    _currentTemperatureText = [NSString stringWithFormat:@"%.1f°C", _weather.temperatureCurrent];
+    
+    _summaryText = [NSString stringWithFormat:@"%.1f°C - %.1f°C | Wind: %.1f km/h %@",
+                                     _weather.temperatureLow,
+                                     _weather.temperatureHigh,
+                                     _weather.windSpeed,
+                                     _weather.windDirection];
+    
     _mainWeatherImage = [[UIImageView alloc] initWithFrame:CGRectMake(7.0f, 10.0f, 60.0f, 51.0f)];
     [self addSubview:_mainWeatherImage];
     [self fetchImage];
+}
+
+- (void) setupDrawConstants {
+    _conditionFrame = CGRectMake(73.0f, 7.0f, 130.0f, 20.0f);
+    _currentTempFrame = CGRectMake(70.0f, 20.0f, 110.0f, 44.0f);
+    _summaryFrame = CGRectMake(12.0f, 63.0f, 200.0f, 20.0f);
+    _dividerFrame = CGRectMake(215.0f, 7.0f, 1.0f, WEATHER_CELL_HEIGHT - 20.0f);
+    
+    _smallFont = [UIFont systemFontOfSize:12.0f];
+    _largeFont = [UIFont systemFontOfSize:35.0f];
 }
 
 - (void) fetchImage {

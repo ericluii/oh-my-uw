@@ -18,12 +18,7 @@
         // Initialization code
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         _loadingText = text;
-        _wrapper = CGRectInset(frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
-        _textWrapper = CGRectMake(0, _wrapper.size.height - 35.0f, _wrapper.size.width, 15.0f);
-        _shadowX = CGRectMake(CGRectGetMinX(_wrapper) + 1.0f, CGRectGetMaxY(_wrapper), CGRectGetWidth(_wrapper), 1.0f);
-        _shadowY = CGRectMake(CGRectGetMaxX(_wrapper), CGRectGetMinY(_wrapper) + 1.0f, 1.0f, CGRectGetHeight(_wrapper));
-        _shadowColor = [UIColor colorWithWhite:0.5 alpha:0.2];
-        _wrapperColor = [UIColor whiteColor];
+        [self setupDrawConstantsWithFrame:frame];
     }
     return self;
 }
@@ -48,6 +43,17 @@
     
     [[UIColor grayColor] set];
     [_loadingText drawInRect:_textWrapper withFont:[UIFont systemFontOfSize:12.0f] lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
+}
+
+- (void) setupDrawConstantsWithFrame:(CGRect)frame {
+    _wrapper = CGRectInset(frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
+    _textWrapper = CGRectMake(0, _wrapper.size.height - 35.0f, _wrapper.size.width, 15.0f);
+    
+    _shadowX = CGRectMake(CGRectGetMinX(_wrapper) + 1.0f, CGRectGetMaxY(_wrapper), CGRectGetWidth(_wrapper), 1.0f);
+    _shadowY = CGRectMake(CGRectGetMaxX(_wrapper), CGRectGetMinY(_wrapper) + 1.0f, 1.0f, CGRectGetHeight(_wrapper));
+    
+    _shadowColor = [UIColor colorWithRed:209/255.0 green:209/255.0 blue:209/255.0 alpha:1];
+    _wrapperColor = [UIColor whiteColor];
 }
 
 @end

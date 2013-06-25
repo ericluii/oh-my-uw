@@ -20,14 +20,19 @@ typedef enum MainCellType {
 @interface OMUMainImageCell : UITableViewCell {
     UIImage * _cellImage;
     NSString * _cellText;
+    
     CGRect _imageWrapper;
     CGRect _labelWrapper;
     CGRect _shadowX;
     CGRect _shadowY;
+    
     CGPoint _textPoint;
+    
     UIColor * _shadowColor;
     UIColor * _highlightedLabelColor;
     UIColor * _labelColor;
+    
+    UIFont * _font;
 }
 
 - (id)initWithCellType:(MainCellType) cellType;
