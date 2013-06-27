@@ -15,6 +15,7 @@
 		0797986E1763BDDA00A36644 /* OMUCoursesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797986D1763BDDA00A36644 /* OMUCoursesManager.m */; };
 		079798711763C89800A36644 /* OMUWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079798701763C89800A36644 /* OMUWeatherCell.m */; };
 		079798741763CDE100A36644 /* OMUMainWeatherCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 079798731763CDE100A36644 /* OMUMainWeatherCellView.m */; };
+		079B377F177BC53B001DA466 /* OMUSideMenuHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 079B377E177BC53B001DA466 /* OMUSideMenuHeader.m */; };
 		07A86E50175826ED0078ED36 /* OMUSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A86E4F175826ED0078ED36 /* OMUSideMenu.m */; };
 		07AA9AF917694BA600D90672 /* OMUDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AA9AF817694BA600D90672 /* OMUDefaultLoadingCell.m */; };
 		07AD0EAD1746E5CC002BF8F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AD0EAC1746E5CC002BF8F6 /* UIKit.framework */; };
@@ -97,6 +98,8 @@
 		079798701763C89800A36644 /* OMUWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUWeatherCell.m; path = Classes/OMUWeatherCell.m; sourceTree = "<group>"; };
 		079798721763CDE100A36644 /* OMUMainWeatherCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUMainWeatherCellView.h; path = Classes/OMUMainWeatherCellView.h; sourceTree = "<group>"; };
 		079798731763CDE100A36644 /* OMUMainWeatherCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUMainWeatherCellView.m; path = Classes/OMUMainWeatherCellView.m; sourceTree = "<group>"; };
+		079B377D177BC53B001DA466 /* OMUSideMenuHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUSideMenuHeader.h; path = Classes/OMUSideMenuHeader.h; sourceTree = "<group>"; };
+		079B377E177BC53B001DA466 /* OMUSideMenuHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUSideMenuHeader.m; path = Classes/OMUSideMenuHeader.m; sourceTree = "<group>"; };
 		07A86E4E175826ED0078ED36 /* OMUSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUSideMenu.h; path = Classes/OMUSideMenu.h; sourceTree = "<group>"; };
 		07A86E4F175826ED0078ED36 /* OMUSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUSideMenu.m; path = Classes/OMUSideMenu.m; sourceTree = "<group>"; };
 		07AA9AF717694BA600D90672 /* OMUDefaultLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUDefaultLoadingCell.h; path = Classes/OMUDefaultLoadingCell.h; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 				076346831755952200645A1B /* OMUNavigationBar.m */,
 				07A86E4E175826ED0078ED36 /* OMUSideMenu.h */,
 				07A86E4F175826ED0078ED36 /* OMUSideMenu.m */,
+				079B377D177BC53B001DA466 /* OMUSideMenuHeader.h */,
+				079B377E177BC53B001DA466 /* OMUSideMenuHeader.m */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 				07F3C7E117778323004DFDB4 /* OMUSchoolOrganizerViewController.m in Sources */,
 				07F3C80A17779BB8004DFDB4 /* OMUErrorCell.m in Sources */,
 				07F3C8511777A4A2004DFDB4 /* OMUInfoCell.m in Sources */,
+				079B377F177BC53B001DA466 /* OMUSideMenuHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

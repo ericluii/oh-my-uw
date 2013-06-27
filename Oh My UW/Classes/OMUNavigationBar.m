@@ -33,8 +33,6 @@
     [_title setTextAlignment:NSTextAlignmentCenter];
     [_title setBackgroundColor:[UIColor clearColor]];
     [_title setTextColor:[UIColor lightGrayColor]];
-//    [_title setShadowColor:[UIColor colorWithWhite:0.5 alpha:1]];
-//    [_title setShadowOffset:CGSizeMake(0, -1)];
     [_title setFont:[UIFont boldSystemFontOfSize:22]];
     [_title setText:title];
     

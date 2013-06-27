@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OMUSideMenuHeader.h"
 
-@interface OMUSideMenu : UIView <UITableViewDataSource, UITableViewDelegate> {
+typedef enum sectionType {
+    sectionTypeSchool = 0,
+    sectionTypeDirection,
+    sectionTypeSocial,
+    sectionTypeOther,
+    numberOfCellType
+} sectionType;
+
+@interface OMUSideMenu : UIView <UITableViewDataSource, UITableViewDelegate, OMUSideMenuHeaderDelegate> {
     UITableView * _menu;
+    NSInteger _openSectionIndex;
 }
+
++ (NSArray * const) sectionRowTitles;
 
 @end

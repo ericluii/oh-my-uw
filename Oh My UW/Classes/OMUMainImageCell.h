@@ -13,8 +13,7 @@ typedef enum MainCellType {
     directionType,
     socialType,
     newsType,
-    faqType,
-    numberOfCellType
+    faqType
 } MainCellType;
 
 @interface OMUMainImageCell : UITableViewCell {

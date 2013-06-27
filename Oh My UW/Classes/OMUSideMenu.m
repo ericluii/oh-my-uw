@@ -9,6 +9,7 @@
 #import "OMUSideMenu.h"
 #import "OMUNavigationConstants.h"
 #import "OMUDeviceUtils.h"
+#import "OMUSideMenuHeader.h"
 
 @implementation OMUSideMenu
 
@@ -17,6 +18,7 @@
     if (self) {
         // Initialization code
         [self setupMenu];
+        _openSectionIndex = NSNotFound;
     }
     return self;
 }
@@ -34,7 +36,26 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    if (section != _openSectionIndex) {
+        return 0;
+    }
+    
+    switch (section) {
+        case sectionTypeSchool:
+            return 8;
+        case sectionTypeDirection:
+            return 5;
+        case sectionTypeSocial:
+            return 4;
+        case sectionTypeOther:
+            return 3;
+        default:
+            return 0;
+    }
+}
+
+- (NSString *) titleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [[[OMUSideMenu sectionRowTitles] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -44,13 +65,105 @@
         cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, 50.0f)];
     }
     
-    [cell.textLabel setText:[NSString stringWithFormat:@"Menu Item %d", indexPath.row]];
+    [cell.textLabel setText:[self titleForRowAtIndexPath:indexPath]];
     
     return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Header";
+- (NSString *) titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case sectionTypeSchool:
+            return @"School Organizer";
+        case sectionTypeDirection:
+            return @"Directions to...";
+        case sectionTypeSocial:
+            return @"Social Feeds";
+        case sectionTypeOther:
+            return @"Other Stuff";
+        default:
+            return 0;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return [OMUSideMenuHeader heightForHeader];
+}
+
+-(UIView*)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section {
+    OMUSideMenuHeader *sectionHeaderView = [_menu dequeueReusableHeaderFooterViewWithIdentifier:[OMUSideMenuHeader reuseIdentifier]];
+    
+    if (!sectionHeaderView) {
+        sectionHeaderView = [[OMUSideMenuHeader alloc] initWithTitle:[self titleForHeaderInSection:section] andImageNamed:@""];
+        sectionHeaderView.section = section;
+        sectionHeaderView.delegate = self;
+    }
+    
+    return sectionHeaderView;
+}
+
+-(void)sectionHeaderView:(OMUSideMenuHeader *)sectionHeaderView sectionOpened:(NSInteger)sectionOpened {
+    NSMutableArray *indexPathsToInsert = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < [[[OMUSideMenu sectionRowTitles] objectAtIndex:sectionOpened] count]; i++) {
+        [indexPathsToInsert addObject:[NSIndexPath indexPathForRow:i inSection:sectionOpened]];
+    }
+    
+    NSMutableArray *indexPathsToDelete = [[NSMutableArray alloc] init];
+    
+    if (_openSectionIndex != NSNotFound) {
+        for (NSInteger i = 0; i < [[[OMUSideMenu sectionRowTitles] objectAtIndex:_openSectionIndex] count]; i++) {
+            [indexPathsToDelete addObject:[NSIndexPath indexPathForRow:i inSection:_openSectionIndex]];
+        }
+    }
+    
+    // Style the animation so that there's a smooth flow in either direction.
+    UITableViewRowAnimation insertAnimation;
+    UITableViewRowAnimation deleteAnimation;
+    if (_openSectionIndex == NSNotFound || sectionOpened < _openSectionIndex) {
+        insertAnimation = UITableViewRowAnimationTop;
+        deleteAnimation = UITableViewRowAnimationBottom;
+    }
+    else {
+        insertAnimation = UITableViewRowAnimationBottom;
+        deleteAnimation = UITableViewRowAnimationTop;
+    }
+    
+    // Apply the updates.
+    _openSectionIndex = sectionOpened;
+    
+    [_menu beginUpdates];
+    [_menu insertRowsAtIndexPaths:indexPathsToInsert withRowAnimation:insertAnimation];
+    [_menu deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:deleteAnimation];
+    [_menu endUpdates];
+}
+
+
+-(void)sectionHeaderView:(OMUSideMenuHeader *)sectionHeaderView sectionClosed:(NSInteger)sectionClosed {
+    NSInteger countOfRowsToDelete = [[[OMUSideMenu sectionRowTitles] objectAtIndex:sectionClosed] count];
+    
+    _openSectionIndex = NSNotFound;
+    
+    if (countOfRowsToDelete > 0) {
+        NSMutableArray *indexPathsToDelete = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i < countOfRowsToDelete; i++) {
+            [indexPathsToDelete addObject:[NSIndexPath indexPathForRow:i inSection:sectionClosed]];
+        }
+        
+        [_menu deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:UITableViewRowAnimationTop];
+    }
+}
+
++ (NSArray * const) sectionRowTitles {
+    static NSArray *sectionRowTitles = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sectionRowTitles = @[@[@"Courses", @"Assignments", @"Midterms", @"Exam Schedule", @"Co-op Planner", @"UW Learn", @"Jobmine", @"Quest"],
+                             @[@"Campus Guide", @"Food", @"Study Spots", @"Parking", @"Around the City"],
+                             @[@"Reddit UW", @"Twitter", @"Goose Watch", @"Events"],
+                             @[@"News", @"Suggestions", @"About the App"]];
+    });
+    
+    return sectionRowTitles;
 }
 
 @end
