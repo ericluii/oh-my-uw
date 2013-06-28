@@ -18,7 +18,8 @@
 @property (nonatomic, strong) id <OMUSideMenuHeaderDelegate> delegate;
 @property (nonatomic) NSInteger section;
 
-- (id)initWithTitle:(NSString *) title andImageNamed:(NSString *) imageNamed;
+- (id)init;
+- (void) configureWithTitle:(NSString *) title andImageNamed:(NSString *) imageName;
 - (void) collapseMenu;
 + (NSString *) reuseIdentifier;
 + (CGFloat) heightForHeader;

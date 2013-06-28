@@ -99,10 +99,12 @@
     OMUSideMenuHeader *sectionHeaderView = [_menu dequeueReusableHeaderFooterViewWithIdentifier:[OMUSideMenuHeader reuseIdentifier]];
     
     if (!sectionHeaderView) {
-        sectionHeaderView = [[OMUSideMenuHeader alloc] initWithTitle:[self titleForHeaderInSection:section] andImageNamed:@""];
-        sectionHeaderView.section = section;
+        sectionHeaderView = [[OMUSideMenuHeader alloc] init];
         sectionHeaderView.delegate = self;
     }
+    
+    sectionHeaderView.section = section;
+    [sectionHeaderView configureWithTitle:[self titleForHeaderInSection:section] andImageNamed:@""];
     
     return sectionHeaderView;
 }

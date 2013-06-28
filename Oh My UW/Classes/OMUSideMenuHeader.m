@@ -11,7 +11,7 @@
 
 @implementation OMUSideMenuHeader
 
-- (id)initWithTitle:(NSString *) title andImageNamed:(NSString *) imageNamed {
+- (id)init {
     self = [super initWithReuseIdentifier:[OMUSideMenuHeader reuseIdentifier]];
     if (self) {
         // Initialization code
@@ -20,13 +20,16 @@
         _expanded = NO;
         
         _titleLabel = [[UILabel alloc] initWithFrame:self.frame];
-        [_titleLabel setText:title];
         [self addSubview:_titleLabel];
         
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeExpandedState)];
         [self addGestureRecognizer:tapGesture];
     }
     return self;
+}
+
+- (void) configureWithTitle:(NSString *) title andImageNamed:(NSString *) imageName {
+    [_titleLabel setText:title];
 }
 
 - (void) collapseMenu {
