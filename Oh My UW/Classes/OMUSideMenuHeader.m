@@ -12,9 +12,11 @@
 @implementation OMUSideMenuHeader
 
 - (id)initWithTitle:(NSString *) title andImageNamed:(NSString *) imageNamed {
-    self = [super initWithFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, 40.0f)];
+    self = [super initWithReuseIdentifier:[OMUSideMenuHeader reuseIdentifier]];
     if (self) {
         // Initialization code
+        [self setFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, 40.0f)];
+        
         _expanded = NO;
         
         _titleLabel = [[UILabel alloc] initWithFrame:self.frame];
@@ -25,6 +27,10 @@
         [self addGestureRecognizer:tapGesture];
     }
     return self;
+}
+
+- (void) collapseMenu {
+    _expanded = NO;
 }
 
 + (CGFloat) heightForHeader {

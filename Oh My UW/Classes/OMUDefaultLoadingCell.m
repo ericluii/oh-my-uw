@@ -13,7 +13,7 @@
 @implementation OMUDefaultLoadingCell
 
 - (id)initWithHeight:(CGFloat) height andText:(NSString *) text {
-    self = [super initWithHeight:height andText:text];
+    self = [super initWithHeight:height andText:text andIdentifer:[OMUDefaultLoadingCell reuseIdentifier]];
     if (self) {
         [self configure];
     }
@@ -25,9 +25,13 @@
 }
 
 
+- (void) startAnimation {
+    [activityImageView startAnimating];
+}
+
 - (void) configure {
     UIImage *statusImage = [[OMUImageManager sharedInstance] getImageNamed:@"loading_bar_1.png"];
-    UIImageView *activityImageView = [[UIImageView alloc]
+    activityImageView = [[UIImageView alloc]
                                       initWithImage:statusImage];
     
     activityImageView.animationImages = [NSArray arrayWithObjects:
@@ -44,8 +48,7 @@
                                          nil];
     
     activityImageView.animationDuration = 0.4;
-    [activityImageView setFrame:CGRectMake(WRAPPER_OFFSET_HORIZONTAL, self.frame.size.height - WRAPPER_OFFSET_VERTICAL, 320.0f - (WRAPPER_OFFSET_HORIZONTAL * 2), 10.0f)];
-    [activityImageView startAnimating];
+    [activityImageView setFrame:CGRectMake(WRAPPER_OFFSET_HORIZONTAL, self.frame.size.height - (WRAPPER_OFFSET_VERTICAL * 2) - 20.0f, 320.0f - (WRAPPER_OFFSET_HORIZONTAL * 2), 10.0f)];
     [self addSubview:activityImageView];
 }
 

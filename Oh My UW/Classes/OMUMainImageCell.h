@@ -34,7 +34,8 @@ typedef enum MainCellType {
     UIFont * _font;
 }
 
-- (id)initWithCellType:(MainCellType) cellType;
+- (id)init;
+- (void) configureForCellType:(MainCellType)cellType;
 + (NSString *) reuseIdentifier;
 
 @end

@@ -13,7 +13,7 @@
 @implementation OMUErrorCell
 
 - (id)initWithHeight:(CGFloat) height andText:(NSString *) text {
-    self = [super initWithHeight:height andText:text];
+    self = [super initWithHeight:height andText:text andIdentifer:[OMUErrorCell reuseIdentifier]];
     if (self) {
         // Initialization code
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];

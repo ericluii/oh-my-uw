@@ -11,17 +11,15 @@
 #import "OMUImageManager.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation OMUMainImageCell {
-    MainCellType _cellType;
-}
+@implementation OMUMainImageCell
 
-- (id)initWithCellType:(MainCellType) cellType {
-    CGRect frame = CGRectMake(0.0f, 0.0f, 320.0f, MAIN_CELL_HEIGHT);
-    self = [super initWithFrame:frame];
+- (id)init {
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[OMUMainImageCell reuseIdentifier]];
     if (self) {
         // Initialization code
+        CGRect frame = CGRectMake(0.0f, 0.0f, 320.0f, MAIN_CELL_HEIGHT);
+        [self setFrame:frame];
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-        _cellType = cellType;
         [self setupDrawConstantsWithFrame:frame];
     }
     return self;
@@ -36,6 +34,11 @@
     
     // Configure the view for the selected state
     [self setNeedsDisplay];
+}
+
+- (void) configureForCellType:(MainCellType)cellType {
+    _cellImage = [self getCellImageForCellType:cellType];
+    _cellText = [self getCellTextForCellType:cellType];
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -68,10 +71,7 @@
     [_cellText drawAtPoint:_textPoint withFont: _font];
 }
 
-- (void) setupDrawConstantsWithFrame:(CGRect)frame {
-    _cellImage = [self getCellImage];
-    _cellText = [self getCellText];
-    
+- (void) setupDrawConstantsWithFrame:(CGRect)frame {    
     _imageWrapper = CGRectInset(frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
     _labelWrapper = CGRectMake(WRAPPER_OFFSET_HORIZONTAL, frame.size.height - 20.0f - WRAPPER_OFFSET_VERTICAL, frame.size.width - (2 * WRAPPER_OFFSET_HORIZONTAL), 20.0f);
     
@@ -87,8 +87,8 @@
     _font = [UIFont systemFontOfSize:13.0f];
 }
 
-- (UIImage *) getCellImage {
-    switch (_cellType) {
+- (UIImage *) getCellImageForCellType:(MainCellType) cellType {
+    switch (cellType) {
         case schoolOrganizerType:
             return [[OMUImageManager sharedInstance] getImageNamed:@"main_image_school"];
         case directionType:
@@ -104,8 +104,8 @@
     }
 }
 
-- (NSString *) getCellText {
-    switch (_cellType) {
+- (NSString *) getCellTextForCellType:(MainCellType) cellType{
+    switch (cellType) {
         case schoolOrganizerType:
             return @" My School Organizer";
         case directionType:

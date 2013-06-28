@@ -19,6 +19,7 @@
 @property (nonatomic) NSInteger section;
 
 - (id)initWithTitle:(NSString *) title andImageNamed:(NSString *) imageNamed;
+- (void) collapseMenu;
 + (NSString *) reuseIdentifier;
 + (CGFloat) heightForHeader;
 
@@ -26,7 +27,6 @@
 
 @protocol OMUSideMenuHeaderDelegate <NSObject>
 
-@optional
 -(void)sectionHeaderView:(OMUSideMenuHeader *)sectionHeaderView sectionOpened:(NSInteger)section;
 -(void)sectionHeaderView:(OMUSideMenuHeader *)sectionHeaderView sectionClosed:(NSInteger)section;
 

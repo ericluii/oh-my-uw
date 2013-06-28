@@ -8,6 +8,10 @@
 
 #import "OMUInfoCell.h"
 
-@interface OMUDefaultLoadingCell : OMUInfoCell
+@interface OMUDefaultLoadingCell : OMUInfoCell {
+    UIImageView * activityImageView;
+}
+
+- (void) startAnimation;
 
 @end

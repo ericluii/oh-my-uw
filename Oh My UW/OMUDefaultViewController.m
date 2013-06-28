@@ -20,6 +20,7 @@
     if (self) {
         // Custom initialization
         _sideMenu = [[OMUSideMenu alloc] init];
+        [_sideMenu setDelegate:self];
         [self.view addSubview:_sideMenu];
         
         _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
@@ -97,6 +98,31 @@
 
 +(CGRect)viewFrame {
     return CGRectMake(0, [OMUDeviceUtils isIOS7] ? STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT : NAV_BAR_HEIGHT, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - NAV_BAR_HEIGHT - STATUS_BAR_HEIGHT);
+}
+
+- (void) popAllControllersAndPush:(UIViewController *) controller {
+    [_navBar setMenuExpanded:NO];
+    [UIView animateWithDuration:0.2 animations:^{
+        [_contentView setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
+    }];
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void) popAllControllersToRoot {
+    [_navBar setMenuExpanded:NO];
+    [UIView animateWithDuration:0.2 animations:^{
+        [_contentView setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
+    }];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void) pushViewController:(UIViewController *) controller {
+    [_navBar setMenuExpanded:NO];
+    [UIView animateWithDuration:0.2 animations:^{
+        [_contentView setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
+    }];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

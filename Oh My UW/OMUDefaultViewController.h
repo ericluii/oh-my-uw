@@ -10,7 +10,7 @@
 #import "OMUNavigationBar.h"
 #import "OMUSideMenu.h"
 
-@interface OMUDefaultViewController : UIViewController {
+@interface OMUDefaultViewController : UIViewController <OMUSideMenuDelegate> {
     OMUNavigationBar *_navBar;
     OMUSideMenu *_sideMenu;
     UIView *_contentView;
@@ -18,6 +18,7 @@
 
 - (id) initWithTitle:(NSString *) title;
 - (void) setBackButtonVisible:(bool) isVisible;
+- (void) pushViewController:(UIViewController *) controller;
 +(CGRect)viewFrame;
 
 @end

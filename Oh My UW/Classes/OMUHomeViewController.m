@@ -82,16 +82,18 @@
             cell = [_tableView dequeueReusableCellWithIdentifier:[OMUWeatherCell reuseIdentifier]];
             
             if (!cell) {
-                cell = [[OMUWeatherCell alloc] initWithWeather:[OMUWeatherModel sharedInstance]];
+                cell = [[OMUWeatherCell alloc] init];
             }
         } else if (_weatherLoading) {
-            cell = [_tableView dequeueReusableCellWithIdentifier:@"loadingCell"];
+            cell = [_tableView dequeueReusableCellWithIdentifier:[OMUDefaultLoadingCell reuseIdentifier]];
             
             if (!cell) {
                 cell = [[OMUDefaultLoadingCell alloc] initWithHeight:WEATHER_CELL_HEIGHT andText:@"Loading Weather..."];
             }
+            
+            [(OMUDefaultLoadingCell *)cell startAnimation];
         } else {
-            cell = [_tableView dequeueReusableCellWithIdentifier:@"errorCell"];
+            cell = [_tableView dequeueReusableCellWithIdentifier:[OMUErrorCell reuseIdentifier]];
             
             if (!cell) {
                 cell = [[OMUErrorCell alloc] initWithHeight:WEATHER_CELL_HEIGHT andText:@"Something Went Wrong. Pull to Try Again."];
@@ -101,8 +103,10 @@
         cell = [_tableView dequeueReusableCellWithIdentifier:[OMUMainImageCell reuseIdentifier]];
         
         if (!cell) {
-            cell = [[OMUMainImageCell alloc] initWithCellType:(MainCellType)(indexPath.row - 1)];
+            cell = [[OMUMainImageCell alloc] init];
         }
+        
+        [(OMUMainImageCell *)cell configureForCellType:(MainCellType)(indexPath.row - 1)];
     }
     
     return cell;
@@ -114,7 +118,7 @@
     if (indexPath.row == 1) {
         OMUSchoolOrganizerViewController * vc = [[OMUSchoolOrganizerViewController alloc] init];
         [vc setBackButtonVisible:YES];
-        [self.navigationController pushViewController:vc animated:YES];
+        [self pushViewController:vc];
     }
 }
 

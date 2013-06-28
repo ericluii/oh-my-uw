@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "OMUSideMenuHeader.h"
 
+@protocol OMUSideMenuDelegate;
+
 typedef enum sectionType {
-    sectionTypeSchool = 0,
+    sectionTypeHome = 0,
+    sectionTypeSchool,
     sectionTypeDirection,
     sectionTypeSocial,
     sectionTypeOther,
@@ -22,6 +25,16 @@ typedef enum sectionType {
     NSInteger _openSectionIndex;
 }
 
+@property (nonatomic, strong) id <OMUSideMenuDelegate> delegate;
+
 + (NSArray * const) sectionRowTitles;
+
+@end
+
+@protocol OMUSideMenuDelegate <NSObject>
+
+@optional
+- (void) popAllControllersAndPush:(UIViewController *) controller;
+- (void) popAllControllersToRoot;
 
 @end

@@ -12,10 +12,24 @@
 @implementation OMUInfoCell
 
 - (id)initWithHeight:(CGFloat) height andText:(NSString *) text {
-    CGRect frame = CGRectMake(0.0f, 0.0f, 320.0f, height);
-    self = [super initWithFrame:frame];
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[OMUInfoCell reuseIdentifier]];
     if (self) {
         // Initialization code
+        CGRect frame = CGRectMake(0.0f, 0.0f, 320.0f, height);
+        [self setFrame:frame];
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        _loadingText = text;
+        [self setupDrawConstantsWithFrame:frame];
+    }
+    return self;
+}
+
+- (id)initWithHeight:(CGFloat) height andText:(NSString *) text andIdentifer:(NSString *) identifier {
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    if (self) {
+        // Initialization code
+        CGRect frame = CGRectMake(0.0f, 0.0f, 320.0f, height);
+        [self setFrame:frame];
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         _loadingText = text;
         [self setupDrawConstantsWithFrame:frame];

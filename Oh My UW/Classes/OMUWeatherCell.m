@@ -15,10 +15,11 @@
 @implementation OMUWeatherCell
 
 - (id)initWithWeather:(OMUWeatherModel *) weather {
-    CGRect frame = CGRectMake(0.0f, 0.0f, 320.0f, WEATHER_CELL_HEIGHT);
-    self = [super initWithFrame:frame];
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[OMUWeatherCell reuseIdentifier]];
     if (self) {
         // Initialization code
+        CGRect frame = CGRectMake(0.0f, 0.0f, 320.0f, WEATHER_CELL_HEIGHT);
+        [self setFrame:frame];
         _weather = weather;
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         [self configure];

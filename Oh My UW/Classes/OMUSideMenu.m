@@ -27,12 +27,13 @@
     _menu = [[UITableView alloc] initWithFrame:self.frame];
     [_menu setDelegate:self];
     [_menu setDataSource:self];
+    [_menu setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     [_menu setBackgroundColor:[UIColor colorWithRed:64/255.0 green:64/255.0 blue:64/255.0 alpha:1]];
     [self addSubview:_menu];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -41,6 +42,8 @@
     }
     
     switch (section) {
+        case sectionTypeHome:
+            return 0;
         case sectionTypeSchool:
             return 8;
         case sectionTypeDirection:
@@ -62,7 +65,8 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"menuCell"];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, 50.0f)];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"menuCell"];
+        [cell setFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, 50.0f)];
     }
     
     [cell.textLabel setText:[self titleForRowAtIndexPath:indexPath]];
@@ -72,6 +76,8 @@
 
 - (NSString *) titleForHeaderInSection:(NSInteger)section {
     switch (section) {
+        case sectionTypeHome:
+            return @"Home";
         case sectionTypeSchool:
             return @"School Organizer";
         case sectionTypeDirection:
@@ -102,14 +108,20 @@
 }
 
 -(void)sectionHeaderView:(OMUSideMenuHeader *)sectionHeaderView sectionOpened:(NSInteger)sectionOpened {
+    if (sectionOpened == sectionTypeHome) {
+        [self.delegate popAllControllersToRoot];
+        return;
+    }
+    
     NSMutableArray *indexPathsToInsert = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < [[[OMUSideMenu sectionRowTitles] objectAtIndex:sectionOpened] count]; i++) {
         [indexPathsToInsert addObject:[NSIndexPath indexPathForRow:i inSection:sectionOpened]];
     }
     
     NSMutableArray *indexPathsToDelete = [[NSMutableArray alloc] init];
-    
+
     if (_openSectionIndex != NSNotFound) {
+        [((OMUSideMenuHeader *)[_menu headerViewForSection:_openSectionIndex]) collapseMenu];
         for (NSInteger i = 0; i < [[[OMUSideMenu sectionRowTitles] objectAtIndex:_openSectionIndex] count]; i++) {
             [indexPathsToDelete addObject:[NSIndexPath indexPathForRow:i inSection:_openSectionIndex]];
         }
@@ -138,6 +150,11 @@
 
 
 -(void)sectionHeaderView:(OMUSideMenuHeader *)sectionHeaderView sectionClosed:(NSInteger)sectionClosed {
+    if (sectionClosed == sectionTypeHome) {
+        [self.delegate popAllControllersToRoot];
+        return;
+    }
+    
     NSInteger countOfRowsToDelete = [[[OMUSideMenu sectionRowTitles] objectAtIndex:sectionClosed] count];
     
     _openSectionIndex = NSNotFound;
@@ -157,7 +174,8 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        sectionRowTitles = @[@[@"Courses", @"Assignments", @"Midterms", @"Exam Schedule", @"Co-op Planner", @"UW Learn", @"Jobmine", @"Quest"],
+        sectionRowTitles = @[@[],
+                            @[@"Courses", @"Assignments", @"Midterms", @"Exam Schedule", @"Co-op Planner", @"UW Learn", @"Jobmine", @"Quest"],
                              @[@"Campus Guide", @"Food", @"Study Spots", @"Parking", @"Around the City"],
                              @[@"Reddit UW", @"Twitter", @"Goose Watch", @"Events"],
                              @[@"News", @"Suggestions", @"About the App"]];
