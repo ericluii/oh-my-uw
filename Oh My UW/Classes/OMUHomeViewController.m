@@ -82,7 +82,7 @@
             cell = [_tableView dequeueReusableCellWithIdentifier:[OMUWeatherCell reuseIdentifier]];
             
             if (!cell) {
-                cell = [[OMUWeatherCell alloc] init];
+                cell = [[OMUWeatherCell alloc] initWithWeather:[OMUWeatherModel sharedInstance]];
             }
         } else if (_weatherLoading) {
             cell = [_tableView dequeueReusableCellWithIdentifier:[OMUDefaultLoadingCell reuseIdentifier]];

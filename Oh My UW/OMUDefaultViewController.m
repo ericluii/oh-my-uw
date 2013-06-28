@@ -102,7 +102,7 @@
 
 - (void) popAllControllersAndPush:(UIViewController *) controller {
     [_navBar setMenuExpanded:NO];
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         [_contentView setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
     }];
     [self.navigationController popToRootViewControllerAnimated:NO];
@@ -111,7 +111,7 @@
 
 - (void) popAllControllersToRoot {
     [_navBar setMenuExpanded:NO];
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         [_contentView setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
     }];
     [self.navigationController popToRootViewControllerAnimated:YES];
@@ -119,7 +119,7 @@
 
 - (void) pushViewController:(UIViewController *) controller {
     [_navBar setMenuExpanded:NO];
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         [_contentView setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
     }];
     [self.navigationController pushViewController:controller animated:YES];
