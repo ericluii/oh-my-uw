@@ -13,8 +13,10 @@
 
 @implementation OMUMainImageCell
 
+static NSString * cellReuseIdentifer = @"OMUMainImageCellReuseIdentifier";
+
 - (id)init {
-    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[OMUMainImageCell reuseIdentifier]];
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellReuseIdentifer];
     if (self) {
         // Initialization code
         CGRect frame = CGRectMake(0.0f, 0.0f, 320.0f, MAIN_CELL_HEIGHT);
@@ -26,7 +28,7 @@
 }
 
 + (NSString *) reuseIdentifier {
-    return @"OMUMainImageCellReuseIdentifier";
+    return cellReuseIdentifer;
 }
 
 - (void) setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
