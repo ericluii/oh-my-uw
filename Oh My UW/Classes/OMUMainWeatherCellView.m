@@ -14,14 +14,15 @@
 
 @implementation OMUMainWeatherCellView
 
-- (id)initWithWeather:(OMUWeatherModel *) weather {
+- (id)init {
     self = [super initWithFrame: CGRectMake(0, 0, 216.0f, WEATHER_CELL_HEIGHT)];
     if (self) {
         // Initialization code
-        _weather = weather;
         [self setBackgroundColor:[UIColor whiteColor]];
-        [self setup];
         [self setupDrawConstants];
+        
+        _mainWeatherImage = [[UIImageView alloc] initWithFrame:CGRectMake(7.0f, 10.0f, 60.0f, 51.0f)];
+        [self addSubview:_mainWeatherImage];
     }
     return self;
 }
@@ -48,20 +49,6 @@
     CGContextFillRect(context, _dividerFrame);
 }
 
-- (void) setup {
-    _currentTemperatureText = [NSString stringWithFormat:@"%.1f°C", _weather.temperatureCurrent];
-    
-    _summaryText = [NSString stringWithFormat:@"%.1f°C - %.1f°C | Wind: %.1f km/h %@",
-                                     _weather.temperatureLow,
-                                     _weather.temperatureHigh,
-                                     _weather.windSpeed,
-                                     _weather.windDirection];
-    
-    _mainWeatherImage = [[UIImageView alloc] initWithFrame:CGRectMake(7.0f, 10.0f, 60.0f, 51.0f)];
-    [self addSubview:_mainWeatherImage];
-    [self fetchImage];
-}
-
 - (void) setupDrawConstants {
     _conditionFrame = CGRectMake(73.0f, 7.0f, 130.0f, 20.0f);
     _currentTempFrame = CGRectMake(70.0f, 20.0f, 110.0f, 44.0f);
@@ -72,15 +59,29 @@
     _largeFont = [UIFont systemFontOfSize:35.0f];
 }
 
-- (void) fetchImage {
-    UIImage * img = [[[OMURequestConstants sharedInstance] imageCache] objectForKey:_weather.imageUrl];
+- (void) configureWithWeather:(OMUWeatherModel *) weather {
+    _weather = weather;
+    
+    _currentTemperatureText = [NSString stringWithFormat:@"%.1f°C", weather.temperatureCurrent];
+    
+    _summaryText = [NSString stringWithFormat:@"%.1f°C - %.1f°C | Wind: %.1f km/h %@",
+                    weather.temperatureLow,
+                    weather.temperatureHigh,
+                    weather.windSpeed,
+                    weather.windDirection];
+    
+    [self fetchImageUrl:weather.imageUrl];
+}
+
+- (void) fetchImageUrl:(NSString *) url {
+    UIImage * img = [[[OMURequestConstants sharedInstance] imageCache] objectForKey:url];
     
     if (img) {
         [_mainWeatherImage setImage:img];
     } else {
-        NSURLRequest * request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:_weather.imageUrl]];
+        NSURLRequest * request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
         AFImageRequestOperation * operation = [AFImageRequestOperation imageRequestOperationWithRequest:request success:^(UIImage *image) {
-            [[[OMURequestConstants sharedInstance] imageCache] setObject:image forKey:_weather.imageUrl];
+            [[[OMURequestConstants sharedInstance] imageCache] setObject:image forKey:url];
             [_mainWeatherImage setImage:image];
         }];
         [operation start];

@@ -25,6 +25,6 @@
 @property (nonatomic, strong) OMUWeatherModel * weather;
 @property (nonatomic, strong) UIImageView * mainWeatherImage;
 
-- (id)initWithWeather:(OMUWeatherModel *) weather;
+- (void) configureWithWeather:(OMUWeatherModel *) weather;
 
 @end

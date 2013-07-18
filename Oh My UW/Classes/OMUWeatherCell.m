@@ -14,20 +14,14 @@
 
 @implementation OMUWeatherCell
 
-- (id)initWithWeather:(OMUWeatherModel *) weather {
+- (id)init {
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[OMUWeatherCell reuseIdentifier]];
     if (self) {
         // Initialization code
         CGRect frame = CGRectMake(0.0f, 0.0f, 320.0f, WEATHER_CELL_HEIGHT);
         [self setFrame:frame];
-        _weather = weather;
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [self configure];
-        _wrapper = CGRectInset(frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
-        _shadowX = CGRectMake(CGRectGetMinX(_wrapper) + 1.0f, CGRectGetMaxY(_wrapper), CGRectGetWidth(_wrapper), 1.0f);
-        _shadowY = CGRectMake(CGRectGetMaxX(_wrapper), CGRectGetMinY(_wrapper) + 1.0f, 1.0f, CGRectGetHeight(_wrapper));
-        _shadowColor = [UIColor colorWithRed:209/255.0 green:209/255.0 blue:209/255.0 alpha:1];
-        _wrapperColor = [UIColor whiteColor];
+        [self setup];
     }
     return self;
 }
@@ -51,24 +45,34 @@
     CGContextFillRect(context, _wrapper);
 }
 
-- (void) configure {    
+- (void) setup {
+    _wrapper = CGRectInset(self.frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
+    _shadowX = CGRectMake(CGRectGetMinX(_wrapper) + 1.0f, CGRectGetMaxY(_wrapper), CGRectGetWidth(_wrapper), 1.0f);
+    _shadowY = CGRectMake(CGRectGetMaxX(_wrapper), CGRectGetMinY(_wrapper) + 1.0f, 1.0f, CGRectGetHeight(_wrapper));
+    _shadowColor = [UIColor colorWithRed:209/255.0 green:209/255.0 blue:209/255.0 alpha:1];
+    _wrapperColor = [UIColor whiteColor];
+    
     _scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL, 320.0f - (WRAPPER_OFFSET_HORIZONTAL * 2), WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2))];
     [_scroller setDelegate:self];
     [_scroller setScrollEnabled:YES];
     
-    _mainWeatherView = [[OMUMainWeatherCellView alloc] initWithWeather: _weather];
+    _mainWeatherView = [[OMUMainWeatherCellView alloc] init];
     [_scroller addSubview:_mainWeatherView];
     
+    [self addSubview:_scroller];
+}
+
+- (void) configureWithWeather:(OMUWeatherModel *)weather {
+    [_mainWeatherView configureWithWeather:weather];
+    
     CGFloat xOrigin = _mainWeatherView.frame.size.width + 5.0f;
-    for (NSDictionary *day in _weather.restOfWeek) {
+    for (NSDictionary *day in weather.restOfWeek) {
         OMUMinorWeatherCellView * dayOfWeek = [[OMUMinorWeatherCellView alloc] initWithDayDictionary:day andFrame:CGRectMake(xOrigin, 0, 40.0f, WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2))];
         [_scroller addSubview:dayOfWeek];
         xOrigin += 40.0f;
     }
     
     [_scroller setContentSize:CGSizeMake(xOrigin, WEATHER_CELL_HEIGHT - (WRAPPER_OFFSET_VERTICAL * 2))];
-
-    [self addSubview:_scroller];
 }
 
 @end

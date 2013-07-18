@@ -20,9 +20,8 @@
 
 @property (nonatomic, strong) UIScrollView * scroller;
 @property (nonatomic, strong) OMUMainWeatherCellView * mainWeatherView;
-@property (nonatomic, strong) OMUWeatherModel * weather;
 
-- (id)initWithWeather:(OMUWeatherModel *) weather;
 + (NSString *) reuseIdentifier;
+- (void) configureWithWeather:(OMUWeatherModel *)weather;
 
 @end
