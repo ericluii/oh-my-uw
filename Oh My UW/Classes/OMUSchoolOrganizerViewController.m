@@ -7,6 +7,9 @@
 //
 
 #import "OMUSchoolOrganizerViewController.h"
+#import "OMUSideMenu.h"
+#import "OMUCoursesViewController.h"
+#import "OMUUIUtils.h"
 
 @interface OMUSchoolOrganizerViewController ()
 
@@ -24,39 +27,38 @@
 }
 
 - (void)setupTableView {
-    _tableView = [[UITableView alloc] initWithFrame:[OMUDefaultViewController viewFrame]];
-    [_tableView setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:1]];
-    [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    [_tableView setDelegate:self];
-    [_tableView setDataSource:self];
+    _tableView = [UITableView defaultTableViewWithDelegateAndDataSource:self];
     [_contentView addSubview:_tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
+    return [[[OMUSideMenu sectionRowTitles] objectAtIndex:sectionTypeSchool] count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        return WEATHER_CELL_HEIGHT;
-    }
-    else {
-        return MAIN_CELL_HEIGHT;
-    }
+    return DEFAULT_CELL_HEIGHT;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"menuCell"];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, SIDE_MENU_WIDTH, 50.0f)];
+        cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 50.0f)];
     }
     
-    [cell.textLabel setText:[NSString stringWithFormat:@"Menu Item %d", indexPath.row]];
+    [cell.textLabel setText:[[[OMUSideMenu sectionRowTitles] objectAtIndex:sectionTypeSchool] objectAtIndex:indexPath.row]];
     
     return cell;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row == 0) {
+        OMUCoursesViewController * vc = [[OMUCoursesViewController alloc] init];
+        [vc setBackButtonVisible:YES];
+        [self pushViewController:vc];
+    }
+}
 
 @end

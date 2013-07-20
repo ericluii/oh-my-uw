@@ -14,6 +14,4 @@
     BOOL _successfulFetch;
 }
 
-- (id)init;
-
 @end

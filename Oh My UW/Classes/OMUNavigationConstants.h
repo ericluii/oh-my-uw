@@ -14,6 +14,7 @@ extern NSInteger const STATUS_BAR_HEIGHT;
 
 extern float const WEATHER_CELL_HEIGHT;
 extern float const MAIN_CELL_HEIGHT;
+extern float const DEFAULT_CELL_HEIGHT;
 
 extern float const WRAPPER_OFFSET_VERTICAL;
 extern float const WRAPPER_OFFSET_HORIZONTAL;

@@ -12,6 +12,4 @@
     UITableView * _tableView;
 }
 
-- (id) init;
-
 @end

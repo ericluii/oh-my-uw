@@ -16,6 +16,7 @@
 #import "OMUMainImageCell.h"
 #import "OMUErrorCell.h"
 #import "OMUSchoolOrganizerViewController.h"
+#import "OMUUIUtils.h"
 
 @interface OMUHomeViewController ()
 
@@ -49,11 +50,8 @@
 }
 
 - (void)setupTableView {
-    _tableView = [[UITableView alloc] initWithFrame:[OMUDefaultViewController viewFrame]];
-    [_tableView setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:1]];
+    _tableView = [UITableView defaultTableViewWithDelegateAndDataSource:self];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    [_tableView setDelegate:self];
-    [_tableView setDataSource:self];
     [_contentView addSubview:_tableView];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -115,7 +113,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 1) {
         OMUSchoolOrganizerViewController * vc = [[OMUSchoolOrganizerViewController alloc] init];

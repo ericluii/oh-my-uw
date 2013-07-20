@@ -11,6 +11,8 @@
 		075393FE175981C600D59314 /* OMUNavigationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 075393FD175981C600D59314 /* OMUNavigationConstants.m */; };
 		076346841755952200645A1B /* OMUNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 076346831755952200645A1B /* OMUNavigationBar.m */; };
 		0778B216176407BC0069D4B4 /* OMUMinorWeatherCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0778B215176407BC0069D4B4 /* OMUMinorWeatherCellView.m */; };
+		07866D7A17999327009893E4 /* OMUCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07866D7917999327009893E4 /* OMUCoursesViewController.m */; };
+		07866D7D179994F7009893E4 /* OMUUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07866D7C179994F7009893E4 /* OMUUIUtils.m */; };
 		0797986B1763845500A36644 /* OMUWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797986A1763845500A36644 /* OMUWeatherModel.m */; };
 		0797986E1763BDDA00A36644 /* OMUCoursesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797986D1763BDDA00A36644 /* OMUCoursesManager.m */; };
 		079798711763C89800A36644 /* OMUWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079798701763C89800A36644 /* OMUWeatherCell.m */; };
@@ -27,6 +29,8 @@
 		07AD0EC61746E5CC002BF8F6 /* OMUDefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AD0EC51746E5CC002BF8F6 /* OMUDefaultViewController.m */; };
 		07AD0EC91746E5CC002BF8F6 /* OMUViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0EC71746E5CC002BF8F6 /* OMUViewController_iPhone.xib */; };
 		07AD0ECC1746E5CC002BF8F6 /* OMUViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AD0ECA1746E5CC002BF8F6 /* OMUViewController_iPad.xib */; };
+		07C340EA17998A6B00F50D48 /* navbar_back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 07C340E817998A6B00F50D48 /* navbar_back_btn.png */; };
+		07C340EB17998A6B00F50D48 /* navbar_back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07C340E917998A6B00F50D48 /* navbar_back_btn@2x.png */; };
 		07C3558517557599000D9C34 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3557317557599000D9C34 /* AFHTTPClient.m */; };
 		07C3558617557599000D9C34 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3557517557599000D9C34 /* AFHTTPRequestOperation.m */; };
 		07C3558717557599000D9C34 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C3557717557599000D9C34 /* AFImageRequestOperation.m */; };
@@ -90,6 +94,10 @@
 		076346831755952200645A1B /* OMUNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUNavigationBar.m; path = Classes/OMUNavigationBar.m; sourceTree = "<group>"; };
 		0778B214176407BC0069D4B4 /* OMUMinorWeatherCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUMinorWeatherCellView.h; path = Classes/OMUMinorWeatherCellView.h; sourceTree = "<group>"; };
 		0778B215176407BC0069D4B4 /* OMUMinorWeatherCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUMinorWeatherCellView.m; path = Classes/OMUMinorWeatherCellView.m; sourceTree = "<group>"; };
+		07866D7817999327009893E4 /* OMUCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUCoursesViewController.h; path = Classes/OMUCoursesViewController.h; sourceTree = "<group>"; };
+		07866D7917999327009893E4 /* OMUCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUCoursesViewController.m; path = Classes/OMUCoursesViewController.m; sourceTree = "<group>"; };
+		07866D7B179994F7009893E4 /* OMUUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUUIUtils.h; path = Classes/OMUUIUtils.h; sourceTree = "<group>"; };
+		07866D7C179994F7009893E4 /* OMUUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUUIUtils.m; path = Classes/OMUUIUtils.m; sourceTree = "<group>"; };
 		079798691763845500A36644 /* OMUWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUWeatherModel.h; path = Classes/OMUWeatherModel.h; sourceTree = "<group>"; };
 		0797986A1763845500A36644 /* OMUWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUWeatherModel.m; path = Classes/OMUWeatherModel.m; sourceTree = "<group>"; };
 		0797986C1763BDDA00A36644 /* OMUCoursesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUCoursesManager.h; path = Classes/OMUCoursesManager.h; sourceTree = "<group>"; };
@@ -118,6 +126,8 @@
 		07AD0EC51746E5CC002BF8F6 /* OMUDefaultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OMUDefaultViewController.m; sourceTree = "<group>"; };
 		07AD0EC81746E5CC002BF8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OMUViewController_iPhone.xib; sourceTree = "<group>"; };
 		07AD0ECB1746E5CC002BF8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OMUViewController_iPad.xib; sourceTree = "<group>"; };
+		07C340E817998A6B00F50D48 /* navbar_back_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_back_btn.png; sourceTree = "<group>"; };
+		07C340E917998A6B00F50D48 /* navbar_back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_btn@2x.png"; sourceTree = "<group>"; };
 		07C3557217557599000D9C34 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		07C3557317557599000D9C34 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		07C3557417557599000D9C34 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -236,6 +246,8 @@
 				07C5BC95176D1E7B001F59F2 /* OMUDeviceUtils.m */,
 				0702C3CA176E9E6C00F3D3E8 /* OMUImageManager.h */,
 				0702C3CB176E9E6C00F3D3E8 /* OMUImageManager.m */,
+				07866D7B179994F7009893E4 /* OMUUIUtils.h */,
+				07866D7C179994F7009893E4 /* OMUUIUtils.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -381,6 +393,8 @@
 				07D660001763763900FAFBAC /* OMUHomeViewController.m */,
 				07F3C7DF17778323004DFDB4 /* OMUSchoolOrganizerViewController.h */,
 				07F3C7E017778323004DFDB4 /* OMUSchoolOrganizerViewController.m */,
+				07866D7817999327009893E4 /* OMUCoursesViewController.h */,
+				07866D7917999327009893E4 /* OMUCoursesViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -406,6 +420,8 @@
 		07EDE2431746EA1F005CB5B1 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				07C340E817998A6B00F50D48 /* navbar_back_btn.png */,
+				07C340E917998A6B00F50D48 /* navbar_back_btn@2x.png */,
 				07F3C8531777A7C2004DFDB4 /* error_bar.png */,
 				07F3C8541777A7C2004DFDB4 /* error_bar@2x.png */,
 				07F3C80B1777A10F004DFDB4 /* loading_bar_1.png */,
@@ -551,6 +567,8 @@
 				07F3C84E1777A10F004DFDB4 /* navbar_menu_btn@2x.png in Resources */,
 				07F3C8551777A7C2004DFDB4 /* error_bar.png in Resources */,
 				07F3C8561777A7C2004DFDB4 /* error_bar@2x.png in Resources */,
+				07C340EA17998A6B00F50D48 /* navbar_back_btn.png in Resources */,
+				07C340EB17998A6B00F50D48 /* navbar_back_btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +609,8 @@
 				07F3C80A17779BB8004DFDB4 /* OMUErrorCell.m in Sources */,
 				07F3C8511777A4A2004DFDB4 /* OMUInfoCell.m in Sources */,
 				079B377F177BC53B001DA466 /* OMUSideMenuHeader.m in Sources */,
+				07866D7A17999327009893E4 /* OMUCoursesViewController.m in Sources */,
+				07866D7D179994F7009893E4 /* OMUUIUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
