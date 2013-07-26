@@ -12,6 +12,10 @@
 
 @implementation OMUAppDelegate
 
++ (OMUAppDelegate *) appDelegate {
+	return (OMUAppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

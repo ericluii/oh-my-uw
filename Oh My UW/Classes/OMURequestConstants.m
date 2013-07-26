@@ -8,7 +8,7 @@
 
 #import "OMURequestConstants.h"
 
-NSString const * API_TOKEN = @"YOUR_API_TOKEN";
+NSString const * API_TOKEN = @"52a604ab3d115f1f65802d68414b6a64";
 NSString const * BASE_URL = @"http://api.uwaterloo.ca/public/v1/";
 
 @implementation OMURequestConstants

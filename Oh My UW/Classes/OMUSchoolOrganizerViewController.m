@@ -10,6 +10,7 @@
 #import "OMUSideMenu.h"
 #import "OMUCoursesViewController.h"
 #import "OMUUIUtils.h"
+#import "OMUExamScheduleViewController.h"
 
 @interface OMUSchoolOrganizerViewController ()
 
@@ -21,15 +22,24 @@
     self = [super initWithTitle:@"School Organizer"];
     if (self) {
         // Custom initialization
-        [self setupTableView];
     }
     return self;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self setupTableView];
+}
+
+#pragma mark - Setup Methods
+
 - (void)setupTableView {
     _tableView = [UITableView defaultTableViewWithDelegateAndDataSource:self];
-    [_contentView addSubview:_tableView];
+    [self addSubview:_tableView];
 }
+
+#pragma mark - UITableview Delegate and Datasource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[[OMUSideMenu sectionRowTitles] objectAtIndex:sectionTypeSchool] count];
@@ -52,13 +62,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (indexPath.row == 1) {
-        OMUCoursesViewController * vc = [[OMUCoursesViewController alloc] init];
-        [vc setBackButtonVisible:YES];
-        [self pushViewController:vc];
-    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];    
+    [self pushViewController:[OMUSideMenu viewControllerForSection:sectionTypeSchool andRow:indexPath.row]];
 }
 
 @end

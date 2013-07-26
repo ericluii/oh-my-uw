@@ -22,6 +22,7 @@
 
 - (id)initWithHeight:(CGFloat) height andText:(NSString *) text;
 - (id)initWithHeight:(CGFloat) height andText:(NSString *) text andIdentifer:(NSString *) identifier;
+- (void) updateTextWrapper;
 + (NSString *) reuseIdentifier;
 
 @end

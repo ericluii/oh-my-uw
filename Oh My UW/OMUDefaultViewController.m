@@ -8,6 +8,7 @@
 
 #import "OMUDefaultViewController.h"
 #import "OMUDeviceUtils.h"
+#import "OMUHomeViewController.h"
 
 @interface OMUDefaultViewController ()
 
@@ -19,23 +20,24 @@
     self = [super initWithNibName:@"OMUViewController_iPhone" bundle:nil];
     if (self) {
         // Custom initialization
-        _sideMenu = [[OMUSideMenu alloc] init];
-        [_sideMenu setDelegate:self];
-        [self.view addSubview:_sideMenu];
-        
-        _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-        [self.view addSubview:_contentView];
-        
-        [self setupGestureRecognizer];
-        
-        _navBar = [[OMUNavigationBar alloc] initWithTitle:title];
-        [_contentView addSubview:_navBar];
+        [self setTitle:title];
     }
     return self;
 }
 
-- (void) setBackButtonVisible:(bool) isVisible {
-    [_navBar backButtonIsVisisble:isVisible];
+- (void) viewDidLoad {
+    _sideMenu = [[OMUSideMenu alloc] init];
+    [_sideMenu setDelegate:self];
+    [self.view addSubview:_sideMenu];
+    
+    _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    [self.view addSubview:_contentView];
+    
+    [self setupGestureRecognizer];
+    
+    _navBar = [[OMUNavigationBar alloc] initWithTitle:self.title];
+    [_navBar backButtonIsVisisble:![[self.navigationController topViewController] isKindOfClass:[OMUHomeViewController class]]];
+    [_contentView addSubview:_navBar];
 }
 
 - (void) setupGestureRecognizer {
@@ -100,6 +102,14 @@
     return CGRectMake(0, [OMUDeviceUtils isIOS7] ? STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT : NAV_BAR_HEIGHT, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - NAV_BAR_HEIGHT - STATUS_BAR_HEIGHT);
 }
 
+- (void) addSubview:(UIView *)view {
+    [_contentView addSubview:view];
+}
+
+- (void) insertSubview:(UIView *)view atIndex:(NSInteger)index {
+    [_contentView insertSubview:view atIndex:index];
+}
+
 - (void) popAllControllersAndPush:(UIViewController *) controller {
     [_navBar setMenuExpanded:NO];
     [UIView animateWithDuration:0.1 animations:^{
@@ -123,6 +133,10 @@
         [_contentView setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
     }];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void) setRightBarButton:(UIButton *) button {
+    [_navBar setRightBarButton:button];
 }
 
 @end

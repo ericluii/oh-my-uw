@@ -11,6 +11,8 @@
 #import "OMUDeviceUtils.h"
 #import "OMUImageManager.h"
 
+static NSInteger OMUBarButtonTag = 1337;
+
 @implementation OMUNavigationBar
 
 - (id)initWithTitle:(NSString*) title {
@@ -18,7 +20,7 @@
     if (self) {
         // Initialization code
         _menuExpanded = false;
-        _navigator = ((OMUAppDelegate *)[[UIApplication sharedApplication] delegate]).navigator;
+        _navigator = [[OMUAppDelegate appDelegate] navigator];
         [self configureNavBarWithTitle:title];
     }
     return self;
@@ -72,6 +74,17 @@
 - (void) backButtonIsVisisble:(BOOL) visible {
     [_backBtn setHidden:!visible];
     [_expandMenuBtn setHidden:visible];
+}
+
+- (void) setRightBarButton:(UIButton *) button {
+    UIButton * btn = (UIButton *)[self viewWithTag:OMUBarButtonTag];
+    
+    if (btn) {
+        [btn removeFromSuperview];
+    }
+    
+    [button setTag:OMUBarButtonTag];
+    [self addSubview:button];
 }
 
 @end

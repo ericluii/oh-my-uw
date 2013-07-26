@@ -10,4 +10,6 @@
 
 @interface OMUErrorCell : OMUInfoCell
 
+- (void) setErrorText:(NSString *) string;
+
 @end

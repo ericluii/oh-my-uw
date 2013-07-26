@@ -17,6 +17,7 @@
 #import "OMUErrorCell.h"
 #import "OMUSchoolOrganizerViewController.h"
 #import "OMUUIUtils.h"
+#import "OMUSideMenu.h"
 
 @interface OMUHomeViewController ()
 
@@ -28,7 +29,6 @@
     self = [super initWithTitle:@"Home"];
     if (self) {
         // Custom initialization
-        [self setupTableView];
         _weatherLoading = YES;
         _successfulFetch = NO;
     }
@@ -40,24 +40,23 @@
     [super viewDidLoad];
 
 	// Do any additional setup after loading the view.
+    [self setupTableView];
     [self fetchWeather];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - Setup Methods
 
 - (void)setupTableView {
     _tableView = [UITableView defaultTableViewWithDelegateAndDataSource:self];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    [_contentView addSubview:_tableView];
+    [self addSubview:_tableView];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [_tableView addSubview:refreshControl];
 }
+
+#pragma mark - UITableview Delegate and Datasource Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1 + numberOfCellType;
@@ -114,13 +113,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (indexPath.row == 1) {
-        OMUSchoolOrganizerViewController * vc = [[OMUSchoolOrganizerViewController alloc] init];
-        [vc setBackButtonVisible:YES];
-        [self pushViewController:vc];
-    }
+    [self pushViewController:[OMUSideMenu viewControllerForSection:sectionTypeHome andRow:indexPath.row]];
 }
+
+#pragma mark - Request Methods
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
     _weatherLoading = YES;
@@ -141,6 +137,7 @@
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"Weather Failed to Fetch: %@", error);
         _weatherLoading = NO;
+        _successfulFetch = NO;
         [_tableView reloadData];
     }];
     

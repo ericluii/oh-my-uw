@@ -19,15 +19,24 @@
     self = [super initWithTitle:@"Courses"];
     if (self) {
         // Custom initialization
-        [self setupTableView];
     }
     return self;
 }
 
+-(void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self setupTableView];
+}
+
+#pragma mark - Setup Methods
+
 - (void) setupTableView {
     _tableView = [UITableView defaultTableViewWithDelegateAndDataSource:self];
-    [_contentView addSubview:_tableView];
+    [self addSubview:_tableView];
 }
+
+#pragma mark - UITableview Delegate and Datasource Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 0;

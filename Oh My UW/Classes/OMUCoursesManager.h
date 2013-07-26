@@ -11,6 +11,7 @@
 @interface OMUCoursesManager : NSObject
 
 + (OMUCoursesManager *) sharedInstance;
+- (void) getAllCourses;
 - (void) restoreCourses;
 - (void) saveCourses;
 - (BOOL) currentlyAtSchool;

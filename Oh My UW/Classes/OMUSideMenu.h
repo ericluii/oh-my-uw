@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "OMUSideMenuHeader.h"
 
+@class OMUDefaultViewController;
+
 @protocol OMUSideMenuDelegate;
 
 typedef enum sectionType {
@@ -28,6 +30,7 @@ typedef enum sectionType {
 @property (nonatomic, strong) id <OMUSideMenuDelegate> delegate;
 
 + (NSArray * const) sectionRowTitles;
++ (OMUDefaultViewController *) viewControllerForSection:(NSInteger) section andRow:(NSInteger) row;
 
 @end
 

@@ -10,6 +10,11 @@
 #import "OMUNavigationConstants.h"
 #import "OMUDeviceUtils.h"
 #import "OMUSideMenuHeader.h"
+#import "OMUDefaultViewController.h"
+#import "OMUCoursesViewController.h"
+#import "OMUExamScheduleViewController.h"
+#import "OMUSchoolOrganizerViewController.h"
+#import "OMUAppDelegate.h"
 
 @implementation OMUSideMenu
 
@@ -74,6 +79,13 @@
     return cell;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    OMUDefaultViewController * vc = [OMUSideMenu viewControllerForSection:indexPath.section andRow:indexPath.row];
+    
+    [(OMUDefaultViewController *)[[[OMUAppDelegate appDelegate].navigator viewControllers]objectAtIndex:0]
+                                     popAllControllersAndPush:vc];
+}
+
 - (NSString *) titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case sectionTypeHome:
@@ -89,6 +101,30 @@
         default:
             return 0;
     }
+}
+
++ (OMUDefaultViewController *) viewControllerForSection:(NSInteger) section andRow:(NSInteger) row {
+    switch (section) {
+        case sectionTypeHome:
+            if (row == 1) {
+                return [[OMUSchoolOrganizerViewController alloc] init];
+            }
+        case sectionTypeSchool:
+            if (row == 1) {
+                return [[OMUCoursesViewController alloc] init];
+            } else if (row == 4) {
+                return [[OMUExamScheduleViewController alloc] init];
+            }
+            break;
+        case sectionTypeDirection:
+            break;
+        case sectionTypeSocial:
+            break;
+        case sectionTypeOther:
+            break;            
+    }
+    
+    return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

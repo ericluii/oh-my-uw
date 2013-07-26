@@ -22,5 +22,5 @@
 
 - (id)initWithTitle:(NSString*) title;
 - (void) backButtonIsVisisble:(BOOL) visible;
-
+- (void) setRightBarButton:(UIButton *) button;
 @end

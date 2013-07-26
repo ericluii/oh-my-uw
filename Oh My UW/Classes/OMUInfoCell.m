@@ -56,18 +56,28 @@
     CGContextFillRect(context, _wrapper);
     
     [[UIColor grayColor] set];
-    [_loadingText drawInRect:_textWrapper withFont:[UIFont systemFontOfSize:12.0f] lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
+    [_loadingText drawInRect:_textWrapper withFont:[UIFont systemFontOfSize:12.0f] lineBreakMode:NSLineBreakByWordWrapping alignment:NSTextAlignmentCenter];
 }
 
 - (void) setupDrawConstantsWithFrame:(CGRect)frame {
     _wrapper = CGRectInset(frame, WRAPPER_OFFSET_HORIZONTAL, WRAPPER_OFFSET_VERTICAL);
-    _textWrapper = CGRectMake(0, _wrapper.size.height - 35.0f, _wrapper.size.width, 15.0f);
+    
+    [self updateTextWrapper];
     
     _shadowX = CGRectMake(CGRectGetMinX(_wrapper) + 1.0f, CGRectGetMaxY(_wrapper), CGRectGetWidth(_wrapper), 1.0f);
     _shadowY = CGRectMake(CGRectGetMaxX(_wrapper), CGRectGetMinY(_wrapper) + 1.0f, 1.0f, CGRectGetHeight(_wrapper));
     
     _shadowColor = [UIColor colorWithRed:209/255.0 green:209/255.0 blue:209/255.0 alpha:1];
     _wrapperColor = [UIColor whiteColor];
+}
+
+- (void) updateTextWrapper {
+    CGSize maxSize = CGSizeMake(_wrapper.size.width - 4.0f, _wrapper.size.height - 35.0f);
+    CGSize textWrapperSize = [_loadingText sizeWithFont:[UIFont systemFontOfSize:12.0f]
+                                      constrainedToSize:maxSize
+                                          lineBreakMode:NSLineBreakByWordWrapping];
+    
+    _textWrapper = CGRectMake(WRAPPER_OFFSET_HORIZONTAL + 2.0f, _wrapper.size.height - 20.0f - textWrapperSize.height, _wrapper.size.width - 2.0f, textWrapperSize.height);
 }
 
 @end

@@ -30,8 +30,14 @@
 - (void) configure {
     UIImage *statusImage = [[OMUImageManager sharedInstance] getImageNamed:@"error_bar"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:statusImage];
-    [imageView setFrame:CGRectMake(WRAPPER_OFFSET_HORIZONTAL, self.frame.size.height - WRAPPER_OFFSET_VERTICAL, 320.0f - (WRAPPER_OFFSET_HORIZONTAL * 2), 10.0f)];
+    [imageView setFrame:CGRectMake(WRAPPER_OFFSET_HORIZONTAL, self.frame.size.height - (WRAPPER_OFFSET_VERTICAL * 2) - 20.0f, 320.0f - (WRAPPER_OFFSET_HORIZONTAL * 2), 10.0f)];
     [self addSubview:imageView];
+}
+
+- (void) setErrorText:(NSString *) string {
+    _loadingText = string;
+    [self updateTextWrapper];
+    [self setNeedsDisplay];
 }
 
 @end
