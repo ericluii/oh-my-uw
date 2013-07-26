@@ -177,7 +177,7 @@
     
     dispatch_once(&onceToken, ^{
         sectionRowTitles = @[@[],
-                            @[@"Courses", @"Assignments", @"Midterms", @"Exam Schedule", @"Co-op Planner", @"UW Learn", @"Jobmine", @"Quest"],
+                            @[@"School Planner", @"Courses", @"Assignments", @"Midterms", @"Exam Schedule", @"UW Learn", @"Jobmine", @"Quest"],
                              @[@"Campus Guide", @"Food", @"Study Spots", @"Parking", @"Around the City"],
                              @[@"Reddit UW", @"Twitter", @"Goose Watch", @"Events"],
                              @[@"News", @"Suggestions", @"About the App"]];

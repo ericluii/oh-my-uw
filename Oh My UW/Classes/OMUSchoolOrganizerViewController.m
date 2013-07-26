@@ -18,7 +18,7 @@
 @implementation OMUSchoolOrganizerViewController
 
 - (id)init {
-    self = [super initWithTitle:@"Home"];
+    self = [super initWithTitle:@"School Organizer"];
     if (self) {
         // Custom initialization
         [self setupTableView];
@@ -54,7 +54,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.row == 0) {
+    if (indexPath.row == 1) {
         OMUCoursesViewController * vc = [[OMUCoursesViewController alloc] init];
         [vc setBackButtonVisible:YES];
         [self pushViewController:vc];

@@ -252,6 +252,15 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		07558F9217A30CE100E01F39 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0797986C1763BDDA00A36644 /* OMUCoursesManager.h */,
+				0797986D1763BDDA00A36644 /* OMUCoursesManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		07AA9AF517694B6500D90672 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +319,7 @@
 		07AD0EB21746E5CC002BF8F6 /* Oh My UW */ = {
 			isa = PBXGroup;
 			children = (
+				07558F9217A30CE100E01F39 /* Managers */,
 				075393F317597CD100D59314 /* Views */,
 				07EDE23F1746E9BD005CB5B1 /* View Controllers */,
 				07EDE23E1746E9B5005CB5B1 /* Models */,
@@ -378,8 +388,6 @@
 			children = (
 				079798691763845500A36644 /* OMUWeatherModel.h */,
 				0797986A1763845500A36644 /* OMUWeatherModel.m */,
-				0797986C1763BDDA00A36644 /* OMUCoursesManager.h */,
-				0797986D1763BDDA00A36644 /* OMUCoursesManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
