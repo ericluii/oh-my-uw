@@ -8,9 +8,6 @@
 
 #import "OMUExamScheduleViewController.h"
 #import "OMUUIUtils.h"
-#import "OMUDefaultLoadingCell.h"
-#import "OMURequestConstants.h"
-#import "AFJSONRequestOperation.h"
 #import "OMUExamScheduleCourse.h"
 #import "OMUErrorCell.h"
 #import "OMUDeviceUtils.h"
@@ -18,10 +15,10 @@
 
 @interface OMUExamScheduleViewController () {
     NSMutableArray * _examScheduleArray, * _filteredExamSchedulArray;
-    bool _loadingSchedule, _successfulRequest;
+    OMULoadingView * _loadScreen;
+    bool _showingSearchView;
     NSString * _term;
     UISearchBar * _searchView;
-    bool _showingSearchView;
 }
 
 @end
@@ -32,8 +29,6 @@
     self = [super initWithTitle:@"Exam Schedule"];
     if (self) {
         // Custom initialization
-        _loadingSchedule = YES;
-        _successfulRequest = NO;
         _showingSearchView = NO;
     }
     return self;
@@ -46,7 +41,14 @@
     [self setupTableView];
     [self setupSearchView];
     [self setupBarButton];
-    [self fetchSchedule];
+    
+    _loadScreen = [[OMULoadingView alloc] init];
+    [self addSubview:_loadScreen];
+    [_loadScreen setDelegate:self];
+    [_loadScreen showLoadscreenWithMessage:@"Loading Exam Schedule..." andError:NO];
+    
+    [[OMUCoursesManager sharedInstance] setDelegate:self];
+    [[OMUCoursesManager sharedInstance] getExamSchedule];
 }
 
 #pragma mark - Setup Methods
@@ -152,21 +154,7 @@
     UITableViewCell * cell;
     NSArray * array = _showingSearchView ? _filteredExamSchedulArray : _examScheduleArray;
     
-    if (_loadingSchedule) {
-        cell = [tableView dequeueReusableCellWithIdentifier:[OMUDefaultLoadingCell reuseIdentifier]];
-        
-        if (!cell) {
-            cell = [[OMUDefaultLoadingCell alloc] initWithHeight:WEATHER_CELL_HEIGHT andText:@"Loading Exam Schedule..."];
-        }
-        
-        [(OMUDefaultLoadingCell *)cell startAnimation];
-    } else if (!_loadingSchedule && !_successfulRequest) {
-        cell = [_tableView dequeueReusableCellWithIdentifier:[OMUErrorCell reuseIdentifier]];
-        
-        if (!cell) {
-            cell = [[OMUErrorCell alloc] initWithHeight:WEATHER_CELL_HEIGHT andText:@"Something Went Wrong. Pleas Try Again Later."];
-        }
-    } else if (indexPath.row == 0) {
+    if (indexPath.row == 0) {
         cell = [_tableView dequeueReusableCellWithIdentifier:[OMUErrorCell reuseIdentifier]];
         
         if (!cell) {
@@ -203,35 +191,27 @@
     return cell;
 }
 
-#pragma mark - Request Methods
+#pragma mark - OMULoadingViewDelegate Methods
 
-- (void) fetchSchedule {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[OMURequestConstants examScheduleURL]];
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"Exam Schedule Successfully Fetched");
-        
-        _term = [[[JSON objectForKey:@"response"] objectForKey:@"data"] objectForKey:@"Term"];
-        _examScheduleArray = [NSMutableArray array];
-        for (NSDictionary * result in [[[JSON objectForKey:@"response"] objectForKey:@"data"] objectForKey:@"result"]) {
-            OMUExamScheduleCourse * course = [[OMUExamScheduleCourse alloc] init];
-            [course configureWithJSONResponse:result];
-            [_examScheduleArray addObject:course];
-        }
-        
-        _filteredExamSchedulArray = [NSMutableArray arrayWithArray:_examScheduleArray];
-        _loadingSchedule = NO;
-        _successfulRequest = YES;
-        [_tableView reloadData];
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Exam Schedule Failed to Fetch: %@", error);
-        _examScheduleArray = nil;
-        _filteredExamSchedulArray = nil;
-        _loadingSchedule = NO;
-        _successfulRequest = NO;
-        [_tableView reloadData];
-    }];
-    
-    [operation start];
+- (void) loadingViewRetryButtonPressed {
+    [_loadScreen showLoadscreenWithMessage:@"Loading Exam Schedule..." andError:NO];
+    [[OMUCoursesManager sharedInstance] getExamSchedule];
+}
+
+#pragma mark - OMUCourseManagerDelegate Methods
+
+- (void) OMUCoursesManagerCompletedRequestWithSuccess:(id)result {
+    _term = [result objectForKey:@"term"];
+    _examScheduleArray = [result objectForKey:@"courses"];
+    _filteredExamSchedulArray = [NSMutableArray arrayWithArray:_examScheduleArray];
+    [_loadScreen hideLoadingMessage];
+    [_tableView reloadData];
+}
+
+- (void)OMUCoursesManagerCompletedRequestWithError:(NSError *)error {
+    _examScheduleArray = nil;
+    _filteredExamSchedulArray = nil;
+    [_loadScreen showLoadscreenWithMessage:@"Something Went Wrong. Please Try Again Later." andError:YES];
 }
 
 @end

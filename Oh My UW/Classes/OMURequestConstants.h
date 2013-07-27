@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSMutableDictionary * imageCache;
 
++ (NSURL *) departmentURL;
 + (NSURL *) examScheduleURL;
 + (NSURL *) weatherURL;
 + (OMURequestConstants *) sharedInstance;

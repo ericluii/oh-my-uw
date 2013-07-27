@@ -34,6 +34,10 @@ NSString const * BASE_URL = @"http://api.uwaterloo.ca/public/v1/";
     return sharedInstance;
 }
 
++ (NSURL *) departmentURL {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@?key=%@&service=DepartmentsList&output=json", BASE_URL, API_TOKEN]];
+}
+
 + (NSURL *) weatherURL {
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@?key=%@&service=Weather&output=json", BASE_URL, API_TOKEN]];
 }

@@ -98,10 +98,6 @@
     }];
 }
 
-+(CGRect)viewFrame {
-    return CGRectMake(0, [OMUDeviceUtils isIOS7] ? STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT : NAV_BAR_HEIGHT, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - NAV_BAR_HEIGHT - STATUS_BAR_HEIGHT);
-}
-
 - (void) addSubview:(UIView *)view {
     [_contentView addSubview:view];
 }
