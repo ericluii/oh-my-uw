@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0702C3CC176E9E6C00F3D3E8 /* OMUImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702C3CB176E9E6C00F3D3E8 /* OMUImageManager.m */; };
+		07149FF617A411A000EF3270 /* OMUDirectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07149FF517A411A000EF3270 /* OMUDirectionViewController.m */; };
+		07149FF917A4129A00EF3270 /* OMUSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07149FF817A4129A00EF3270 /* OMUSocialViewController.m */; };
+		07149FFD17A418D400EF3270 /* OMULoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07149FFC17A418D400EF3270 /* OMULoadingView.m */; };
 		075393FE175981C600D59314 /* OMUNavigationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 075393FD175981C600D59314 /* OMUNavigationConstants.m */; };
 		07558F9517A3198100E01F39 /* OMUExamScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07558F9417A3198100E01F39 /* OMUExamScheduleViewController.m */; };
 		07558F9817A320E100E01F39 /* OMUExamScheduleCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07558F9717A320E100E01F39 /* OMUExamScheduleCourse.m */; };
@@ -19,6 +22,7 @@
 		0797986E1763BDDA00A36644 /* OMUCoursesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0797986D1763BDDA00A36644 /* OMUCoursesManager.m */; };
 		079798711763C89800A36644 /* OMUWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079798701763C89800A36644 /* OMUWeatherCell.m */; };
 		079798741763CDE100A36644 /* OMUMainWeatherCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 079798731763CDE100A36644 /* OMUMainWeatherCellView.m */; };
+		079A155917A434D4001A0B13 /* OMUDepartment.m in Sources */ = {isa = PBXBuildFile; fileRef = 079A155817A434D4001A0B13 /* OMUDepartment.m */; };
 		079B377F177BC53B001DA466 /* OMUSideMenuHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 079B377E177BC53B001DA466 /* OMUSideMenuHeader.m */; };
 		07A86E50175826ED0078ED36 /* OMUSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A86E4F175826ED0078ED36 /* OMUSideMenu.m */; };
 		07AA9AF917694BA600D90672 /* OMUDefaultLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AA9AF817694BA600D90672 /* OMUDefaultLoadingCell.m */; };
@@ -90,6 +94,12 @@
 /* Begin PBXFileReference section */
 		0702C3CA176E9E6C00F3D3E8 /* OMUImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUImageManager.h; path = Classes/OMUImageManager.h; sourceTree = "<group>"; };
 		0702C3CB176E9E6C00F3D3E8 /* OMUImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUImageManager.m; path = Classes/OMUImageManager.m; sourceTree = "<group>"; };
+		07149FF417A411A000EF3270 /* OMUDirectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUDirectionViewController.h; path = Classes/OMUDirectionViewController.h; sourceTree = "<group>"; };
+		07149FF517A411A000EF3270 /* OMUDirectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUDirectionViewController.m; path = Classes/OMUDirectionViewController.m; sourceTree = "<group>"; };
+		07149FF717A4129A00EF3270 /* OMUSocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUSocialViewController.h; path = Classes/OMUSocialViewController.h; sourceTree = "<group>"; };
+		07149FF817A4129A00EF3270 /* OMUSocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUSocialViewController.m; path = Classes/OMUSocialViewController.m; sourceTree = "<group>"; };
+		07149FFB17A418D400EF3270 /* OMULoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMULoadingView.h; path = Classes/OMULoadingView.h; sourceTree = "<group>"; };
+		07149FFC17A418D400EF3270 /* OMULoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMULoadingView.m; path = Classes/OMULoadingView.m; sourceTree = "<group>"; };
 		075393FC175981C600D59314 /* OMUNavigationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUNavigationConstants.h; path = Classes/OMUNavigationConstants.h; sourceTree = "<group>"; };
 		075393FD175981C600D59314 /* OMUNavigationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUNavigationConstants.m; path = Classes/OMUNavigationConstants.m; sourceTree = "<group>"; };
 		07558F9317A3198100E01F39 /* OMUExamScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUExamScheduleViewController.h; path = Classes/OMUExamScheduleViewController.h; sourceTree = "<group>"; };
@@ -112,6 +122,8 @@
 		079798701763C89800A36644 /* OMUWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUWeatherCell.m; path = Classes/OMUWeatherCell.m; sourceTree = "<group>"; };
 		079798721763CDE100A36644 /* OMUMainWeatherCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUMainWeatherCellView.h; path = Classes/OMUMainWeatherCellView.h; sourceTree = "<group>"; };
 		079798731763CDE100A36644 /* OMUMainWeatherCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUMainWeatherCellView.m; path = Classes/OMUMainWeatherCellView.m; sourceTree = "<group>"; };
+		079A155717A434D4001A0B13 /* OMUDepartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUDepartment.h; path = Classes/OMUDepartment.h; sourceTree = "<group>"; };
+		079A155817A434D4001A0B13 /* OMUDepartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUDepartment.m; path = Classes/OMUDepartment.m; sourceTree = "<group>"; };
 		079B377D177BC53B001DA466 /* OMUSideMenuHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUSideMenuHeader.h; path = Classes/OMUSideMenuHeader.h; sourceTree = "<group>"; };
 		079B377E177BC53B001DA466 /* OMUSideMenuHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMUSideMenuHeader.m; path = Classes/OMUSideMenuHeader.m; sourceTree = "<group>"; };
 		07A86E4E175826ED0078ED36 /* OMUSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMUSideMenu.h; path = Classes/OMUSideMenu.h; sourceTree = "<group>"; };
@@ -232,9 +244,19 @@
 			name = "Weather Cell";
 			sourceTree = "<group>";
 		};
+		07149FFA17A418B300EF3270 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				07149FFB17A418D400EF3270 /* OMULoadingView.h */,
+				07149FFC17A418D400EF3270 /* OMULoadingView.m */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
 		075393F317597CD100D59314 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				07149FFA17A418B300EF3270 /* General */,
 				07AA9AF617694B7500D90672 /* Home */,
 				07AA9AF517694B6500D90672 /* Navigation */,
 			);
@@ -396,6 +418,8 @@
 				0797986A1763845500A36644 /* OMUWeatherModel.m */,
 				07558F9617A320E100E01F39 /* OMUExamScheduleCourse.h */,
 				07558F9717A320E100E01F39 /* OMUExamScheduleCourse.m */,
+				079A155717A434D4001A0B13 /* OMUDepartment.h */,
+				079A155817A434D4001A0B13 /* OMUDepartment.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -413,6 +437,10 @@
 				07866D7917999327009893E4 /* OMUCoursesViewController.m */,
 				07558F9317A3198100E01F39 /* OMUExamScheduleViewController.h */,
 				07558F9417A3198100E01F39 /* OMUExamScheduleViewController.m */,
+				07149FF417A411A000EF3270 /* OMUDirectionViewController.h */,
+				07149FF517A411A000EF3270 /* OMUDirectionViewController.m */,
+				07149FF717A4129A00EF3270 /* OMUSocialViewController.h */,
+				07149FF817A4129A00EF3270 /* OMUSocialViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -631,6 +659,10 @@
 				07866D7D179994F7009893E4 /* OMUUIUtils.m in Sources */,
 				07558F9517A3198100E01F39 /* OMUExamScheduleViewController.m in Sources */,
 				07558F9817A320E100E01F39 /* OMUExamScheduleCourse.m in Sources */,
+				07149FF617A411A000EF3270 /* OMUDirectionViewController.m in Sources */,
+				07149FF917A4129A00EF3270 /* OMUSocialViewController.m in Sources */,
+				07149FFD17A418D400EF3270 /* OMULoadingView.m in Sources */,
+				079A155917A434D4001A0B13 /* OMUDepartment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

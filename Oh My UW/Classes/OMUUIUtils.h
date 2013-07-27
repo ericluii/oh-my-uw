@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@interface OMUUIUtils : NSObject
+
++(CGRect) fullscreenFrame;
+
+@end
+
 @interface UITableView (OMUDefaultTableView)
 
 + (UITableView *) defaultTableViewWithDelegateAndDataSource:(id) delegateDataSource;

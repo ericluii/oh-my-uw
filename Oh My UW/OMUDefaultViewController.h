@@ -21,6 +21,5 @@
 - (void) insertSubview:(UIView *)view atIndex:(NSInteger)index;
 - (void) pushViewController:(UIViewController *) controller;
 - (void) setRightBarButton:(UIButton *) button;
-+(CGRect)viewFrame;
 
 @end

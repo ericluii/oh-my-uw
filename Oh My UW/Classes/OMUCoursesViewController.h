@@ -7,8 +7,10 @@
 //
 
 #import "OMUDefaultViewController.h"
+#import "OMUCoursesManager.h"
+#import "OMULoadingView.h"
 
-@interface OMUCoursesViewController : OMUDefaultViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface OMUCoursesViewController : OMUDefaultViewController <UITableViewDataSource, UITableViewDelegate, OMUCoursesManagerDelegate, OMULoadingViewDelegate> {
     UITableView * _tableView;
 }
 

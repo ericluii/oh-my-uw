@@ -14,6 +14,8 @@
 #import "OMUCoursesViewController.h"
 #import "OMUExamScheduleViewController.h"
 #import "OMUSchoolOrganizerViewController.h"
+#import "OMUDirectionViewController.h"
+#import "OMUSocialViewController.h"
 #import "OMUAppDelegate.h"
 
 @implementation OMUSideMenu
@@ -108,7 +110,12 @@
         case sectionTypeHome:
             if (row == 1) {
                 return [[OMUSchoolOrganizerViewController alloc] init];
+            } else if (row == 2) {
+                return [[OMUDirectionViewController alloc] init];
+            } else if (row == 3) {
+                return [[OMUSocialViewController alloc] init];
             }
+            break;
         case sectionTypeSchool:
             if (row == 1) {
                 return [[OMUCoursesViewController alloc] init];

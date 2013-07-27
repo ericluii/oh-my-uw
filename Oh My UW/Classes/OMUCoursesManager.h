@@ -8,12 +8,32 @@
 
 #import <Foundation/Foundation.h>
 
-@interface OMUCoursesManager : NSObject
+@protocol OMUCoursesManagerDelegate <NSObject>
+
+@optional
+- (void) OMUCoursesManagerCompletedRequestWithSuccess:(id) result;
+- (void) OMUCoursesManagerCompletedRequestWithError:(NSError *) error;
+
+@end
+
+@interface OMUCoursesManager : NSObject {
+    NSMutableArray * _departmentArray;
+    
+    NSMutableArray * _examScheduleArray;
+    NSString * _examScheduleTerm;
+}
+
+@property (nonatomic, strong) id<OMUCoursesManagerDelegate> delegate;
 
 + (OMUCoursesManager *) sharedInstance;
-- (void) getAllCourses;
+
+// Profile Methods
 - (void) restoreCourses;
 - (void) saveCourses;
 - (BOOL) currentlyAtSchool;
+
+// Request Methods
+- (void) getExamSchedule;
+- (void) getDepartments;
 
 @end

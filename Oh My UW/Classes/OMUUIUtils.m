@@ -8,11 +8,21 @@
 
 #import "OMUUIUtils.h"
 #import "OMUDefaultViewController.h"
+#import "OMUNavigationConstants.h"
+#import "OMUDeviceUtils.h"
+
+@implementation OMUUIUtils
+
++(CGRect) fullscreenFrame {
+    return CGRectMake(0, [OMUDeviceUtils isIOS7] ? STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT : NAV_BAR_HEIGHT, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - NAV_BAR_HEIGHT - STATUS_BAR_HEIGHT);
+}
+
+@end
 
 @implementation UITableView (OMUDefaultTableView)
 
 + (UITableView *) defaultTableViewWithDelegateAndDataSource:(id) delegateDataSource {
-    UITableView * table = [[UITableView alloc] initWithFrame:[OMUDefaultViewController viewFrame]];
+    UITableView * table = [[UITableView alloc] initWithFrame:[OMUUIUtils fullscreenFrame]];
     [table setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:1]];
     [table setDelegate:delegateDataSource];
     [table setDataSource:delegateDataSource];
