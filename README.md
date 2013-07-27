@@ -11,7 +11,13 @@ Open source was the best choice for this project because I will not be at UW for
 
 I will be uploading a design plan soon so that other people will have an idea of the direction this project will be going.
 
------- Usage ------
+Coming Up
+=========
+
+Because of iOS 7 around the corner, the goal is to complete the functionality of the app as soon as possible, and then to work on the design at the end. Hopefully, a design which is suitable for iOS7 and iOS6 will come to life.
+
+Usage
+=====
 I give permission to use improve my code and enhance its functionality, but do not take the code and release it in the App Store as your own.
 
 Make pull requests, or message me to become a collaborator, and I will include your code with the project. When significant changes have been made, I will push the update to the App Store.
