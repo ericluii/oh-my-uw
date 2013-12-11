@@ -10,14 +10,14 @@
 
 @interface SideMenuView : UIView
 
-typedef enum sectionType {
+typedef enum SectionType {
     sectionTypeHome = 0,
     sectionTypeSchool,
     sectionTypeDirection,
     sectionTypeSocial,
-    sectionTypeOther,
-    numberOfCellType
-} sectionType;
+    numberOfCellType,
+    sectionTypeOther
+} SectionType;
 
 @property(nonatomic, strong) UITableView * menu;
 @property(nonatomic, strong) UIImageView * blurBackground;

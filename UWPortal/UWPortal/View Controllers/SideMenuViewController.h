@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "SideMenuView.h"
+#import "SideMenuHeaderView.h"
+
+
+// Removed SideMenuHeaderViewDelegate to temporarily disable tap to expand
 
 @interface SideMenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     SideMenuView *_sideMenuView;
+    SectionType _openSection;
 }
 
 @end

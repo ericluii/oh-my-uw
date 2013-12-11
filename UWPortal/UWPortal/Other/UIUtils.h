@@ -10,6 +10,14 @@
 
 @end
 
+@interface UIColor (CustomColors)
+
++(UIColor *) mainBackgroundColor;
++(UIColor *) navBarColor;
++(UIColor *) sideMenuColor;
+
+@end
+
 @interface UIImage (Blur)
 
 -(UIImage *)boxblurImageWithBlur:(CGFloat)blur;

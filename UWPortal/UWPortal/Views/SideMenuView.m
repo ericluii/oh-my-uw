@@ -12,20 +12,27 @@
 @implementation SideMenuView
 
 - (id)initWithMenuDelegate:(id) delegate {
-    NSInteger width = CGRectGetWidth([[UIScreen mainScreen] bounds]) - 60;
+    NSInteger width = CGRectGetWidth([[UIScreen mainScreen] bounds]) - 50;
     self = [super initWithFrame:CGRectMake(-width,
                                            0,
                                            width,
                                            CGRectGetHeight([[UIScreen mainScreen] bounds]))];
     if (self) {
         // Initialization code
+        UIView *statusCover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 20)];
+        [statusCover setBackgroundColor:[UIColor sideMenuColor]];
+        [statusCover setAlpha:0.3];
+        [self addSubview:statusCover];
+        
         _menu = [[UITableView alloc] initWithFrame:CGRectMake(0,
                                                               20,
                                                               width,
                                                               CGRectGetHeight([[UIScreen mainScreen] bounds]) - 20)];
         [_menu setBackgroundColor:[UIColor clearColor]];
+        [_menu setSeparatorInset:UIEdgeInsetsZero];
         [_menu setDelegate:delegate];
         [_menu setDataSource:delegate];
+        _menu.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
         [self addSubview:_menu];
         [self setBackgroundColor:[UIColor clearColor]];
         
@@ -122,8 +129,8 @@
         sectionHeaderTitles = @[@"Home",
                                 @"School Organizer",
                                 @"Directions",
-                                @"Social Feeds",
-                                @"Other Stuff"];
+                                @"Social Feeds"];//,
+                                //@"Other Stuff"];
     });
     
     return sectionHeaderTitles;
@@ -137,8 +144,8 @@
         sectionRowTitles = @[@[],
                              @[@"Courses", @"Exam Schedule"], // @"School Planner",  @"UW Learn", @"Jobmine", @"Quest", @"Assignments", @"Midterms",
                              @[@"Campus", @"Food", @"Study Spots", @"Parking"], // @"Around the City"
-                             @[@"Suggestions", @"About the App"],
-                             @[@"Reddit UW", @"Twitter", @"Goose Watch", @"Events"]]; // News
+                             @[@"Suggestions", @"About the App"]];//,
+                             //@[@"Reddit UW", @"Twitter", @"Goose Watch", @"Events"]]; // News
     });
     
     return sectionRowTitles;

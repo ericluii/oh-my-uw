@@ -9,6 +9,25 @@
 #import "UIUtils.h"
 #import <Accelerate/Accelerate.h>
 
+@implementation UIColor (CustomColors)
+
++(UIColor *) mainBackgroundColor {
+    return [UIColor whiteColor];
+}
+
++(UIColor *) navBarColor {
+    return [UIColor colorWithRed:255/255.0f
+                           green:210/255.0f
+                            blue:84/255.0f
+                           alpha:1];
+}
+
++(UIColor *) sideMenuColor {
+    return [UIColor blackColor];
+}
+
+@end
+
 @implementation UIImage (Blur)
 
 -(UIImage *)boxblurImageWithBlur:(CGFloat)blur {
