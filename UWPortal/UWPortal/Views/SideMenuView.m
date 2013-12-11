@@ -141,7 +141,7 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        sectionRowTitles = @[@[],
+        sectionRowTitles = @[@[@"Home"],
                              @[@"Courses", @"Exam Schedule"], // @"School Planner",  @"UW Learn", @"Jobmine", @"Quest", @"Assignments", @"Midterms",
                              @[@"Campus", @"Food", @"Study Spots", @"Parking"], // @"Around the City"
                              @[@"Suggestions", @"About the App"]];//,

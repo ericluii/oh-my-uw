@@ -80,10 +80,10 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return [SideMenuHeaderView headerHeight];
+    return section == sectionTypeHome ? 0 : [SideMenuHeaderView headerHeight];
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {    
     SideMenuHeaderView * header = [tableView dequeueReusableCellWithIdentifier:[SideMenuHeaderView reuseIdentifier]];
     
     if (!header) {
