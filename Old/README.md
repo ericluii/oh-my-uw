@@ -1,10 +1,3 @@
-UPDATE
-========
-
-Restarting this project with the new name - uw portal temporarily - since the project is very similar to UW'S official portal.
-We be implementing for iOS7 support ONLY.
-
-/////////////////
 oh-my-uw
 ========
 

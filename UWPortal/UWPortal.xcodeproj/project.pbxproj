@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0796BF171857DF7E00A0FF96 /* SideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796BF161857DF7E00A0FF96 /* SideMenuView.m */; };
+		07A8F8FB1857D779001FCDE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A8F8FA1857D779001FCDE3 /* Foundation.framework */; };
+		07A8F8FD1857D779001FCDE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A8F8FC1857D779001FCDE3 /* CoreGraphics.framework */; };
+		07A8F8FF1857D779001FCDE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A8F8FE1857D779001FCDE3 /* UIKit.framework */; };
+		07A8F9051857D779001FCDE3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07A8F9031857D779001FCDE3 /* InfoPlist.strings */; };
+		07A8F9071857D779001FCDE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A8F9061857D779001FCDE3 /* main.m */; };
+		07A8F90B1857D779001FCDE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A8F90A1857D779001FCDE3 /* AppDelegate.m */; };
+		07A8F90D1857D779001FCDE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A8F90C1857D779001FCDE3 /* Images.xcassets */; };
+		07A8F9141857D779001FCDE3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A8F9131857D779001FCDE3 /* XCTest.framework */; };
+		07A8F9151857D779001FCDE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A8F8FA1857D779001FCDE3 /* Foundation.framework */; };
+		07A8F9161857D779001FCDE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A8F8FE1857D779001FCDE3 /* UIKit.framework */; };
+		07A8F91E1857D779001FCDE3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07A8F91C1857D779001FCDE3 /* InfoPlist.strings */; };
+		07A8F9201857D779001FCDE3 /* UWPortalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A8F91F1857D779001FCDE3 /* UWPortalTests.m */; };
+		07A8F92F1857DA77001FCDE3 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A8F92E1857DA77001FCDE3 /* SideMenuViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07A8F9171857D779001FCDE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07A8F8EF1857D779001FCDE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07A8F8F61857D779001FCDE3;
+			remoteInfo = UWPortal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0796BF151857DF7E00A0FF96 /* SideMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuView.h; sourceTree = "<group>"; };
+		0796BF161857DF7E00A0FF96 /* SideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuView.m; sourceTree = "<group>"; };
+		07A8F8F71857D779001FCDE3 /* UWPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UWPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07A8F8FA1857D779001FCDE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		07A8F8FC1857D779001FCDE3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		07A8F8FE1857D779001FCDE3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		07A8F9021857D779001FCDE3 /* UWPortal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UWPortal-Info.plist"; sourceTree = "<group>"; };
+		07A8F9041857D779001FCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		07A8F9061857D779001FCDE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07A8F9081857D779001FCDE3 /* UWPortal-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UWPortal-Prefix.pch"; sourceTree = "<group>"; };
+		07A8F9091857D779001FCDE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		07A8F90A1857D779001FCDE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		07A8F90C1857D779001FCDE3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		07A8F9121857D779001FCDE3 /* UWPortalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UWPortalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07A8F9131857D779001FCDE3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		07A8F91B1857D779001FCDE3 /* UWPortalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UWPortalTests-Info.plist"; sourceTree = "<group>"; };
+		07A8F91D1857D779001FCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		07A8F91F1857D779001FCDE3 /* UWPortalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UWPortalTests.m; sourceTree = "<group>"; };
+		07A8F92D1857DA77001FCDE3 /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
+		07A8F92E1857DA77001FCDE3 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07A8F8F41857D779001FCDE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A8F8FD1857D779001FCDE3 /* CoreGraphics.framework in Frameworks */,
+				07A8F8FF1857D779001FCDE3 /* UIKit.framework in Frameworks */,
+				07A8F8FB1857D779001FCDE3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07A8F90F1857D779001FCDE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A8F9141857D779001FCDE3 /* XCTest.framework in Frameworks */,
+				07A8F9161857D779001FCDE3 /* UIKit.framework in Frameworks */,
+				07A8F9151857D779001FCDE3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0796BF141857DF4F00A0FF96 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0796BF151857DF7E00A0FF96 /* SideMenuView.h */,
+				0796BF161857DF7E00A0FF96 /* SideMenuView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		07A8F8EE1857D779001FCDE3 = {
+			isa = PBXGroup;
+			children = (
+				07A8F9001857D779001FCDE3 /* UWPortal */,
+				07A8F9191857D779001FCDE3 /* UWPortalTests */,
+				07A8F8F91857D779001FCDE3 /* Frameworks */,
+				07A8F8F81857D779001FCDE3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07A8F8F81857D779001FCDE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07A8F8F71857D779001FCDE3 /* UWPortal.app */,
+				07A8F9121857D779001FCDE3 /* UWPortalTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07A8F8F91857D779001FCDE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07A8F8FA1857D779001FCDE3 /* Foundation.framework */,
+				07A8F8FC1857D779001FCDE3 /* CoreGraphics.framework */,
+				07A8F8FE1857D779001FCDE3 /* UIKit.framework */,
+				07A8F9131857D779001FCDE3 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07A8F9001857D779001FCDE3 /* UWPortal */ = {
+			isa = PBXGroup;
+			children = (
+				0796BF141857DF4F00A0FF96 /* Views */,
+				07A8F9291857D9B4001FCDE3 /* ViewControllers */,
+				07A8F9091857D779001FCDE3 /* AppDelegate.h */,
+				07A8F90A1857D779001FCDE3 /* AppDelegate.m */,
+				07A8F90C1857D779001FCDE3 /* Images.xcassets */,
+				07A8F9011857D779001FCDE3 /* Supporting Files */,
+			);
+			path = UWPortal;
+			sourceTree = "<group>";
+		};
+		07A8F9011857D779001FCDE3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07A8F9021857D779001FCDE3 /* UWPortal-Info.plist */,
+				07A8F9031857D779001FCDE3 /* InfoPlist.strings */,
+				07A8F9061857D779001FCDE3 /* main.m */,
+				07A8F9081857D779001FCDE3 /* UWPortal-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07A8F9191857D779001FCDE3 /* UWPortalTests */ = {
+			isa = PBXGroup;
+			children = (
+				07A8F91F1857D779001FCDE3 /* UWPortalTests.m */,
+				07A8F91A1857D779001FCDE3 /* Supporting Files */,
+			);
+			path = UWPortalTests;
+			sourceTree = "<group>";
+		};
+		07A8F91A1857D779001FCDE3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07A8F91B1857D779001FCDE3 /* UWPortalTests-Info.plist */,
+				07A8F91C1857D779001FCDE3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07A8F9291857D9B4001FCDE3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				07A8F92D1857DA77001FCDE3 /* SideMenuViewController.h */,
+				07A8F92E1857DA77001FCDE3 /* SideMenuViewController.m */,
+			);
+			name = ViewControllers;
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07A8F8F61857D779001FCDE3 /* UWPortal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07A8F9231857D779001FCDE3 /* Build configuration list for PBXNativeTarget "UWPortal" */;
+			buildPhases = (
+				07A8F8F31857D779001FCDE3 /* Sources */,
+				07A8F8F41857D779001FCDE3 /* Frameworks */,
+				07A8F8F51857D779001FCDE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UWPortal;
+			productName = UWPortal;
+			productReference = 07A8F8F71857D779001FCDE3 /* UWPortal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		07A8F9111857D779001FCDE3 /* UWPortalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07A8F9261857D779001FCDE3 /* Build configuration list for PBXNativeTarget "UWPortalTests" */;
+			buildPhases = (
+				07A8F90E1857D779001FCDE3 /* Sources */,
+				07A8F90F1857D779001FCDE3 /* Frameworks */,
+				07A8F9101857D779001FCDE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07A8F9181857D779001FCDE3 /* PBXTargetDependency */,
+			);
+			name = UWPortalTests;
+			productName = UWPortalTests;
+			productReference = 07A8F9121857D779001FCDE3 /* UWPortalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07A8F8EF1857D779001FCDE3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Eric Lui";
+				TargetAttributes = {
+					07A8F9111857D779001FCDE3 = {
+						TestTargetID = 07A8F8F61857D779001FCDE3;
+					};
+				};
+			};
+			buildConfigurationList = 07A8F8F21857D779001FCDE3 /* Build configuration list for PBXProject "UWPortal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 07A8F8EE1857D779001FCDE3;
+			productRefGroup = 07A8F8F81857D779001FCDE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07A8F8F61857D779001FCDE3 /* UWPortal */,
+				07A8F9111857D779001FCDE3 /* UWPortalTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07A8F8F51857D779001FCDE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A8F9051857D779001FCDE3 /* InfoPlist.strings in Resources */,
+				07A8F90D1857D779001FCDE3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07A8F9101857D779001FCDE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A8F91E1857D779001FCDE3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07A8F8F31857D779001FCDE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A8F92F1857DA77001FCDE3 /* SideMenuViewController.m in Sources */,
+				07A8F90B1857D779001FCDE3 /* AppDelegate.m in Sources */,
+				0796BF171857DF7E00A0FF96 /* SideMenuView.m in Sources */,
+				07A8F9071857D779001FCDE3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07A8F90E1857D779001FCDE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A8F9201857D779001FCDE3 /* UWPortalTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07A8F9181857D779001FCDE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07A8F8F61857D779001FCDE3 /* UWPortal */;
+			targetProxy = 07A8F9171857D779001FCDE3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		07A8F9031857D779001FCDE3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07A8F9041857D779001FCDE3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		07A8F91C1857D779001FCDE3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07A8F91D1857D779001FCDE3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07A8F9211857D779001FCDE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		07A8F9221857D779001FCDE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07A8F9241857D779001FCDE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UWPortal/UWPortal-Prefix.pch";
+				INFOPLIST_FILE = "UWPortal/UWPortal-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		07A8F9251857D779001FCDE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UWPortal/UWPortal-Prefix.pch";
+				INFOPLIST_FILE = "UWPortal/UWPortal-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		07A8F9271857D779001FCDE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UWPortal.app/UWPortal";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UWPortal/UWPortal-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "UWPortalTests/UWPortalTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		07A8F9281857D779001FCDE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UWPortal.app/UWPortal";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UWPortal/UWPortal-Prefix.pch";
+				INFOPLIST_FILE = "UWPortalTests/UWPortalTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07A8F8F21857D779001FCDE3 /* Build configuration list for PBXProject "UWPortal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07A8F9211857D779001FCDE3 /* Debug */,
+				07A8F9221857D779001FCDE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07A8F9231857D779001FCDE3 /* Build configuration list for PBXNativeTarget "UWPortal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07A8F9241857D779001FCDE3 /* Debug */,
+				07A8F9251857D779001FCDE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07A8F9261857D779001FCDE3 /* Build configuration list for PBXNativeTarget "UWPortalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07A8F9271857D779001FCDE3 /* Debug */,
+				07A8F9281857D779001FCDE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07A8F8EF1857D779001FCDE3 /* Project object */;
+}
