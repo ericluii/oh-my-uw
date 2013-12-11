@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0727FB8B185827DC001479C8 /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FB8A185827DC001479C8 /* UIUtils.m */; };
 		0796BF171857DF7E00A0FF96 /* SideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796BF161857DF7E00A0FF96 /* SideMenuView.m */; };
 		07A8F8FB1857D779001FCDE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A8F8FA1857D779001FCDE3 /* Foundation.framework */; };
 		07A8F8FD1857D779001FCDE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A8F8FC1857D779001FCDE3 /* CoreGraphics.framework */; };
@@ -34,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0727FB89185827DC001479C8 /* UIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtils.h; sourceTree = "<group>"; };
+		0727FB8A185827DC001479C8 /* UIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtils.m; sourceTree = "<group>"; };
+		0727FB8C185828FF001479C8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		0796BF151857DF7E00A0FF96 /* SideMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuView.h; sourceTree = "<group>"; };
 		0796BF161857DF7E00A0FF96 /* SideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuView.m; sourceTree = "<group>"; };
 		07A8F8F71857D779001FCDE3 /* UWPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UWPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0727FB88185827AD001479C8 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0727FB89185827DC001479C8 /* UIUtils.h */,
+				0727FB8A185827DC001479C8 /* UIUtils.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		0796BF141857DF4F00A0FF96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +124,7 @@
 		07A8F8F91857D779001FCDE3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0727FB8C185828FF001479C8 /* CoreImage.framework */,
 				07A8F8FA1857D779001FCDE3 /* Foundation.framework */,
 				07A8F8FC1857D779001FCDE3 /* CoreGraphics.framework */,
 				07A8F8FE1857D779001FCDE3 /* UIKit.framework */,
@@ -122,6 +136,7 @@
 		07A8F9001857D779001FCDE3 /* UWPortal */ = {
 			isa = PBXGroup;
 			children = (
+				0727FB88185827AD001479C8 /* Other */,
 				0796BF141857DF4F00A0FF96 /* Views */,
 				07A8F9291857D9B4001FCDE3 /* ViewControllers */,
 				07A8F9091857D779001FCDE3 /* AppDelegate.h */,
@@ -270,6 +285,7 @@
 				07A8F90B1857D779001FCDE3 /* AppDelegate.m in Sources */,
 				0796BF171857DF7E00A0FF96 /* SideMenuView.m in Sources */,
 				07A8F9071857D779001FCDE3 /* main.m in Sources */,
+				0727FB8B185827DC001479C8 /* UIUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

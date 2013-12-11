@@ -22,6 +22,11 @@
         // Custom initialization
         _openSectionIndex = NSNotFound;
         [self.view setBackgroundColor:[UIColor blueColor]];
+        [self setTitle:@"Home"];
+        
+        UILabel * lbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, 200, 200)];
+        [lbl setText:@"IOGARWJJGAREIGAREIOJ"];
+        [self.view addSubview:lbl];
         
         UIPanGestureRecognizer * panDetection = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panHandler:)];
         [self.view addGestureRecognizer:panDetection];
@@ -70,35 +75,7 @@
 }
 
 - (void) panHandler:(UIPanGestureRecognizer *) recognizer {
-    if (recognizer.state == UIGestureRecognizerStateEnded) {
-        CGPoint vel = [recognizer velocityInView:self.view];
-        NSLog(@"%@", NSStringFromCGPoint(vel));
-        if (vel.x < 0) {
-            [UIView animateWithDuration:(vel.x < -500 ? 0.2 : 0.4) animations:^{
-                [_sideMenuView setFrame:CGRectMake(-CGRectGetWidth(_sideMenuView.frame),
-                                                  0,
-                                                  _sideMenuView.frame.size.width,
-                                                  _sideMenuView.frame.size.height)];
-            }];
-        } else {
-            [UIView animateWithDuration:(vel.x > 500 ? 0.2 : 0.4) animations:^{
-                [_sideMenuView setFrame:CGRectMake(0,
-                                                   0,
-                                                   _sideMenuView.frame.size.width,
-                                                   _sideMenuView.frame.size.height)];
-            }];
-        }
-    } else {
-        CGPoint translation = [recognizer translationInView:self.view];
-        float newX = _sideMenuView.frame.origin.x + translation.x;
-        
-        if (newX < -CGRectGetWidth(_sideMenuView.frame) || newX > 0) {
-            return;
-        }
-        
-        [_sideMenuView setFrame:CGRectMake(newX, 0, _sideMenuView.frame.size.width, _sideMenuView.frame.size.height)];
-        [recognizer setTranslation:CGPointMake(0, 0) inView:_sideMenuView];
-    }
+    [_sideMenuView panHandler:recognizer];
 }
 
 @end

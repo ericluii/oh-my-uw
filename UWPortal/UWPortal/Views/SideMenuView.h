@@ -20,8 +20,10 @@ typedef enum sectionType {
 } sectionType;
 
 @property(nonatomic, strong) UITableView * menu;
+@property(nonatomic, strong) UIImageView * blurBackground;
 
 - (id)initWithMenuDelegate:(id) delegate;
+- (void) panHandler:(UIPanGestureRecognizer *) recognizer;
 
 + (NSArray * const) sectionHeaderTitles;
 + (NSArray * const) sectionRowTitles;
