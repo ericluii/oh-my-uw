@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SideMenuView : UIView
+@interface SideMenuView : UIView <UITableViewDelegate, UITableViewDataSource> {
+    UIViewController * _ownerViewController;
+}
 
 typedef enum SectionType {
     sectionTypeHome = 0,
@@ -21,8 +23,9 @@ typedef enum SectionType {
 
 @property(nonatomic, strong) UITableView * menu;
 @property(nonatomic, strong) UIImageView * blurBackground;
+@property(nonatomic, strong) UIView * blockingView;
 
-- (id)initWithMenuDelegate:(id) delegate;
+- (id)initWithViewController:(UIViewController*)vc;
 - (void) panHandler:(UIPanGestureRecognizer *) recognizer;
 
 + (NSArray * const) sectionHeaderTitles;

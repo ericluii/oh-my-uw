@@ -7,11 +7,12 @@
 //
 
 #import "SideMenuView.h"
+#import "SideMenuHeaderView.h"
 #import "UIUtils.h"
 
 @implementation SideMenuView
 
-- (id)initWithMenuDelegate:(id) delegate {
+- (id)initWithViewController:(UIViewController*)vc {
     NSInteger width = CGRectGetWidth([[UIScreen mainScreen] bounds]) - 50;
     self = [super initWithFrame:CGRectMake(-width,
                                            0,
@@ -19,6 +20,18 @@
                                            CGRectGetHeight([[UIScreen mainScreen] bounds]))];
     if (self) {
         // Initialization code
+        _ownerViewController = vc;
+        
+        // Setup blocking view
+        _blockingView = [[UIView alloc] initWithFrame:CGRectMake(width,
+                                                                 0,
+                                                                 CGRectGetWidth([[UIScreen mainScreen] bounds]),
+                                                                 CGRectGetHeight([[UIScreen mainScreen] bounds]))];
+        [_blockingView setBackgroundColor:[UIColor blackColor]];
+        [_blockingView setAlpha:0];
+        [self addSubview:_blockingView];
+        
+        // Setup Side Menu
         UIView *statusCover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 20)];
         [statusCover setBackgroundColor:[UIColor sideMenuColor]];
         [statusCover setAlpha:0.3];
@@ -30,8 +43,8 @@
                                                               CGRectGetHeight([[UIScreen mainScreen] bounds]) - 20)];
         [_menu setBackgroundColor:[UIColor clearColor]];
         [_menu setSeparatorInset:UIEdgeInsetsZero];
-        [_menu setDelegate:delegate];
-        [_menu setDataSource:delegate];
+        [_menu setDelegate:self];
+        [_menu setDataSource:self];
         _menu.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
         [self addSubview:_menu];
         [self setBackgroundColor:[UIColor clearColor]];
@@ -55,6 +68,7 @@
 - (void) panHandler:(UIPanGestureRecognizer *) recognizer {
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         [_blurBackground setImage:[self getBlurredImage]];
+        [_ownerViewController.view setUserInteractionEnabled:NO];
     }
     
     if (recognizer.state == UIGestureRecognizerStateEnded) {
@@ -69,7 +83,10 @@
                                                     0,
                                                     0,
                                                      self.frame.size.height)];
+                [_blockingView setAlpha:0];
             }];
+            
+            [_ownerViewController.view setUserInteractionEnabled:YES];
         } else {
             [UIView animateWithDuration:(vel.x > 500 ? 0.2 : 0.4) animations:^{
                 [self setFrame:CGRectMake(0,
@@ -80,6 +97,7 @@
                                                      0,
                                                      CGRectGetWidth(self.frame),
                                                      self.frame.size.height)];
+                [_blockingView setAlpha:0.6];
             }];
         }
     } else {
@@ -91,6 +109,7 @@
         
         [self setFrame:CGRectMake(newX, 0, self.frame.size.width, self.frame.size.height)];
         [_blurBackground setFrame:CGRectMake(-newX, 0, CGRectGetWidth(self.frame) + newX, self.frame.size.height)];
+        [_blockingView setAlpha:((CGRectGetWidth(self.frame) + newX)/CGRectGetWidth(self.frame))*0.6];
         [recognizer setTranslation:CGPointMake(0, 0) inView:self];
     }
 }
@@ -110,8 +129,8 @@
     CGContextRef c = UIGraphicsGetCurrentContext();
     CGContextTranslateCTM(c, -x, -y);
     
-    CALayer* lyer = ((UIViewController*)_menu.delegate).view.layer;
-    [lyer addSublayer:((UIViewController*)_menu.delegate).navigationController.navigationBar.layer];
+    CALayer* lyer = _ownerViewController.view.layer;
+    [lyer addSublayer:_ownerViewController.navigationController.navigationBar.layer];
     [lyer renderInContext:c]; // view is the view you are grabbing the screen shot of. The view that is to be blurred.
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -149,6 +168,50 @@
     });
     
     return sectionRowTitles;
+}
+
+#pragma mark - Tableview Delegate and Datasource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return numberOfCellType;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [[[SideMenuView sectionRowTitles] objectAtIndex:section] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"bob"];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"bob"];
+        [cell setBackgroundColor:[UIColor clearColor]];
+        [cell setBackgroundView:[[UIView alloc] initWithFrame:cell.frame]];
+        [cell.backgroundView setBackgroundColor:[UIColor sideMenuColor]];
+        [cell.backgroundView setAlpha:0.1];
+    }
+    
+    [cell.textLabel setText:[[[SideMenuView sectionRowTitles]
+                              objectAtIndex:indexPath.section]
+                             objectAtIndex:indexPath.row]];
+    
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return section == sectionTypeHome ? 0 : [SideMenuHeaderView headerHeight];
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    SideMenuHeaderView * header = [tableView dequeueReusableCellWithIdentifier:[SideMenuHeaderView reuseIdentifier]];
+    
+    if (!header) {
+        header = [[SideMenuHeaderView alloc] initWithSectionNumber:section];
+    }
+    
+    [header.textLabel setText:[[SideMenuView sectionHeaderTitles] objectAtIndex:section]];
+    
+    return header;
 }
 
 @end

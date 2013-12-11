@@ -15,14 +15,13 @@
 
 @implementation SideMenuViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)initWithTitle:(NSString*)title {
+    self = [super initWithNibName:nil bundle:nil];
     if (self) {
         // Custom initialization
         _openSection = numberOfCellType;
         [self.view setBackgroundColor:[UIColor mainBackgroundColor]];
-        [self setTitle:@"Home"];
+        [self setTitle:title];
         
         UIPanGestureRecognizer * panDetection = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panHandler:)];
         [self.view addGestureRecognizer:panDetection];
@@ -34,7 +33,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _sideMenuView = [[SideMenuView alloc] initWithMenuDelegate:self];
+    _sideMenuView = [[SideMenuView alloc] initWithViewController:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -49,50 +48,6 @@
 
 - (void) panHandler:(UIPanGestureRecognizer *) recognizer {
     [_sideMenuView panHandler:recognizer];
-}
-
-#pragma mark - Tableview Delegate and Datasource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return numberOfCellType;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[SideMenuView sectionRowTitles] objectAtIndex:section] count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"bob"];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"bob"];
-        [cell setBackgroundColor:[UIColor clearColor]];
-        [cell setBackgroundView:[[UIView alloc] initWithFrame:cell.frame]];
-        [cell.backgroundView setBackgroundColor:[UIColor sideMenuColor]];
-        [cell.backgroundView setAlpha:0.1];
-    }
-
-    [cell.textLabel setText:[[[SideMenuView sectionRowTitles]
-                                objectAtIndex:indexPath.section]
-                                objectAtIndex:indexPath.row]];
-    
-    return cell;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return section == sectionTypeHome ? 0 : [SideMenuHeaderView headerHeight];
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {    
-    SideMenuHeaderView * header = [tableView dequeueReusableCellWithIdentifier:[SideMenuHeaderView reuseIdentifier]];
-    
-    if (!header) {
-        header = [[SideMenuHeaderView alloc] initWithSectionNumber:section];
-    }
-    
-    [header.textLabel setText:[[SideMenuView sectionHeaderTitles] objectAtIndex:section]];
-    
-    return header;
 }
 
 #pragma mark - Side Menu Header Delegate Methods
