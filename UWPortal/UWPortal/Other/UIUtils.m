@@ -17,7 +17,7 @@
 
 +(UIColor *) navBarColor {
     return [UIColor colorWithRed:255/255.0f
-                           green:210/255.0f
+                           green:235/255.0f
                             blue:84/255.0f
                            alpha:1];
 }
