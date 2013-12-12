@@ -19,7 +19,7 @@
         [self setFrame:CGRectMake(0,
                                   0,
                                   CGRectGetWidth([[UIScreen mainScreen] bounds]) - 50,
-                                  65)];
+                                  50)];
         [self setBackgroundView:[[UIView alloc] initWithFrame:self.frame]];
         [self.backgroundView setBackgroundColor:[UIColor sideMenuColor]];
         [self.backgroundView setAlpha:0.3];
@@ -53,7 +53,7 @@
 }
 
 + (NSInteger)headerHeight {
-    return 65;
+    return 50;
 }
 
 + (NSString*)reuseIdentifier {

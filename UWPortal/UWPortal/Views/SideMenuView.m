@@ -11,6 +11,12 @@
 #import "UIUtils.h"
 #import "HomeViewController.h"
 #import "ExamScheduleViewController.h"
+#import "CourseViewController.h"
+#import "CampusViewController.h"
+#import "FoodViewController.h"
+#import "ParkingViewController.h"
+#import "SuggestionsViewController.h"
+#import "AboutViewController.h"
 #import "AppDelegate.h"
 
 @implementation SideMenuView
@@ -24,6 +30,7 @@
     if (self) {
         // Initialization code
         _ownerViewController = vc;
+        _isShowing = NO;
         
         // Setup blocking view
         _blockingView = [[UIView alloc] initWithFrame:CGRectMake(width,
@@ -69,7 +76,7 @@
 
 - (void) panHandler:(UIPanGestureRecognizer *) recognizer {
     if (recognizer.state == UIGestureRecognizerStateBegan) {
-        [_blurBackground setImage:[self getBlurredImage]];
+        if (!_isShowing) { [_blurBackground setImage:[self getBlurredImage]]; }
         [_ownerViewController.view setUserInteractionEnabled:NO];
     }
     
@@ -78,29 +85,32 @@
         if (vel.x < 0) {
             [UIView animateWithDuration:(vel.x < -500 ? 0.2 : 0.4) animations:^{
                 [self setFrame:CGRectMake(-CGRectGetWidth(self.frame),
-                                                   0,
-                                                   self.frame.size.width,
-                                                   self.frame.size.height)];
+                                          0,
+                                          self.frame.size.width,
+                                          self.frame.size.height)];
                 [_blurBackground setFrame:CGRectMake(CGRectGetWidth(self.frame),
-                                                    0,
-                                                    0,
+                                                     0,
+                                                     0,
                                                      self.frame.size.height)];
                 [_blockingView setAlpha:0];
             }];
             
             [_ownerViewController.view setUserInteractionEnabled:YES];
+            _isShowing = NO;
         } else {
             [UIView animateWithDuration:(vel.x > 500 ? 0.2 : 0.4) animations:^{
                 [self setFrame:CGRectMake(0,
-                                                   0,
-                                                   self.frame.size.width,
-                                                   self.frame.size.height)];
+                                          0,
+                                          self.frame.size.width,
+                                          self.frame.size.height)];
                 [_blurBackground setFrame:CGRectMake(0,
                                                      0,
                                                      CGRectGetWidth(self.frame),
                                                      self.frame.size.height)];
-                [_blockingView setAlpha:0.6];
+                [_blockingView setAlpha:0.4];
             }];
+            
+            _isShowing = YES;
         }
     } else {
         CGPoint translation = [recognizer translationInView:self];
@@ -111,7 +121,7 @@
         
         [self setFrame:CGRectMake(newX, 0, self.frame.size.width, self.frame.size.height)];
         [_blurBackground setFrame:CGRectMake(-newX, 0, CGRectGetWidth(self.frame) + newX, self.frame.size.height)];
-        [_blockingView setAlpha:((CGRectGetWidth(self.frame) + newX)/CGRectGetWidth(self.frame))*0.6];
+        [_blockingView setAlpha:((CGRectGetWidth(self.frame) + newX)/CGRectGetWidth(self.frame))*0.4];
         [recognizer setTranslation:CGPointMake(0, 0) inView:self];
     }
 }
@@ -145,7 +155,7 @@
         sectionHeaderTitles = @[@"School Organizer",
                                 @"Directions",
                                 @"Social Feeds"];//,
-                                //@"Other Stuff"];
+        //@"Other Stuff"];
     });
     
     return sectionHeaderTitles;
@@ -157,9 +167,9 @@
     
     dispatch_once(&onceToken, ^{
         sectionRowTitles = @[@[@"Courses", @"Exam Schedule"], // @"School Planner",  @"UW Learn", @"Jobmine", @"Quest", @"Assignments", @"Midterms",
-                             @[@"Campus", @"Food", @"Study Spots", @"Parking"], // @"Around the City"
+                             @[@"Campus", @"Food", @"Parking"], // @"Around the City", @"Study Spots",
                              @[@"Suggestions", @"About the App"]];//,
-                             //@[@"Reddit UW", @"Twitter", @"Goose Watch", @"Events"]]; // News
+        //@[@"Reddit UW", @"Twitter", @"Goose Watch", @"Events"]]; // News
     });
     
     return sectionRowTitles;
@@ -222,9 +232,44 @@
         [_blockingView setAlpha:0];
     }];
     [_ownerViewController.view setUserInteractionEnabled:YES];
+    _isShowing = NO;
     
     [_ownerViewController.navigationController popToRootViewControllerAnimated:NO];
-    [[[AppDelegate appDelegate] rootViewController].navigationController pushViewController:[[ExamScheduleViewController alloc] init] animated:YES];
+    [[[AppDelegate appDelegate] rootViewController].navigationController
+                pushViewController:[SideMenuView viewControllerForIndexPath:indexPath]
+                animated:YES];
+}
+
++(UIViewController*)viewControllerForIndexPath:(NSIndexPath*)indexPath {
+    switch (indexPath.section) {
+        case sectionTypeSchool:
+            if (indexPath.row == 0) {
+                return [[CourseViewController alloc] init];
+            } else if (indexPath.row == 1) {
+                return [[ExamScheduleViewController alloc] init];
+            }
+            break;
+        case sectionTypeDirection:
+            if (indexPath.row == 0) {
+                return [[CampusViewController alloc] init];
+            } else if (indexPath.row == 1) {
+                return [[FoodViewController alloc] init];
+            } else if (indexPath.row == 2) {
+                return [[ParkingViewController alloc] init];
+            }
+            break;
+        case sectionTypeSocial:
+            break;
+        case sectionTypeOther:
+            if (indexPath.row == 0) {
+                return [[SuggestionsViewController alloc] init];
+            } else if (indexPath.row == 1) {
+                return [[AboutViewController alloc] init];
+            }
+            break;
+    }
+    
+    return nil;
 }
 
 @end

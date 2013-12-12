@@ -551,6 +551,11 @@
 				CLASSPREFIX = OMU;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Eric Lui";
+				TargetAttributes = {
+					07AD0EA81746E5CC002BF8F6 = {
+						DevelopmentTeam = GV74JYWEKW;
+					};
+				};
 			};
 			buildConfigurationList = 07AD0EA41746E5CB002BF8F6 /* Build configuration list for PBXProject "Oh_My_UW" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -759,15 +764,15 @@
 		07AD0ED01746E5CC002BF8F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Eric Lui (X64FHS5GGN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Eric Lui (X64FHS5GGN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Oh My UW/Oh_My_UW-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Oh My UW/Oh_My_UW-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B42C2536-5397-406E-B83B-0D6E04B562C4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B42C2536-5397-406E-B83B-0D6E04B562C4";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "18843F3A-E866-4D94-9B6E-455612C18698";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -776,15 +781,15 @@
 		07AD0ED11746E5CC002BF8F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Eric Lui (X64FHS5GGN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Eric Lui (X64FHS5GGN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Oh My UW/Oh_My_UW-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Oh My UW/Oh_My_UW-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B42C2536-5397-406E-B83B-0D6E04B562C4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B42C2536-5397-406E-B83B-0D6E04B562C4";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "18843F3A-E866-4D94-9B6E-455612C18698";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

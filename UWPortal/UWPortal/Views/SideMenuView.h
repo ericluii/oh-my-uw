@@ -10,14 +10,15 @@
 
 @interface SideMenuView : UIView <UITableViewDelegate, UITableViewDataSource> {
     UIViewController * _ownerViewController;
+    BOOL _isShowing;
 }
 
 typedef enum SectionType {
     sectionTypeSchool = 0,
     sectionTypeDirection,
-    sectionTypeSocial,
+    sectionTypeOther,
     numberOfCellType,
-    sectionTypeOther
+    sectionTypeSocial
 } SectionType;
 
 @property(nonatomic, strong) UITableView * menu;

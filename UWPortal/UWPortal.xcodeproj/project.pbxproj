@@ -11,6 +11,12 @@
 		0727FB901858ED37001479C8 /* SideMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FB8F1858ED37001479C8 /* SideMenuHeaderView.m */; };
 		0727FB9318590B06001479C8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FB9218590B06001479C8 /* HomeViewController.m */; };
 		0727FB961859161D001479C8 /* ExamScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FB951859161D001479C8 /* ExamScheduleViewController.m */; };
+		0727FB9A18596550001479C8 /* CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FB9918596550001479C8 /* CourseViewController.m */; };
+		0727FB9D185967B0001479C8 /* CampusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FB9C185967B0001479C8 /* CampusViewController.m */; };
+		0727FBA01859688A001479C8 /* FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FB9F1859688A001479C8 /* FoodViewController.m */; };
+		0727FBA3185968E1001479C8 /* ParkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FBA2185968E1001479C8 /* ParkingViewController.m */; };
+		0727FBA618596945001479C8 /* SuggestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FBA518596945001479C8 /* SuggestionsViewController.m */; };
+		0727FBA918596969001479C8 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FBA818596969001479C8 /* AboutViewController.m */; };
 		0796BF171857DF7E00A0FF96 /* SideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796BF161857DF7E00A0FF96 /* SideMenuView.m */; };
 		07A8F8FB1857D779001FCDE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A8F8FA1857D779001FCDE3 /* Foundation.framework */; };
 		07A8F8FD1857D779001FCDE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A8F8FC1857D779001FCDE3 /* CoreGraphics.framework */; };
@@ -47,6 +53,18 @@
 		0727FB9218590B06001479C8 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0727FB941859161D001479C8 /* ExamScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamScheduleViewController.h; sourceTree = "<group>"; };
 		0727FB951859161D001479C8 /* ExamScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamScheduleViewController.m; sourceTree = "<group>"; };
+		0727FB9818596550001479C8 /* CourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseViewController.h; sourceTree = "<group>"; };
+		0727FB9918596550001479C8 /* CourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseViewController.m; sourceTree = "<group>"; };
+		0727FB9B185967B0001479C8 /* CampusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampusViewController.h; sourceTree = "<group>"; };
+		0727FB9C185967B0001479C8 /* CampusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampusViewController.m; sourceTree = "<group>"; };
+		0727FB9E1859688A001479C8 /* FoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodViewController.h; sourceTree = "<group>"; };
+		0727FB9F1859688A001479C8 /* FoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodViewController.m; sourceTree = "<group>"; };
+		0727FBA1185968E1001479C8 /* ParkingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkingViewController.h; sourceTree = "<group>"; };
+		0727FBA2185968E1001479C8 /* ParkingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkingViewController.m; sourceTree = "<group>"; };
+		0727FBA418596945001479C8 /* SuggestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionsViewController.h; sourceTree = "<group>"; };
+		0727FBA518596945001479C8 /* SuggestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionsViewController.m; sourceTree = "<group>"; };
+		0727FBA718596969001479C8 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		0727FBA818596969001479C8 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		0796BF151857DF7E00A0FF96 /* SideMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuView.h; sourceTree = "<group>"; };
 		0796BF161857DF7E00A0FF96 /* SideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuView.m; sourceTree = "<group>"; };
 		07A8F8F71857D779001FCDE3 /* UWPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UWPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				0727FB88185827AD001479C8 /* Other */,
-				0796BF141857DF4F00A0FF96 /* Views */,
 				07A8F9291857D9B4001FCDE3 /* ViewControllers */,
+				0796BF141857DF4F00A0FF96 /* Views */,
 				07A8F9091857D779001FCDE3 /* AppDelegate.h */,
 				07A8F90A1857D779001FCDE3 /* AppDelegate.m */,
 				07A8F90C1857D779001FCDE3 /* Images.xcassets */,
@@ -196,6 +214,18 @@
 				0727FB9218590B06001479C8 /* HomeViewController.m */,
 				0727FB941859161D001479C8 /* ExamScheduleViewController.h */,
 				0727FB951859161D001479C8 /* ExamScheduleViewController.m */,
+				0727FB9818596550001479C8 /* CourseViewController.h */,
+				0727FB9918596550001479C8 /* CourseViewController.m */,
+				0727FB9B185967B0001479C8 /* CampusViewController.h */,
+				0727FB9C185967B0001479C8 /* CampusViewController.m */,
+				0727FB9E1859688A001479C8 /* FoodViewController.h */,
+				0727FB9F1859688A001479C8 /* FoodViewController.m */,
+				0727FBA1185968E1001479C8 /* ParkingViewController.h */,
+				0727FBA2185968E1001479C8 /* ParkingViewController.m */,
+				0727FBA418596945001479C8 /* SuggestionsViewController.h */,
+				0727FBA518596945001479C8 /* SuggestionsViewController.m */,
+				0727FBA718596969001479C8 /* AboutViewController.h */,
+				0727FBA818596969001479C8 /* AboutViewController.m */,
 			);
 			name = ViewControllers;
 			path = "View Controllers";
@@ -248,6 +278,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Eric Lui";
 				TargetAttributes = {
+					07A8F8F61857D779001FCDE3 = {
+						DevelopmentTeam = GV74JYWEKW;
+					};
 					07A8F9111857D779001FCDE3 = {
 						TestTargetID = 07A8F8F61857D779001FCDE3;
 					};
@@ -296,12 +329,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0727FBA01859688A001479C8 /* FoodViewController.m in Sources */,
+				0727FBA3185968E1001479C8 /* ParkingViewController.m in Sources */,
 				07A8F92F1857DA77001FCDE3 /* SideMenuViewController.m in Sources */,
 				0727FB901858ED37001479C8 /* SideMenuHeaderView.m in Sources */,
 				07A8F90B1857D779001FCDE3 /* AppDelegate.m in Sources */,
+				0727FBA618596945001479C8 /* SuggestionsViewController.m in Sources */,
+				0727FB9A18596550001479C8 /* CourseViewController.m in Sources */,
 				0796BF171857DF7E00A0FF96 /* SideMenuView.m in Sources */,
 				07A8F9071857D779001FCDE3 /* main.m in Sources */,
 				0727FB9318590B06001479C8 /* HomeViewController.m in Sources */,
+				0727FBA918596969001479C8 /* AboutViewController.m in Sources */,
+				0727FB9D185967B0001479C8 /* CampusViewController.m in Sources */,
 				0727FB961859161D001479C8 /* ExamScheduleViewController.m in Sources */,
 				0727FB8B185827DC001479C8 /* UIUtils.m in Sources */,
 			);
@@ -422,10 +461,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UWPortal/UWPortal-Prefix.pch";
 				INFOPLIST_FILE = "UWPortal/UWPortal-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -435,10 +477,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UWPortal/UWPortal-Prefix.pch";
 				INFOPLIST_FILE = "UWPortal/UWPortal-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
