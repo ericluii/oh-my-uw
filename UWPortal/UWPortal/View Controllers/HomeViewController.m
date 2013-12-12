@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "ExamScheduleViewController.h"
 
 @interface HomeViewController ()
 
@@ -28,9 +29,29 @@
 	// Do any additional setup after loading the view.
     
     _widgetTable = [[UITableView alloc] initWithFrame:self.view.frame];
-//    [_widgetTable setDelegate:self];
-//    [_widgetTable setDataSource:self];
+    [_widgetTable setDelegate:self];
+    [_widgetTable setDataSource:self];
     [self.view addSubview:_widgetTable];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"bingo"];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"bingo"];
+    }
+    
+    [cell.textLabel setText:@"Weather Info"];
+    
+    return cell;
 }
 
 @end

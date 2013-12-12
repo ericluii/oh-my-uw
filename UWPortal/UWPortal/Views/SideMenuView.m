@@ -9,6 +9,9 @@
 #import "SideMenuView.h"
 #import "SideMenuHeaderView.h"
 #import "UIUtils.h"
+#import "HomeViewController.h"
+#import "ExamScheduleViewController.h"
+#import "AppDelegate.h"
 
 @implementation SideMenuView
 
@@ -32,15 +35,15 @@
         [self addSubview:_blockingView];
         
         // Setup Side Menu
-        UIView *statusCover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 20)];
+        UIView *statusCover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 64)];
         [statusCover setBackgroundColor:[UIColor sideMenuColor]];
         [statusCover setAlpha:0.3];
         [self addSubview:statusCover];
         
         _menu = [[UITableView alloc] initWithFrame:CGRectMake(0,
-                                                              20,
+                                                              64,
                                                               width,
-                                                              CGRectGetHeight([[UIScreen mainScreen] bounds]) - 20)];
+                                                              CGRectGetHeight([[UIScreen mainScreen] bounds]) - 64)];
         [_menu setBackgroundColor:[UIColor clearColor]];
         [_menu setSeparatorInset:UIEdgeInsetsZero];
         [_menu setDelegate:self];
@@ -56,7 +59,6 @@
                                                                         CGRectGetHeight([[UIScreen mainScreen] bounds]))];
         [_blurBackground setContentMode:UIViewContentModeLeft];
         [_blurBackground setClipsToBounds:YES];
-        [_blurBackground setImage:[self getBlurredImage]];
         [self insertSubview:_blurBackground atIndex:0];
         
         UIPanGestureRecognizer * panDetection = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panHandler:)];
@@ -119,19 +121,14 @@
     // You will want to calculate this in code based on the view you will be presenting.
     float x = 0;
     float y = 0;
-    CGSize size = CGSizeMake(self.frame.size.width,self.frame.size.height);
-    
-    if (size.width == 0) {
-        return nil;
-    }
+    CGSize size = self.frame.size;
     
     UIGraphicsBeginImageContext(size);
     CGContextRef c = UIGraphicsGetCurrentContext();
     CGContextTranslateCTM(c, -x, -y);
     
-    CALayer* lyer = _ownerViewController.view.layer;
-    [lyer addSublayer:_ownerViewController.navigationController.navigationBar.layer];
-    [lyer renderInContext:c]; // view is the view you are grabbing the screen shot of. The view that is to be blurred.
+    [((UIWindow*)[[[UIApplication sharedApplication] windows] lastObject]).layer renderInContext:c];
+    // view is the view you are grabbing the screen shot of. The view that is to be blurred.
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -145,8 +142,7 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        sectionHeaderTitles = @[@"Home",
-                                @"School Organizer",
+        sectionHeaderTitles = @[@"School Organizer",
                                 @"Directions",
                                 @"Social Feeds"];//,
                                 //@"Other Stuff"];
@@ -160,8 +156,7 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        sectionRowTitles = @[@[@"Home"],
-                             @[@"Courses", @"Exam Schedule"], // @"School Planner",  @"UW Learn", @"Jobmine", @"Quest", @"Assignments", @"Midterms",
+        sectionRowTitles = @[@[@"Courses", @"Exam Schedule"], // @"School Planner",  @"UW Learn", @"Jobmine", @"Quest", @"Assignments", @"Midterms",
                              @[@"Campus", @"Food", @"Study Spots", @"Parking"], // @"Around the City"
                              @[@"Suggestions", @"About the App"]];//,
                              //@[@"Reddit UW", @"Twitter", @"Goose Watch", @"Events"]]; // News
@@ -199,7 +194,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return section == sectionTypeHome ? 0 : [SideMenuHeaderView headerHeight];
+    return [SideMenuHeaderView headerHeight];
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -212,6 +207,24 @@
     [header.textLabel setText:[[SideMenuView sectionHeaderTitles] objectAtIndex:section]];
     
     return header;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [UIView animateWithDuration:(0.3) animations:^{
+        [self setFrame:CGRectMake(-CGRectGetWidth(self.frame),
+                                  0,
+                                  self.frame.size.width,
+                                  self.frame.size.height)];
+        [_blurBackground setFrame:CGRectMake(CGRectGetWidth(self.frame),
+                                             0,
+                                             0,
+                                             self.frame.size.height)];
+        [_blockingView setAlpha:0];
+    }];
+    [_ownerViewController.view setUserInteractionEnabled:YES];
+    
+    [_ownerViewController.navigationController popToRootViewControllerAnimated:NO];
+    [[[AppDelegate appDelegate] rootViewController].navigationController pushViewController:[[ExamScheduleViewController alloc] init] animated:YES];
 }
 
 @end

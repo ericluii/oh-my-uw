@@ -10,6 +10,7 @@
 		0727FB8B185827DC001479C8 /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FB8A185827DC001479C8 /* UIUtils.m */; };
 		0727FB901858ED37001479C8 /* SideMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FB8F1858ED37001479C8 /* SideMenuHeaderView.m */; };
 		0727FB9318590B06001479C8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FB9218590B06001479C8 /* HomeViewController.m */; };
+		0727FB961859161D001479C8 /* ExamScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FB951859161D001479C8 /* ExamScheduleViewController.m */; };
 		0796BF171857DF7E00A0FF96 /* SideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796BF161857DF7E00A0FF96 /* SideMenuView.m */; };
 		07A8F8FB1857D779001FCDE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A8F8FA1857D779001FCDE3 /* Foundation.framework */; };
 		07A8F8FD1857D779001FCDE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A8F8FC1857D779001FCDE3 /* CoreGraphics.framework */; };
@@ -44,6 +45,8 @@
 		0727FB8F1858ED37001479C8 /* SideMenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuHeaderView.m; sourceTree = "<group>"; };
 		0727FB9118590B06001479C8 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0727FB9218590B06001479C8 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		0727FB941859161D001479C8 /* ExamScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamScheduleViewController.h; sourceTree = "<group>"; };
+		0727FB951859161D001479C8 /* ExamScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamScheduleViewController.m; sourceTree = "<group>"; };
 		0796BF151857DF7E00A0FF96 /* SideMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuView.h; sourceTree = "<group>"; };
 		0796BF161857DF7E00A0FF96 /* SideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuView.m; sourceTree = "<group>"; };
 		07A8F8F71857D779001FCDE3 /* UWPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UWPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +194,8 @@
 				07A8F92E1857DA77001FCDE3 /* SideMenuViewController.m */,
 				0727FB9118590B06001479C8 /* HomeViewController.h */,
 				0727FB9218590B06001479C8 /* HomeViewController.m */,
+				0727FB941859161D001479C8 /* ExamScheduleViewController.h */,
+				0727FB951859161D001479C8 /* ExamScheduleViewController.m */,
 			);
 			name = ViewControllers;
 			path = "View Controllers";
@@ -297,6 +302,7 @@
 				0796BF171857DF7E00A0FF96 /* SideMenuView.m in Sources */,
 				07A8F9071857D779001FCDE3 /* main.m in Sources */,
 				0727FB9318590B06001479C8 /* HomeViewController.m in Sources */,
+				0727FB961859161D001479C8 /* ExamScheduleViewController.m in Sources */,
 				0727FB8B185827DC001479C8 /* UIUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

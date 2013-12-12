@@ -9,14 +9,20 @@
 #import "AppDelegate.h"
 #import "HomeViewController.h"
 #import "UIUtils.h"
+#import "SideMenuView.h"
 
 @implementation AppDelegate
+
++ (AppDelegate *) appDelegate {
+	return [[UIApplication sharedApplication] delegate];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    _navigator = [[UINavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
+    _rootViewController = [[HomeViewController alloc] init];
+    _navigator = [[UINavigationController alloc] initWithRootViewController:_rootViewController];
     
     [_navigator.navigationBar setBarTintColor:[UIColor navBarColor]];
     _navigator.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor]

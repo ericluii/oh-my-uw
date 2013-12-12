@@ -8,7 +8,7 @@
 
 #import "SideMenuViewController.h"
 
-@interface HomeViewController : SideMenuViewController {
+@interface HomeViewController : SideMenuViewController <UITableViewDataSource, UITableViewDelegate> {
     
 }
 

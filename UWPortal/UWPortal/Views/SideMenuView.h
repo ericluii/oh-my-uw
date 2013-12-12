@@ -13,8 +13,7 @@
 }
 
 typedef enum SectionType {
-    sectionTypeHome = 0,
-    sectionTypeSchool,
+    sectionTypeSchool = 0,
     sectionTypeDirection,
     sectionTypeSocial,
     numberOfCellType,
