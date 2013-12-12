@@ -52,6 +52,7 @@
                                                               CGRectGetHeight([[UIScreen mainScreen] bounds]) - 64)];
         [_menu setBackgroundColor:[UIColor sideMenuColor]];
         [_menu setSeparatorInset:UIEdgeInsetsZero];
+        [_menu setShowsVerticalScrollIndicator:NO];
         [_menu setDelegate:self];
         [_menu setDataSource:self];
         _menu.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
