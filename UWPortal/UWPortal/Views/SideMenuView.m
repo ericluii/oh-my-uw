@@ -37,21 +37,20 @@
                                                                  0,
                                                                  CGRectGetWidth([[UIScreen mainScreen] bounds]),
                                                                  CGRectGetHeight([[UIScreen mainScreen] bounds]))];
-        [_blockingView setBackgroundColor:[UIColor blackColor]];
+        [_blockingView setBackgroundColor:[UIColor whiteColor]];
         [_blockingView setAlpha:0];
         [self addSubview:_blockingView];
         
         // Setup Side Menu
         UIView *statusCover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 64)];
         [statusCover setBackgroundColor:[UIColor sideMenuColor]];
-        [statusCover setAlpha:0.3];
         [self addSubview:statusCover];
         
         _menu = [[UITableView alloc] initWithFrame:CGRectMake(0,
                                                               64,
                                                               width,
                                                               CGRectGetHeight([[UIScreen mainScreen] bounds]) - 64)];
-        [_menu setBackgroundColor:[UIColor clearColor]];
+        [_menu setBackgroundColor:[UIColor sideMenuColor]];
         [_menu setSeparatorInset:UIEdgeInsetsZero];
         [_menu setDelegate:self];
         [_menu setDataSource:self];
@@ -192,8 +191,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"bob"];
         [cell setBackgroundColor:[UIColor clearColor]];
         [cell setBackgroundView:[[UIView alloc] initWithFrame:cell.frame]];
-        [cell.backgroundView setBackgroundColor:[UIColor sideMenuColor]];
-        [cell.backgroundView setAlpha:0.1];
+        [cell.backgroundView setBackgroundColor:[UIColor clearColor]];
+        [cell.backgroundView setAlpha:0.4];
     }
     
     [cell.textLabel setText:[[[SideMenuView sectionRowTitles]
@@ -214,7 +213,7 @@
         header = [[SideMenuHeaderView alloc] initWithSectionNumber:section];
     }
     
-    [header.textLabel setText:[[SideMenuView sectionHeaderTitles] objectAtIndex:section]];
+    [header.headerTitle setText:[[SideMenuView sectionHeaderTitles] objectAtIndex:section]];
     
     return header;
 }

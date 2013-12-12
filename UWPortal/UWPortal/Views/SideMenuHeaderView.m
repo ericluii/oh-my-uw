@@ -16,15 +16,19 @@
     
     if (self) {
         // Initialization code
+        _section = sectionNumber;
+        _isOpen = NO;
+        
         [self setFrame:CGRectMake(0,
                                   0,
                                   CGRectGetWidth([[UIScreen mainScreen] bounds]) - 50,
                                   50)];
         [self setBackgroundView:[[UIView alloc] initWithFrame:self.frame]];
-        [self.backgroundView setBackgroundColor:[UIColor sideMenuColor]];
-        [self.backgroundView setAlpha:0.3];
-        _section = sectionNumber;
-        _isOpen = NO;
+        [self.backgroundView setBackgroundColor:[UIColor colorWithWhite:0.5 alpha:0.3]];
+        
+        _headerTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 320, 40)];
+        _headerTitle.font = [UIFont systemFontOfSize:20.0f];
+        [self addSubview:_headerTitle];
         
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                      action:@selector(changeExpandedState)];

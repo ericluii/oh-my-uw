@@ -23,7 +23,7 @@
 }
 
 +(UIColor *) sideMenuColor {
-    return [UIColor blackColor];
+    return [UIColor colorWithWhite:0.5 alpha:0.1];
 }
 
 @end

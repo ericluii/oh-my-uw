@@ -15,6 +15,7 @@
 }
 
 @property (nonatomic, strong) id <SideMenuHeaderViewDelegate> delegate;
+@property (nonatomic, strong) UILabel * headerTitle;
 @property (nonatomic) NSInteger section;
 
 - (id)initWithSectionNumber:(NSInteger)sectionNumber;
